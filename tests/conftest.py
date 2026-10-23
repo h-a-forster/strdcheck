@@ -22,3 +22,16 @@ def pytest_collection_modifyitems(config: pytest.Config, items: list[pytest.Item
     for item in items:
         if "slow" in item.keywords:
             item.add_marker(skip)
+
+
+@pytest.fixture(scope="session")
+def strd_dir():
+    """Directory with all 58 checksum-verified StRD files; skips when the cache is incomplete."""
+    from strdcheck.fetch import is_cached, resolve_data_dir
+    from strdcheck.manifest import all_datasets
+
+    d = resolve_data_dir()
+    missing = [i.name for i in all_datasets() if not is_cached(i, d)]
+    if missing:
+        pytest.skip(f"StRD files not cached ({len(missing)} missing); run `strdcheck fetch`")
+    return d

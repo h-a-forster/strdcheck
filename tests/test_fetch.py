@@ -73,3 +73,22 @@ def test_resolve_data_dir(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> No
 def test_fetch_unknown_name(tmp_path: Path) -> None:
     with pytest.raises(KeyError):
         fetch_mod.fetch(["NotADataset"], tmp_path)
+
+
+def test_urlopen_sends_user_agent(monkeypatch) -> None:
+    """NIST answers 403 to the default Python-urllib user agent."""
+    import io
+    import urllib.request
+
+    from strdcheck import fetch as fetch_mod
+
+    seen = {}
+
+    def fake(req, timeout):
+        seen["ua"] = req.get_header("User-agent")
+        seen["timeout"] = timeout
+        return io.BytesIO(b"data")
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake)
+    assert fetch_mod._urlopen(fetch_mod.ALLOWED_PREFIX + "x.dat", 5.0) == b"data"
+    assert seen == {"ua": fetch_mod.USER_AGENT, "timeout": 5.0}

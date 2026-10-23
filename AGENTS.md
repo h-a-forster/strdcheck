@@ -76,20 +76,17 @@ Updated: 2026-10-24.
 
 Done:
 - M0 scaffold: uv project with `uv.lock` (numpy/scipy forks for Python 3.11 vs >= 3.12;
-  torch 2.14.1+cpu from the PyTorch CPU index installs on Windows), CI, hygiene files,
-  `docs/DESIGN.md`.
-- Manifest of all 58 StRD files with SHA-256 (retrieved 2026-10-23), downloader, LRE
-  module, CLI `list/fetch/verify`, pytest plugin stub with `strd_assert_lre`. Tests and ruff
-  pass.
-- Research: references checked via Crossref; prior art (lmfit tests, scipy test data,
-  NISTnls) noted; PyPI name free; "Hill et al. 2024" not located yet.
-- Feasibility probe (DESIGN 11): ceilings bind on NumAcc3/4; polars/DuckDB/torch lose 2-4
-  digits versus numpy on NumAcc4 tiled to 1e6; Filip exposes `rcond` truncation in
-  lstsq/pinv paths; BoxBOD Start 1 gives silent failures for `lm` and `curve_fit`.
+  torch 2.14.1+cpu from the PyTorch CPU index), CI, hygiene files, `docs/DESIGN.md`;
+  manifest, downloader (sends its own User-Agent: NIST returns 403 to `Python-urllib`), LRE
+  module, CLI `list/fetch/verify`, plugin stub.
+- M1: `parse.py` (all 58 files parse; Rat43 header dof typo recorded), `exact.py` (exact
+  rational references, float64/float32 ceilings, tiled references, mpmath Gauss-Newton
+  refinement), `models.py` (27 models, analytic Jacobians checked against mpmath),
+  `scripts/verify_certified.py` -> `results/certified_check.csv` (530 values; none below the
+  limit; about 40 s).
 
-Next (in order): M1 parser + exact references + `scripts/verify_certified.py`; M2 results and
-checkpoint store; M3-M5 adapters; M6 plugin; M7 runner and quick study; M9 report. Cut order
-if short of time: DESIGN 8.
+Next (in order): M2 results and checkpoint store; M3-M5 adapters; M6 plugin; M7 runner and
+quick study; M9 report. Cut order if short of time: DESIGN 8.
 
 Open questions for the owner: O1 data licence (bundle the 2.1 MB of StRD files or keep
-fetching).
+fetching). "Hill et al. 2024" not located yet (M9).

@@ -28,6 +28,7 @@ ENV_VAR = "STRDCHECK_DATA_DIR"
 ALLOWED_PREFIX = "https://www.itl.nist.gov/div898/strd/"
 TIMEOUT_S = 60.0
 ATTEMPTS = 3
+USER_AGENT = "strdcheck (+https://github.com/h-a-forster/strdcheck)"
 
 Opener = Callable[[str, float], bytes]
 
@@ -56,7 +57,9 @@ def resolve_data_dir(data_dir: str | os.PathLike[str] | None = None) -> Path:
 def _urlopen(url: str, timeout: float) -> bytes:
     if not url.startswith(ALLOWED_PREFIX):
         raise ValueError(f"refusing to download from outside {ALLOWED_PREFIX}: {url}")
-    with urllib.request.urlopen(url, timeout=timeout) as resp:  # noqa: S310 - fixed host
+    # NIST's server answers 403 to the default "Python-urllib" user agent.
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310 - fixed host
         return resp.read()
 
 

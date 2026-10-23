@@ -217,9 +217,12 @@ For every univariate, ANOVA and linear quantity we compute, with exact rational 
 
 For polynomial models the powers are taken exactly of the rounded `x`. The report shows each
 engine LRE with its ceiling and the *deficit* `ceiling - LRE` (clipped at 0). For nonlinear
-problems the float64 ceiling is computed with mpmath (50 digits) by Gauss-Newton refinement
-from `b*` on float64-rounded data; a run that does not converge in 20 iterations marks the
-ceiling unknown.
+problems the float64 ceiling is computed with mpmath (40 digits) by Gauss-Newton refinement
+from `b*` on float64-rounded data (for Nelson, on `log(y)` as numpy computes it); a run that
+does not reach a relative step of `1e-20` within 100 iterations marks the ceiling unknown.
+(Gauss-Newton converges only linearly on large-residual problems: MGH09 gains about 0.2
+digits per iteration, so the 20 iterations first planned were not enough. M1 measured all
+27 problems converging, ENSO slowest at about 18 s for both data versions.)
 
 ### 4.7 StRD-derived tiled datasets (Part C)
 
@@ -281,7 +284,9 @@ class Dataset:
     def array(self, column: str, dtype=np.float64) -> np.ndarray: ...
 ```
 
-Rules: read bytes, decode ASCII, strip `\r`. Take the data line range from the header
+Rules: read bytes, decode ASCII, strip `\r`. Rat43's header prints 9 residual degrees of
+freedom although n - p = 11 (its certified residual SD uses 11): the parser keeps the printed
+value as `df["printed_residual"]` and uses n - p everywhere. Take the data line range from the header
 (`Data (lines a to b)`); check the row count equals the manifest `n_obs` and every row has the
 expected number of fields; raise `ParseError` otherwise. Certified blocks are parsed with one
 regex set per suite. `array(dtype)` parses each string with Python `float` (correctly rounded
@@ -494,7 +499,7 @@ Each milestone ends with `uv run pytest`, `uv run ruff check .` and
 | ID | Deliverable | Done-check |
 |---|---|---|
 | M0 | Scaffold, manifest, fetch, LRE, plugin stub, DESIGN | done: tests, ruff, `strdcheck --version` |
-| M1 | `parse.py`, `exact.py`, synthetic fixtures, `scripts/verify_certified.py` | all 58 files parse with row counts equal to the manifest; for every univariate, ANOVA and linear certified value `LRE(exact_dec, certified) >= cap - 1`; for every nonlinear problem `LRE(RSS(b*), certified RSS) >= 9` and SEs from 4.5 at `b*` reach `>= 8` (mpmath); any miss is documented in DESIGN as a certified-value question, not patched |
+| M1 | `parse.py`, `exact.py`, synthetic fixtures, `scripts/verify_certified.py` | all 58 files parse with row counts equal to the manifest; for every univariate, ANOVA and linear certified value `LRE(exact_dec, certified) >= cap - 1`; for every nonlinear problem `LRE(RSS(b*), certified RSS) >= 9` and SEs from 4.5 at `b*` reach `>= 8` (mpmath); any miss is documented in DESIGN as a certified-value question, not patched. **Done 2026-10-24**: worst `LRE(exact_dec)` is cap - 0.65 (Filip b6); mpmath refinement from `b*` reproduces every nonlinear certified value to >= 10.3 digits. Evaluated *at* the printed `b*`, all problems pass except Lanczos1, whose certified RSS (1.4e-25) is below the resolution of 11-digit parameters (RSS at the printed `b*` is 4e-21); the refined check covers it |
 | M2 | `results.py`, `checkpoint.py`, retry wrapper | kill-and-resume test: a run interrupted after k units resumes and finishes with exactly N unit files and no duplicates; config-hash mismatch refused |
 | M3 | univariate and ANOVA adapters + controls | each adapter exact on a synthetic integer dataset; `control.exact` hits the cap on all 20 datasets; `control.onepass.f64` has LRE(sd) < 2 on NumAcc3/4 (expected failure, proves the pipeline detects loss) |
 | M4 | linear adapters + control | synthetic exact-fit test per adapter; `control.normal-equations.f64` loses at least 5 digits on Filip or Longley versus `numpy.Polynomial.fit` / statsmodels qr; rank recorded for lstsq paths |
