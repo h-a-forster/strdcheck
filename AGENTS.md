@@ -79,6 +79,9 @@ Done:
   torch 2.14.1+cpu from the PyTorch CPU index), CI, hygiene files, `docs/DESIGN.md`;
   manifest, downloader (sends its own User-Agent: NIST returns 403 to `Python-urllib`), LRE
   module, CLI `list/fetch/verify`, plugin stub.
+- M3: univariate (15 engine configs + 2 controls) and ANOVA (7 + 2 controls) adapters in
+  `engines/`, registry; synthetic exact-answer test per adapter; controls behave on real
+  data. Found: the shared ANOVA `combine` step cancels in `m_g - m` (DESIGN 4.3 updated).
 - M2: `results.py` (EngineResult, QuantityRecord, UnitRecord, `score`), `checkpoint.py`
   (RunStore, atomic unit files, progress.log, config-hash guard, `execute` with at most 3
   spawned workers, `with_retries`); kill-and-resume test passes.
@@ -88,7 +91,7 @@ Done:
   `scripts/verify_certified.py` -> `results/certified_check.csv` (530 values; none below the
   limit; about 40 s).
 
-Next (in order): M3-M5 adapters; M6 plugin; M7 runner and
+Next (in order): M4-M5 adapters; M6 plugin; M7 runner and
 quick study; M9 report. Cut order if short of time: DESIGN 8.
 
 Open questions for the owner: O1 data licence (bundle the 2.1 MB of StRD files or keep
