@@ -146,10 +146,8 @@ def score(
         x = float(value)
         r = lre(x, cert.value, cap=cert.cap)
         ceil = float(ceilings.get(name, math.nan))
-        if math.isnan(ceil) or math.isnan(r.value):
-            deficit = math.nan
-        else:
-            deficit = max(ceil - r.value, 0.0)
+        unknown = math.isnan(ceil) or math.isnan(r.value)
+        deficit = math.nan if unknown else max(ceil - r.value, 0.0)
         rows.append(
             QuantityRecord(
                 name=name,

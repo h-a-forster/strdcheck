@@ -120,7 +120,8 @@ class RunStore:
     # -- logs ---------------------------------------------------------------------------------
 
     def log_progress(self, unit_id: str, status: str, seconds: float) -> None:
-        line = f"{datetime.now(UTC).isoformat(timespec='seconds')}\t{unit_id}\t{status}\t{seconds:.3f}\n"
+        stamp = datetime.now(UTC).isoformat(timespec="seconds")
+        line = f"{stamp}\t{unit_id}\t{status}\t{seconds:.3f}\n"
         with (self.dir / "progress.log").open("a", encoding="utf-8") as fh:
             fh.write(line)
 
