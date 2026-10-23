@@ -79,6 +79,9 @@ Done:
   torch 2.14.1+cpu from the PyTorch CPU index), CI, hygiene files, `docs/DESIGN.md`;
   manifest, downloader (sends its own User-Agent: NIST returns 403 to `Python-urllib`), LRE
   module, CLI `list/fetch/verify`, plugin stub.
+- M6: plugin `strd_dataset` fixture (skip or `--strd-fetch`), `--strd-report` CSV, terminal
+  summary of the five lowest LREs; `strdcheck.testing` (`params`, `check_univariate`,
+  `check_linear`, `check_nonlinear`, `LRETable`); pytester tests.
 - M5: nonlinear adapters (12 `least_squares` + 2 `curve_fit` configurations), SEs from
   the SVD of the returned Jacobian (curve_fit: its `pcov`), `classify` outcome classes;
   756 NIST-start fits take about 16 s serially; done-check passes.
