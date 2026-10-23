@@ -79,6 +79,9 @@ Done:
   torch 2.14.1+cpu from the PyTorch CPU index), CI, hygiene files, `docs/DESIGN.md`;
   manifest, downloader (sends its own User-Agent: NIST returns 403 to `Python-urllib`), LRE
   module, CLI `list/fetch/verify`, plugin stub.
+- M5: nonlinear adapters (12 `least_squares` + 2 `curve_fit` configurations), SEs from
+  the SVD of the returned Jacobian (curve_fit: its `pcov`), `classify` outcome classes;
+  756 NIST-start fits take about 16 s serially; done-check passes.
 - M4: linear adapters (17 configurations + normal-equations control), shared float64
   routine for derived SEs/residual SD/R² (marked `derived`), reported rank recorded;
   synthetic exact-answer tests; normal equations lose 13.8 digits vs `Polynomial.fit` on Filip.
@@ -94,7 +97,7 @@ Done:
   `scripts/verify_certified.py` -> `results/certified_check.csv` (530 values; none below the
   limit; about 40 s).
 
-Next (in order): M5 nonlinear adapters; M6 plugin; M7 runner and
+Next (in order): M6 plugin; M7 runner and
 quick study; M9 report. Cut order if short of time: DESIGN 8.
 
 Open questions for the owner: O1 data licence (bundle the 2.1 MB of StRD files or keep
