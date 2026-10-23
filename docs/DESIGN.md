@@ -60,9 +60,15 @@ Checked 2026-10-23.
   from the NIST files.
 - **Package name.** `strdcheck`, `strd`, `nistrd`, `pystrd`, `nist-strd` are not on PyPI
   (PyPI JSON API returned 404 for each, 2026-10-23).
-- **Unverified lead.** The project notes mention "Hill et al. 2024" (R versus statsmodels on
-  StRD). Two web searches did not locate it. M9 task: find and cite it precisely, or drop the
-  reference. Until then no claim of novelty relative to it is made.
+- **Closest recent work (located 2026-10-24, M9).** Hill, Du, Johnson and McCullough (2024)
+  compare R's `stats` package with Python libraries (including statsmodels) on the StRD
+  univariate, ANOVA and linear regression suites using LRE (Crossref-verified metadata; we
+  read the abstract only, not the full text). Their abstract reports both R and statsmodels as
+  reliable for univariate statistics and recommends R for linear regression. strdcheck differs
+  in scope (columnar engines polars and DuckDB, PyTorch, the nonlinear suite with
+  silent-failure rates), in reporting (representation ceilings and deficits, conditioning
+  context) and in packaging (a pytest plugin). We make no claim about which Python libraries
+  they covered beyond what the abstract states.
 
 Positioning: lead with the columnar engines (polars, DuckDB, pandas) and the nonlinear
 silent-failure rates, which the older literature does not cover, and with the ceiling-aware
@@ -601,6 +607,9 @@ be redone by the study with the full protocol.
   doi:10.1080/00031305.1983.10483115.
 - Higham, N. J. (2002). *Accuracy and Stability of Numerical Algorithms*, 2nd ed. SIAM.
   doi:10.1137/1.9780898718027.
+- Hill, C., Du, L., Johnson, M., McCullough, B. D. (2024). Comparing programming languages
+  for data analytics: Accuracy of estimation in Python and R. *WIREs Data Mining and
+  Knowledge Discovery* 14(3). doi:10.1002/widm.1531.
 - Keeling, K. B., Pavur, R. J. (2007). A comparative study of the reliability of nine
   statistical software packages. *Computational Statistics & Data Analysis* 51(8),
   3811-3831. doi:10.1016/j.csda.2006.02.013.

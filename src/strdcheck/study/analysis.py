@@ -10,7 +10,8 @@ Outputs (all small, committed):
 - ``nonlinear_problem_rates.csv``: per-problem silent-failure rates with Wilson intervals;
 - ``comparisons.csv``: the five pre-specified comparisons (permutation p, Holm);
 - ``tiled.csv``: Part C LREs against derived references;
-- ``ceilings.csv``: representation ceilings; ``environment.json``; ``summary.json``.
+- ``ceilings.csv``: representation ceilings; ``conditioning.csv``: cond(X) of the linear
+  designs; ``environment.json``; ``summary.json``.
 """
 
 from __future__ import annotations
@@ -477,6 +478,15 @@ def write_results(run_dir: str | Path, out_dir: str | Path) -> list[Path]:
             out / "ceilings.csv", crow, ["dataset", "suite", "quantity", "dec", "f64", "f32"]
         )
     )
+    cond = [
+        {"dataset": r.dataset, "cond": r.extra["cond"], "log10_cond": math.log10(r.extra["cond"])}
+        for r in records
+        if r.part == "P" and "cond" in r.extra
+    ]
+    if cond:
+        written.append(
+            _write_csv(out / "conditioning.csv", cond, ["dataset", "cond", "log10_cond"])
+        )
 
     # Part A
     arows = part_a_rows(records)

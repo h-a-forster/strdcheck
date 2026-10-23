@@ -40,7 +40,9 @@ def combine(
         "ss_within": ss_w,
         "ms_within": ms_w,
         "r2": ss_b / (ss_b + ss_w) if ss_b + ss_w else math.nan,
-        "resid_sd": math.sqrt(ms_w),
+        # A negative within-group variance (possible for the one-pass control) is a numerical
+        # failure of the inputs, reported as nan rather than raised.
+        "resid_sd": math.sqrt(ms_w) if ms_w >= 0 else math.nan,
     }
 
 

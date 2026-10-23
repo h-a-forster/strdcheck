@@ -1,0 +1,23 @@
+# Extended Part B (DESIGN 6.3): all three spreads, 60 starts per problem; Parts A and C off.
+# 4,860 units (68,040 fits), about 35-40 minutes on 3 workers. Secondary to the quick study:
+# its first 20 starts at sigma = 1.0 are the quick study's starts (same seeds).
+
+[study]
+name = "partb-extended"
+workers = 3
+repeats = 1
+
+[part_a]
+enabled = false
+
+[part_b]
+enabled = true
+seed = 20261023
+sigmas = [0.25, 1.0, 2.0]
+starts_per_problem = 60
+taus = [2.0, 4.0, 6.0]
+bootstrap = 10000
+permutations = 20000
+
+[part_c]
+enabled = false

@@ -1,0 +1,67 @@
+{
+ "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+ "git_commit": "b9dc15d",
+ "implementation": "CPython",
+ "logical_cpus": 16,
+ "machine": "AMD64",
+ "numpy_build": {
+  "blas": {
+   "detection method": "pkgconfig",
+   "found": true,
+   "include directory": "<path>/include",
+   "lib directory": "<path>/lib",
+   "name": "scipy-openblas",
+   "openblas configuration": "OpenBLAS 0.3.34.106.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24",
+   "pc file directory": "<path>/.openblas",
+   "version": "0.3.34.106.0"
+  },
+  "lapack": {
+   "detection method": "pkgconfig",
+   "found": true,
+   "include directory": "<path>/include",
+   "lib directory": "<path>/lib",
+   "name": "scipy-openblas",
+   "openblas configuration": "OpenBLAS 0.3.34.106.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24",
+   "pc file directory": "<path>/.openblas",
+   "version": "0.3.34.106.0"
+  },
+  "simd": {
+   "baseline": [
+    "X86_V2"
+   ],
+   "found": [
+    "X86_V3"
+   ]
+  }
+ },
+ "os": "Windows-11-10.0.26200-SP0",
+ "packages": {
+  "duckdb": "2.0.0",
+  "mpmath": "1.3.0",
+  "numpy": "2.5.4",
+  "pandas": "3.1.0",
+  "polars": "2.0.0",
+  "scipy": "1.18.1",
+  "statsmodels": "0.15.0",
+  "strdcheck": "0.1.0.dev0",
+  "threadpoolctl": "3.7.0",
+  "torch": "2.14.1+cpu"
+ },
+ "python": "3.13.1",
+ "threadpools": [
+  {
+   "architecture": "Haswell",
+   "internal_api": "openblas",
+   "num_threads": 16,
+   "prefix": "libscipy_openblas",
+   "threading_layer": "pthreads",
+   "user_api": "blas",
+   "version": "0.3.34.106.0"
+  }
+ ],
+ "torch": {
+  "mkl": true,
+  "num_threads": 8,
+  "openmp": true
+ }
+}

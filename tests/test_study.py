@@ -168,3 +168,15 @@ def test_run_unit_records_adapter_exception(strd_dir, tmp_path, monkeypatch) -> 
     execute(store, [u], run_unit, workers=1)
     rec = store.records()[0]
     assert rec.status == "error" and "nope" in rec.error
+
+
+def test_m8_k1_reproduces_exact_f64(strd_dir) -> None:
+    """M8 done-check: the tiled reference with k = 1 equals the float64 exact reference."""
+    from strdcheck import exact
+    from strdcheck.parse import load
+
+    for name in ("NumAcc3", "NumAcc4", "PiDigits"):
+        ds = load(name, strd_dir)
+        t = exact.tiled_reference(ds.array("y"), 1)
+        r = exact.reference(ds, "f64")
+        assert t["mean"] == r["mean"] and t["sd"] == r["sd"]

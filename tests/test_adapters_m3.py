@@ -110,3 +110,8 @@ def test_controls_on_real_data(strd_dir) -> None:
         sd = _lre("control.onepass.f64", "univariate", ds, "sd")
         ceiling = exact.ceilings(ds)["sd"].f64
         assert math.isnan(sd) or sd <= ceiling - 5, (name, sd, ceiling)
+
+
+def test_combine_negative_variance_is_nan() -> None:
+    out = anova_mod.combine([3, 3], [1.0, 2.0], [-0.5, -0.5], 1.5)
+    assert math.isnan(out["resid_sd"]) and out["ss_within"] < 0

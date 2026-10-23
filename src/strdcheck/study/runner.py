@@ -108,6 +108,14 @@ def _run_p(u: Unit) -> UnitRecord:
     ds = _dataset(u.dataset, u.data_dir)
     c = exact.nonlinear_ceilings(ds) if ds.suite == "nonlinear" else exact.ceilings(ds)
     ceil = {k: {"dec": v.dec, "f64": v.f64, "f32": v.f32} for k, v in c.items()}
+    extra: dict[str, Any] = {"ceilings": ceil}
+    if ds.suite == "linear":
+        # 2-norm condition number of the float64 design matrix: a backward-stable solver can
+        # be expected to lose about log10(cond) digits on the coefficients.
+        from strdcheck.engines.linear import design
+
+        X, _ = design(ds)
+        extra["cond"] = float(np.linalg.cond(X))
     return UnitRecord(
         u.unit_id,
         "P",
@@ -116,7 +124,7 @@ def _run_p(u: Unit) -> UnitRecord:
         ds.suite,
         "ok",
         seconds=time.perf_counter() - t0,
-        extra={"ceilings": ceil},
+        extra=extra,
     )
 
 
