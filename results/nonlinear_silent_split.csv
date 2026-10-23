@@ -1,0 +1,15 @@
+sigma,tau,adapter,problems,silent_at_min,silent_at_min_lo,silent_at_min_hi,silent_wrong,silent_wrong_lo,silent_wrong_hi,problems_with_wrong_rss
+1.0,4.0,scipy.curve_fit.default,27,0.0722,0.0167,0.1426,0.2444,0.1278,0.3722,16
+1.0,4.0,scipy.curve_fit.jac-analytic,27,0.0778,0.0185,0.1537,0.2537,0.1315,0.3889,17
+1.0,4.0,scipy.least_squares.dogbox.jac-2point.tol-default,27,0.0963,0.0259,0.1907,0.2574,0.1407,0.3852,17
+1.0,4.0,scipy.least_squares.dogbox.jac-2point.tol-tight,27,0.0611,0.0148,0.1185,0.2222,0.1167,0.3389,15
+1.0,4.0,scipy.least_squares.dogbox.jac-analytic.tol-default,27,0.0778,0.0148,0.1648,0.2556,0.1426,0.3796,18
+1.0,4.0,scipy.least_squares.dogbox.jac-analytic.tol-tight,27,0.0426,0.0074,0.0889,0.2185,0.1148,0.3333,16
+1.0,4.0,scipy.least_squares.lm.jac-2point.tol-default,27,0.0907,0.0167,0.1852,0.2537,0.1296,0.3889,17
+1.0,4.0,scipy.least_squares.lm.jac-2point.tol-tight,27,0.0907,0.0167,0.1852,0.2352,0.1167,0.3667,16
+1.0,4.0,scipy.least_squares.lm.jac-analytic.tol-default,27,0.0611,0.0093,0.1315,0.2537,0.1315,0.3889,17
+1.0,4.0,scipy.least_squares.lm.jac-analytic.tol-tight,27,0.0593,0.0074,0.1296,0.2204,0.1074,0.3444,16
+1.0,4.0,scipy.least_squares.trf.jac-2point.tol-default,27,0.1148,0.0278,0.2278,0.2981,0.1704,0.4352,17
+1.0,4.0,scipy.least_squares.trf.jac-2point.tol-tight,27,0.0796,0.0093,0.1648,0.2815,0.163,0.4093,17
+1.0,4.0,scipy.least_squares.trf.jac-analytic.tol-default,27,0.0889,0.0093,0.1889,0.2889,0.1667,0.4222,17
+1.0,4.0,scipy.least_squares.trf.jac-analytic.tol-tight,27,0.05,0.0037,0.1185,0.2611,0.1444,0.3889,16

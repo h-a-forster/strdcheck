@@ -109,7 +109,9 @@ linear and 750 nonlinear engine calls, each repeated 3 times for a reproducibili
 The default ("quick") study, Parts A + B-quick + C-quick, is budgeted at under 15 minutes on
 3 worker processes and must stay under 45 minutes. The full-size command (Part B with 200
 random starts per problem and three spreads, Part C up to n = 2 x 10^7) is documented in
-section 6.7 and estimated at 60-75 minutes; it is not part of the default run.
+section 6.7; measured Part B throughput (2.3-2.7 units/s on 3 workers) puts it at 2-2.5
+hours, so it is not part of the default run and must be split (for example one spread per
+run) to respect a 45-minute limit per run.
 
 ## 4. Formulas
 
@@ -465,13 +467,12 @@ uv sync --group dev --extra torch
 uv run strdcheck fetch
 uv run python scripts/run_study.py --config configs/quick.toml --run runs/quick   # < 15 min target
 uv run strdcheck table runs/quick --out results/
-# Full size (documented; about 60-75 min on 3 workers):
+# Full size (documented; about 2-2.5 h on 3 workers, see REPORT.md for measured rates):
 uv run python scripts/run_study.py --config configs/full.toml --run runs/full
 ```
 
-Estimates (to be replaced by measured values in REPORT.md): Part A 3-5 min (exact ceilings
-for SmLs03/06/09 and the nonlinear mpmath refinements dominate), Part B quick 3-6 min,
-Part C quick 2-4 min.
+Measured on the reference machine (REPORT.md): phase P 50 s, Part A 89 s, Part B quick
+235 s, Part C quick 54 s; about 7 minutes for the quick study in total.
 
 ### 6.8 Reporting rules
 

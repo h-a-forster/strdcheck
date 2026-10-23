@@ -128,7 +128,14 @@ def test_end_to_end_small_run(strd_dir, tmp_path: Path) -> None:
     assert all(r.status == "ok" for r in recs), [r.error for r in recs if r.status != "ok"]
     a = [r for r in recs if r.part == "A" and r.adapter == "control.exact"]
     assert a and all(q.lre >= q.cap - 1 for r in a for q in r.quantities)
-    assert all(r.repeat_identical for r in recs if r.part == "A")
+    # Inline runs use this process's thread pools, not the 1-thread worker setup; polars
+    # streaming with several threads is not bitwise repeatable (REPORT section 5).
+    unstable = [
+        r.unit_id
+        for r in recs
+        if r.part == "A" and not r.repeat_identical and "lazy-streaming" not in r.adapter
+    ]
+    assert not unstable, unstable
     b = [r for r in recs if r.part == "B"]
     assert len(b) == 4 and all(len(r.extra["fits"]) == 14 for r in b)
     res = analysis.write_results(run, tmp_path / "results")
@@ -180,3 +187,23 @@ def test_m8_k1_reproduces_exact_f64(strd_dir) -> None:
         t = exact.tiled_reference(ds.array("y"), 1)
         r = exact.reference(ds, "f64")
         assert t["mean"] == r["mean"] and t["sd"] == r["sd"]
+
+
+def test_silent_split_separates_equivalent_minima() -> None:
+    from strdcheck.results import UnitRecord
+
+    def rec(prob: str, fits: list[dict]) -> UnitRecord:
+        return UnitRecord(
+            f"B|{prob}", "B", prob, "all", "nonlinear", "ok", extra={"sigma": 1.0, "fits": fits}
+        )
+
+    ok = {"adapter": "a", "success": True, "min_param_lre": 8.0, "rss_lre": 9.0}
+    at_min = {"adapter": "a", "success": True, "min_param_lre": 0.5, "rss_lre": 7.0}
+    wrong = {"adapter": "a", "success": True, "min_param_lre": 0.5, "rss_lre": 1.0}
+    flagged = {"adapter": "a", "success": False, "min_param_lre": 0.5, "rss_lre": 1.0}
+    err = {"adapter": "a", "error": "boom"}
+    recs = [rec("P1", [ok, at_min, wrong, wrong]), rec("P2", [flagged, err, ok, at_min])]
+    (row,) = analysis.silent_split(recs, 4.0, 200, 1)
+    assert row["problems"] == 2 and row["problems_with_wrong_rss"] == 1
+    assert row["silent_at_min"] == pytest.approx((1 / 4 + 1 / 4) / 2)
+    assert row["silent_wrong"] == pytest.approx((2 / 4 + 0) / 2)

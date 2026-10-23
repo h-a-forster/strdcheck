@@ -377,6 +377,65 @@ def outcome_rates(records: list[UnitRecord], taus: Sequence[float], B: int, seed
     return rows, per_problem, counts, totals
 
 
+def silent_split(records: list[UnitRecord], tau: float, B: int, seed: int) -> list[dict[str, Any]]:
+    """Secondary analysis: split silent failures by the residual sum of squares.
+
+    A silent fit whose RSS still agrees with the certified minimum to ``tau`` digits reached
+    an equivalent minimum (exchangeable model components, such as the terms of a sum of
+    exponentials, or a flat direction of the objective) and differs from the certified
+    point only in parameter labelling or ill-determined parameters. A silent fit with a wrong
+    RSS stopped at a different stationary point or short of the minimum. Rates are per
+    problem and then averaged, as in :func:`outcome_rates`.
+    """
+    cnt: dict[tuple, Counter] = defaultdict(Counter)
+    for r in records:
+        if r.part != "B":
+            continue
+        sigma = float(r.extra["sigma"])
+        for f in r.extra.get("fits", []):
+            key = (sigma, f["adapter"], r.dataset)
+            cnt[key]["fits"] += 1
+            if "error" in f:
+                continue
+            o = classify(f.get("success"), _f(f.get("min_param_lre")), tau=tau)
+            if o != "silent":
+                continue
+            rss = _f(f.get("rss_lre"))
+            cnt[key]["at_min" if math.isfinite(rss) and rss >= tau else "wrong"] += 1
+    rows = []
+    for sigma, ad in sorted({(k[0], k[1]) for k in cnt}):
+        probs = sorted(k[2] for k in cnt if (k[0], k[1]) == (sigma, ad))
+        row: dict[str, Any] = {"sigma": sigma, "tau": tau, "adapter": ad, "problems": len(probs)}
+        for part in ("at_min", "wrong"):
+            rates = np.array(
+                [cnt[(sigma, ad, p)][part] / cnt[(sigma, ad, p)]["fits"] for p in probs]
+            )
+            lo, hi = cluster_bootstrap_mean(rates, B, seed)
+            row[f"silent_{part}"], row[f"silent_{part}_lo"], row[f"silent_{part}_hi"] = (
+                float(rates.mean()),
+                lo,
+                hi,
+            )
+        row["problems_with_wrong_rss"] = sum(cnt[(sigma, ad, p)]["wrong"] > 0 for p in probs)
+        rows.append(row)
+    return rows
+
+
+SPLIT_FIELDS = [
+    "sigma",
+    "tau",
+    "adapter",
+    "problems",
+    "silent_at_min",
+    "silent_at_min_lo",
+    "silent_at_min_hi",
+    "silent_wrong",
+    "silent_wrong_lo",
+    "silent_wrong_hi",
+    "problems_with_wrong_rss",
+]
+
+
 def comparisons(per_problem, sigma: float, B_boot: int, B_perm: int, seed: int):
     rows = []
     for i, (label, a, b) in enumerate(COMPARISONS):
@@ -582,6 +641,8 @@ def write_results(run_dir: str | Path, out_dir: str | Path) -> list[Path]:
         for o in OUTCOMES:
             rfields += [o, f"{o}_lo", f"{o}_hi"]
         written.append(_write_csv(out / "nonlinear_rates.csv", rates, rfields))
+        split = silent_split(records, PRIMARY_TAU, int(pb.get("bootstrap", 10000)), seed)
+        written.append(_write_csv(out / "nonlinear_silent_split.csv", split, SPLIT_FIELDS))
         prow = []
         for (sigma, tau, ad, prob), c in sorted(counts.items()):
             if tau != PRIMARY_TAU:

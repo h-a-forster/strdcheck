@@ -1,0 +1,73 @@
+{
+ "config": {
+  "name": "partb-extended",
+  "part_a": {
+   "enabled": false,
+   "suites": [
+    "univariate",
+    "anova",
+    "linear",
+    "nonlinear"
+   ]
+  },
+  "part_b": {
+   "bootstrap": 10000,
+   "enabled": true,
+   "permutations": 20000,
+   "problems": [],
+   "seed": 20261023,
+   "sigmas": [
+    0.25,
+    1.0,
+    2.0
+   ],
+   "starts_per_problem": 60,
+   "taus": [
+    2.0,
+    4.0,
+    6.0
+   ]
+  },
+  "part_c": {
+   "datasets": [
+    "NumAcc3",
+    "NumAcc4",
+    "PiDigits"
+   ],
+   "enabled": false,
+   "orders": [
+    "tiled",
+    "permuted"
+   ],
+   "seed": 20261023,
+   "sizes": [
+    10000,
+    100000,
+    1000000
+   ]
+  },
+  "repeats": 1,
+  "workers": 3
+ },
+ "config_hash": "8ecfe8521fbe8f91",
+ "created": "2026-10-23T22:57:38+00:00",
+ "notable": 0,
+ "part_a_quantities": 0,
+ "part_b": {
+  "fits": 68040,
+  "primary_sigma": 1.0
+ },
+ "parts": {
+  "B": 4860
+ },
+ "seconds": {
+  "A": 0,
+  "B": 5245.6,
+  "C": 0,
+  "P": 0
+ },
+ "status": {
+  "ok": 4860
+ },
+ "units": 4860
+}

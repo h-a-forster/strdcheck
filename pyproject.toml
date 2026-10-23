@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "strdcheck"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "Numerical accuracy of the Python data stack on the NIST Statistical Reference Datasets: log relative error (LRE) for numpy, pandas, polars, DuckDB, statsmodels, scipy and PyTorch, a pytest plugin, and a published LRE table."
 readme = "README.md"
 license = "MIT"
@@ -16,7 +16,7 @@ keywords = [
     "nonlinear-least-squares", "floating-point", "pytest-plugin", "benchmark", "validation",
 ]
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
     "Environment :: Console",
     "Framework :: Pytest",
     "Intended Audience :: Developers",

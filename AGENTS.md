@@ -49,17 +49,19 @@ representation ceiling, plus silent-failure rates of scipy's nonlinear least squ
 | `src/strdcheck/lre.py` | LRE/LAE, significant digits, clipping | done |
 | `src/strdcheck/manifest.py`, `data/manifest.json` | 58 StRD files with URL, SHA-256, size, difficulty, n | done |
 | `src/strdcheck/fetch.py` | NIST-only downloader with checksum and atomic cache writes | done |
-| `src/strdcheck/cli.py` | `list`, `fetch`, `verify` (later `study`, `table`, `env`) | partial, M7 |
-| `src/strdcheck/pytest_plugin.py` | `strd` marker, `strd_assert_lre`, options (later dataset fixtures, report) | partial, M6 |
-| `src/strdcheck/parse.py` | StRD parser -> `Dataset` | M1 |
-| `src/strdcheck/exact.py` | exact rational references and representation ceilings | M1 |
-| `src/strdcheck/results.py`, `checkpoint.py` | result schema, resumable unit store | M2 |
-| `src/strdcheck/engines/` | adapters per suite + registry | M3-M5 |
-| `src/strdcheck/models.py` | 27 nonlinear models with analytic Jacobians | M5 |
-| `src/strdcheck/testing.py` | public plugin helpers | M6 |
-| `src/strdcheck/study/` | config, runner, analysis, report, tiled Part C | M7-M9 |
+| `src/strdcheck/cli.py` | `list`, `fetch`, `verify`, `study`, `table`, `env` | done |
+| `src/strdcheck/pytest_plugin.py` | `strd` marker, `strd_assert_lre`, `strd_dataset`, `--strd-*` options, LRE report | done |
+| `src/strdcheck/parse.py` | StRD parser -> `Dataset` | done |
+| `src/strdcheck/exact.py` | exact rational references, ceilings, mpmath nonlinear references | done |
+| `src/strdcheck/results.py`, `checkpoint.py` | result schema, resumable unit store | done |
+| `src/strdcheck/engines/` | adapters per suite + registry | done |
+| `src/strdcheck/models.py` | 27 nonlinear models with analytic Jacobians | done |
+| `src/strdcheck/testing.py` | public plugin helpers | done |
+| `src/strdcheck/study/` | config, runner (phases P/A/B/C), analysis, tiled Part C | done |
+| `src/strdcheck/env.py` | scrubbed environment record | done |
 | `scripts/build_manifest.py` | regenerate the manifest from NIST | done |
-| `configs/`, `results/` | study configs; committed small outputs | M7, M9 |
+| `scripts/verify_certified.py`, `scripts/run_study.py` | V1 check; study retry wrapper | done |
+| `configs/`, `results/`, `repros/` | study configs; committed tables; standalone reproductions | done |
 
 ## How to test
 
@@ -74,7 +76,17 @@ uv run strdcheck fetch               # real StRD files into the user cache (need
 
 Updated: 2026-10-24.
 
-Done:
+Done (v0.1.0, not tagged):
+- M10 release prep: README (install from git, quick start, plugin, validation, citation),
+  REPORT.md, CHANGELOG 0.1.0, version 0.1.0 in pyproject, `__init__` and CITATION.cff.
+- M9 study and report: quick study (`configs/quick.toml`, 1,884 units, 0 errors, about
+  7 minutes) committed in `results/`; extended Part B over the three spreads
+  (`configs/partb-extended.toml`, 4,860 units) in `results/partb-extended/`. Notable cells
+  triaged (REPORT 3.4), standalone repros in `repros/`. Secondary analysis
+  `nonlinear_silent_split.csv` separates silent fits at an equivalent minimum (RSS right,
+  parameters not) from wrong ones. Part P records cond(X) for the linear problems.
+- M8: tiled Part C (7 engine paths, exact derived references, threads 1 vs 3, bitwise
+  repeatability); k = 1 reproduces the float64 reference (test).
 - M0 scaffold: uv project with `uv.lock` (numpy/scipy forks for Python 3.11 vs >= 3.12;
   torch 2.14.1+cpu from the PyTorch CPU index), CI, hygiene files, `docs/DESIGN.md`;
   manifest, downloader (sends its own User-Agent: NIST returns 403 to `Python-urllib`), LRE
@@ -104,8 +116,15 @@ Done:
   `scripts/verify_certified.py` -> `results/certified_check.csv` (530 values; none below the
   limit; about 40 s).
 
-Next (in order): M6 plugin; M7 runner and
-quick study; M9 report. Cut order if short of time: DESIGN 8.
+Next:
+- Full-size study (`configs/full.toml`, about 2-2.5 hours at the measured 2.3-2.7 Part B
+  units/s): split into one run per spread to keep each under 45 minutes, then regenerate the
+  tables and update REPORT.md.
+- Second platform (Linux, a different BLAS) to quantify platform dependence of the LAPACK
+  paths (REPORT limitation 1).
+- Optional: canonicalise exchangeable parameters (Lanczos, Gauss, ENSO) in Part B scoring, so
+  equivalent minima count as correct in a secondary outcome; GPU paths (DESIGN 3.2).
 
 Open questions for the owner: O1 data licence (bundle the 2.1 MB of StRD files or keep
-fetching). "Hill et al. 2024" not located yet (M9).
+fetching). Hill, Du, Johnson and McCullough (2024), doi:10.1002/widm.1531, is cited from its
+abstract only.
