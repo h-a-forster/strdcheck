@@ -1,0 +1,530 @@
+{
+ "source": "NIST Statistical Reference Datasets (StRD), SRD 140",
+ "doi": "10.18434/T43G6C",
+ "base_url": "https://www.itl.nist.gov/div898/strd/",
+ "retrieved": "2026-10-23",
+ "datasets": [
+  {
+   "name": "PiDigits",
+   "suite": "univariate",
+   "url": "https://www.itl.nist.gov/div898/strd/univ/data/PiDigits.dat",
+   "sha256": "e9421a2f4c0a31c505099332b4d22e507e808953c3c57bddae9226f25587d7d2",
+   "bytes": 46441,
+   "difficulty": "lower",
+   "n_obs": 5000
+  },
+  {
+   "name": "Lottery",
+   "suite": "univariate",
+   "url": "https://www.itl.nist.gov/div898/strd/univ/data/Lottery.dat",
+   "sha256": "956cb33392ee28683aa7978326fc356d1461e4a3b0e5a69d317fd481d02d6255",
+   "bytes": 3750,
+   "difficulty": "lower",
+   "n_obs": 218
+  },
+  {
+   "name": "Lew",
+   "suite": "univariate",
+   "url": "https://www.itl.nist.gov/div898/strd/univ/data/Lew.dat",
+   "sha256": "081b231f686d01fa00247b8072909206947c8321bd62e060d9aaae5f4866c44e",
+   "bytes": 3518,
+   "difficulty": "lower",
+   "n_obs": 200
+  },
+  {
+   "name": "Mavro",
+   "suite": "univariate",
+   "url": "https://www.itl.nist.gov/div898/strd/univ/data/Mavro.dat",
+   "sha256": "6b967538d6a607fdf30df054c6fbf4ca6bfb4fa6dc2ecbe613d4f93237a0b1dd",
+   "bytes": 2187,
+   "difficulty": "lower",
+   "n_obs": 50
+  },
+  {
+   "name": "Michelso",
+   "suite": "univariate",
+   "url": "https://www.itl.nist.gov/div898/strd/univ/data/Michelso.dat",
+   "sha256": "68cad435641539ca020adafb4c9a6b7fcc4fefe1d6ab8f2af8fb858d4f1b12ab",
+   "bytes": 2349,
+   "difficulty": "lower",
+   "n_obs": 100
+  },
+  {
+   "name": "NumAcc1",
+   "suite": "univariate",
+   "url": "https://www.itl.nist.gov/div898/strd/univ/data/NumAcc1.dat",
+   "sha256": "ce7c7a0fc6d7cedd0d5e1f9911afb9337544be6836730beb9968ca0a4571d375",
+   "bytes": 1840,
+   "difficulty": "lower",
+   "n_obs": 3
+  },
+  {
+   "name": "NumAcc2",
+   "suite": "univariate",
+   "url": "https://www.itl.nist.gov/div898/strd/univ/data/NumAcc2.dat",
+   "sha256": "5be29522dfbe299541f0ec98ec1c22a51a5587bf06561ba21a92c209fb7ef0f9",
+   "bytes": 11794,
+   "difficulty": "average",
+   "n_obs": 1001
+  },
+  {
+   "name": "NumAcc3",
+   "suite": "univariate",
+   "url": "https://www.itl.nist.gov/div898/strd/univ/data/NumAcc3.dat",
+   "sha256": "66df1b96596735936f37fd889e7c1c6ce998eb2b523bfc46c98ec1737e992aec",
+   "bytes": 14830,
+   "difficulty": "average",
+   "n_obs": 1001
+  },
+  {
+   "name": "NumAcc4",
+   "suite": "univariate",
+   "url": "https://www.itl.nist.gov/div898/strd/univ/data/NumAcc4.dat",
+   "sha256": "ca310dc767f5130f980f8280bbe69e26ba414a4d85a89fc11b6c767b828e5fe4",
+   "bytes": 15765,
+   "difficulty": "higher",
+   "n_obs": 1001
+  },
+  {
+   "name": "SiRstv",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SiRstv.dat",
+   "sha256": "5a4f02d7f256e18c30dcad1b81e0260bb810b5ac113f6107e06dee168d07663e",
+   "bytes": 2032,
+   "difficulty": "lower",
+   "n_obs": 25
+  },
+  {
+   "name": "SmLs01",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SmLs01.dat",
+   "sha256": "ad28cac0d4fb79ffea2522b55349083bdea10f12a6f8c46cfbabcccdb4d6b896",
+   "bytes": 6304,
+   "difficulty": "lower",
+   "n_obs": 189
+  },
+  {
+   "name": "SmLs02",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SmLs02.dat",
+   "sha256": "708e32eaf36769abe7533e7dcd1b6dc67091b60df938dd37c4f0e65660ef7b0b",
+   "bytes": 48430,
+   "difficulty": "lower",
+   "n_obs": 1809
+  },
+  {
+   "name": "SmLs03",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SmLs03.dat",
+   "sha256": "e18404d0628b78670580b230a3a3b6cd997d959d00f92a2883a4da942b19377a",
+   "bytes": 469635,
+   "difficulty": "lower",
+   "n_obs": 18009
+  },
+  {
+   "name": "SmLs04",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SmLs04.dat",
+   "sha256": "1308eb1581f28ce6c9de4ca9520fcc729f916c34f1f9dee10fb6e6581e5b4ce7",
+   "bytes": 7064,
+   "difficulty": "average",
+   "n_obs": 189
+  },
+  {
+   "name": "SmLs05",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SmLs05.dat",
+   "sha256": "7b1333e6e56ced74145096df774cfb1f6305213cb28f9a8222c418ca85d0c296",
+   "bytes": 55668,
+   "difficulty": "average",
+   "n_obs": 1809
+  },
+  {
+   "name": "SmLs06",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SmLs06.dat",
+   "sha256": "0c0f09a2df05f2e9db5324a6aaeed85647651e874e9f5c3892b8f29fc4a200f7",
+   "bytes": 541674,
+   "difficulty": "average",
+   "n_obs": 18009
+  },
+  {
+   "name": "SmLs07",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SmLs07.dat",
+   "sha256": "fd95c510aa8b3ce7f67ddd32846ccead7d9abae441790336c6fb0fcb0ae3558f",
+   "bytes": 7630,
+   "difficulty": "higher",
+   "n_obs": 189
+  },
+  {
+   "name": "SmLs08",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SmLs08.dat",
+   "sha256": "87dd38dfffeb65d39dbe3e8ba73bd16644fc396c1aad03fc0295225f3ba6aef9",
+   "bytes": 61097,
+   "difficulty": "higher",
+   "n_obs": 1809
+  },
+  {
+   "name": "SmLs09",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/SmLs09.dat",
+   "sha256": "f4688c5a0d5690fc86fa27e0c5a265eef0b24641e74af27aa72d9615084dd13f",
+   "bytes": 595702,
+   "difficulty": "higher",
+   "n_obs": 18009
+  },
+  {
+   "name": "AtmWtAg",
+   "suite": "anova",
+   "url": "https://www.itl.nist.gov/div898/strd/anova/AtmWtAg.dat",
+   "sha256": "5a1083c9062d3966f244bffa376fc9b033244abf86a0d0dd016af39cd71fb8a7",
+   "bytes": 3171,
+   "difficulty": "average",
+   "n_obs": 48
+  },
+  {
+   "name": "Norris",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Norris.dat",
+   "sha256": "5ab6906c68a9c4b2eb1661c0cd7d2a09f5a469a6d4e05b6b691f190f5f7b944f",
+   "bytes": 2688,
+   "difficulty": "lower",
+   "n_obs": 36
+  },
+  {
+   "name": "Pontius",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Pontius.dat",
+   "sha256": "de60baa5dc66fd804f9316f895bc5aa2b8f791c09d1ecc1ec39f8b199b8c15c7",
+   "bytes": 2748,
+   "difficulty": "lower",
+   "n_obs": 40
+  },
+  {
+   "name": "NoInt1",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/NoInt1.dat",
+   "sha256": "d8234c428dedaa9de23b67df7d04aeee83befae73ceb6b38321b224955a9b667",
+   "bytes": 1608,
+   "difficulty": "average",
+   "n_obs": 11
+  },
+  {
+   "name": "NoInt2",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/NoInt2.dat",
+   "sha256": "a71c2810b1edcef8fec6b864c20c5f9d9908e530282a174772ce610999ca7c69",
+   "bytes": 1347,
+   "difficulty": "average",
+   "n_obs": 3
+  },
+  {
+   "name": "Filip",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Filip.dat",
+   "sha256": "403b34689e401d915cb28bd69311d3ca5c3007d88d3b670b00e3203042315072",
+   "bytes": 4867,
+   "difficulty": "higher",
+   "n_obs": 82
+  },
+  {
+   "name": "Longley",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Longley.dat",
+   "sha256": "fc4b0c824f8f0b834eb8e7d1c4c7e0b3cebdd7987bcb085e8f5e1007582480ea",
+   "bytes": 2987,
+   "difficulty": "higher",
+   "n_obs": 16
+  },
+  {
+   "name": "Wampler1",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Wampler1.dat",
+   "sha256": "8bcd6f00dbe8c307ebc5c971e12b950eb3cdb75afbc2b38573082b5fcb0d7fbc",
+   "bytes": 2420,
+   "difficulty": "higher",
+   "n_obs": 21
+  },
+  {
+   "name": "Wampler2",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Wampler2.dat",
+   "sha256": "01ba5f08b5b9f84431f3754216e006939a80264a1caa69fe08b3cbc543f9ee3e",
+   "bytes": 2414,
+   "difficulty": "higher",
+   "n_obs": 21
+  },
+  {
+   "name": "Wampler3",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Wampler3.dat",
+   "sha256": "c5b025f6ebf0365de92d80e478ad826b01a6dfdafb71964ea8bae7eec993ce53",
+   "bytes": 2433,
+   "difficulty": "higher",
+   "n_obs": 21
+  },
+  {
+   "name": "Wampler4",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Wampler4.dat",
+   "sha256": "dcff32075a52ecf31af70dad340776237544b1a29b5034a40f8b3e6b607cf9c1",
+   "bytes": 2381,
+   "difficulty": "higher",
+   "n_obs": 21
+  },
+  {
+   "name": "Wampler5",
+   "suite": "linear",
+   "url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Wampler5.dat",
+   "sha256": "c4e260a6638db61287bfea75a2dd3b324c86c5d40931ddc6d8fab0c0305ffa39",
+   "bytes": 2425,
+   "difficulty": "higher",
+   "n_obs": 21
+  },
+  {
+   "name": "Misra1a",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1a.dat",
+   "sha256": "9d3194d537d9a6bbf92eb819504070923a1885d0191f40b6b3aaeedd130b98e2",
+   "bytes": 1932,
+   "difficulty": "lower",
+   "n_obs": 14
+  },
+  {
+   "name": "Chwirut2",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Chwirut2.dat",
+   "sha256": "c37e5522a34f9a57e18d7d10f8736202eabc0c33b8e7ad0010e618db04b57411",
+   "bytes": 3178,
+   "difficulty": "lower",
+   "n_obs": 54
+  },
+  {
+   "name": "Chwirut1",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Chwirut1.dat",
+   "sha256": "d9a055dfe5af71a8754c00f073ef00f8fed2e3fd1c6fd20cea8fd62d7cc3ed84",
+   "bytes": 7835,
+   "difficulty": "lower",
+   "n_obs": 214
+  },
+  {
+   "name": "Lanczos3",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Lanczos3.dat",
+   "sha256": "bc998624541c49fedee08346ee2c1d495741c4ea1dd15c052d7c743ab3cf0efe",
+   "bytes": 2661,
+   "difficulty": "lower",
+   "n_obs": 24
+  },
+  {
+   "name": "Gauss1",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Gauss1.dat",
+   "sha256": "20d0b85ffc73681ce9bdd69c566e53969a65e0e2192c3de16ad4a1dcfdca6c27",
+   "bytes": 8417,
+   "difficulty": "lower",
+   "n_obs": 250
+  },
+  {
+   "name": "Gauss2",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Gauss2.dat",
+   "sha256": "24fe86801c35c4f86140cced68894e31d73b6ed5738cf698474144f94bae3640",
+   "bytes": 8416,
+   "difficulty": "lower",
+   "n_obs": 250
+  },
+  {
+   "name": "DanWood",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/DanWood.dat",
+   "sha256": "5eae83de8b34e34c631a5738d640183b0628913e728437ae77f066e832186e24",
+   "bytes": 2073,
+   "difficulty": "lower",
+   "n_obs": 6
+  },
+  {
+   "name": "Misra1b",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1b.dat",
+   "sha256": "dd27e310f787dcbc2addc50b9f8e5e3b82155f732926898b1858e4d08eead6a8",
+   "bytes": 1924,
+   "difficulty": "lower",
+   "n_obs": 14
+  },
+  {
+   "name": "Kirby2",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Kirby2.dat",
+   "sha256": "cbd288dd9d8586ec97ca408277d1a27ef41b19b543c158d594af189de80ae61c",
+   "bytes": 6073,
+   "difficulty": "average",
+   "n_obs": 151
+  },
+  {
+   "name": "Hahn1",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Hahn1.dat",
+   "sha256": "7e885af48e18a222033a66cb22b491f0f5bc761b652142c0d9b28132daf63956",
+   "bytes": 10053,
+   "difficulty": "average",
+   "n_obs": 236
+  },
+  {
+   "name": "Nelson",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Nelson.dat",
+   "sha256": "82fe77ef1a79a4441e7af5083680fc5046f9eb29b33bc2f2b76c478ecbe976d7",
+   "bytes": 7194,
+   "difficulty": "average",
+   "n_obs": 128
+  },
+  {
+   "name": "MGH17",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/MGH17.dat",
+   "sha256": "75edb5522ee639794ae1f0d0f4a1e3638e963c6854888b853e1f45cea3c2f4d7",
+   "bytes": 3178,
+   "difficulty": "average",
+   "n_obs": 33
+  },
+  {
+   "name": "Lanczos1",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Lanczos1.dat",
+   "sha256": "dc7a419a4d7e7c0891e378dcde953a3e5dd273618b64b2cee8301e51577b428a",
+   "bytes": 3032,
+   "difficulty": "average",
+   "n_obs": 24
+  },
+  {
+   "name": "Lanczos2",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Lanczos2.dat",
+   "sha256": "be1ac732e725ef75298f082bcdedab9e2ee9395ad77d8fad2ef37c95e0421572",
+   "bytes": 2689,
+   "difficulty": "average",
+   "n_obs": 24
+  },
+  {
+   "name": "Gauss3",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Gauss3.dat",
+   "sha256": "24842a9e795db59c2c6cbc4c11047f90faedad014f8146faa6b5555259958d6d",
+   "bytes": 8418,
+   "difficulty": "average",
+   "n_obs": 250
+  },
+  {
+   "name": "Misra1c",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1c.dat",
+   "sha256": "012f75aa0ff112afabdff73880e324ab28e2dc267b678537611c403b959dc941",
+   "bytes": 1932,
+   "difficulty": "average",
+   "n_obs": 14
+  },
+  {
+   "name": "Misra1d",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1d.dat",
+   "sha256": "4dfa39a381a5ffea3e5d9306af1bda9d53bc57226a8e6f0c19af6b9702580481",
+   "bytes": 1919,
+   "difficulty": "average",
+   "n_obs": 14
+  },
+  {
+   "name": "Roszman1",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Roszman1.dat",
+   "sha256": "fb526231ae6b02929e3de54e072e259b3d87424089abd4b1015ffb946b1e0ab0",
+   "bytes": 2573,
+   "difficulty": "average",
+   "n_obs": 25
+  },
+  {
+   "name": "ENSO",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/ENSO.dat",
+   "sha256": "0c644f45b0e586cb1bb0613bad68f63c704efadacd086e768468d33d83f3e5d9",
+   "bytes": 6998,
+   "difficulty": "average",
+   "n_obs": 168
+  },
+  {
+   "name": "MGH09",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/MGH09.dat",
+   "sha256": "6419da83fd9ab34615769413dc2a6d35b11372f512a9401628a1565067c51d10",
+   "bytes": 2393,
+   "difficulty": "higher",
+   "n_obs": 11
+  },
+  {
+   "name": "Thurber",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Thurber.dat",
+   "sha256": "806b8d00a5365eff907561db796fec3af8a26a5f353297d4311fd46ed5b0146f",
+   "bytes": 3128,
+   "difficulty": "higher",
+   "n_obs": 37
+  },
+  {
+   "name": "BoxBOD",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/BoxBOD.dat",
+   "sha256": "fc44fbed04e3be16df6498e722d4c8aedfd0af210110bc396d9f99acecd77e21",
+   "bytes": 1784,
+   "difficulty": "higher",
+   "n_obs": 6
+  },
+  {
+   "name": "Rat42",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Rat42.dat",
+   "sha256": "fc97dd1f94fbcb381495065a053e279f23588a9ceb243276f2a2c36c8225985b",
+   "bytes": 1945,
+   "difficulty": "higher",
+   "n_obs": 9
+  },
+  {
+   "name": "MGH10",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/MGH10.dat",
+   "sha256": "a0eb140580fdd6dcf6fba2cbbd81afa598c5226f1e6d702d1313c72a7a6e6fb4",
+   "bytes": 2421,
+   "difficulty": "higher",
+   "n_obs": 16
+  },
+  {
+   "name": "Eckerle4",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Eckerle4.dat",
+   "sha256": "8ec2133b29a0a7cecbfccd51f7c61ee432f73c460bf5ce7106d672642e57a61e",
+   "bytes": 2871,
+   "difficulty": "higher",
+   "n_obs": 35
+  },
+  {
+   "name": "Rat43",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Rat43.dat",
+   "sha256": "36f08908d0f09b1d075e3701ca567701535c58ac0d795ff68fb3c04e172c2c5d",
+   "bytes": 2168,
+   "difficulty": "higher",
+   "n_obs": 15
+  },
+  {
+   "name": "Bennett5",
+   "suite": "nonlinear",
+   "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Bennett5.dat",
+   "sha256": "b34d160605b959c301d13aac6627b693743d32ad98a6c4f830a3f728cdff0f52",
+   "bytes": 7088,
+   "difficulty": "higher",
+   "n_obs": 154
+  }
+ ]
+}

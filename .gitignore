@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+tmp/
+.env
+
+# Downloaded StRD files and long-run outputs (never committed; small derived results go in results/)
+/data/
+/cache/
+/runs/

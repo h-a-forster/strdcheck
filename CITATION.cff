@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use strdcheck, please cite it as below, and cite the NIST StRD."
+title: strdcheck
+abstract: >-
+  Numerical accuracy of the Python data stack (numpy, pandas, polars, DuckDB,
+  statsmodels, scipy, PyTorch) on the NIST Statistical Reference Datasets,
+  measured by the log relative error, with a pytest plugin and a published
+  LRE table.
+type: software
+authors:
+  - name: strdcheck contributors
+repository-code: "https://github.com/h-a-forster/strdcheck"
+license: MIT
+version: 0.1.0.dev0
+keywords:
+  - numerical accuracy
+  - NIST StRD
+  - log relative error
+  - nonlinear least squares
+  - statistical software
+references:
+  - type: data
+    authors:
+      - name: National Institute of Standards and Technology
+    title: "NIST Statistical Reference Datasets - SRD 140"
+    doi: 10.18434/T43G6C
+    url: "https://www.itl.nist.gov/div898/strd/"
+  - type: article
+    authors:
+      - family-names: McCullough
+        given-names: B. D.
+    title: "Assessing the reliability of statistical software: Part I"
+    journal: The American Statistician
+    volume: 52
+    issue: 4
+    start: 358
+    end: 366
+    year: 1998
+    doi: 10.1080/00031305.1998.10480597
+  - type: article
+    authors:
+      - family-names: McCullough
+        given-names: B. D.
+    title: "Assessing the reliability of statistical software: Part II"
+    journal: The American Statistician
+    volume: 53
+    issue: 2
+    start: 149
+    end: 159
+    year: 1999
+    doi: 10.1080/00031305.1999.10474450

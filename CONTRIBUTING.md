@@ -1,0 +1,50 @@
+# Contributing
+
+Bug reports, new engine adapters and corrections to the design are welcome.
+
+## Setup
+
+You need [uv](https://docs.astral.sh/uv/) and git.
+
+```sh
+uv sync --group dev                  # add --extra torch for CPU-only PyTorch
+uv run strdcheck --version
+uv run strdcheck fetch               # only needed for tests marked as needing data
+```
+
+## Checks
+
+```sh
+uv run pytest              # fast suite; add --runslow for long checks
+uv run ruff check .
+uv run ruff format --check .
+```
+
+CI runs these on pull requests (Ubuntu with Python 3.11 and 3.13, Windows with Python 3.13).
+
+Test rules:
+
+- No network. Tests use synthetic files in StRD format under `tests/fixtures/`, or skip when
+  the real StRD files are not in the cache.
+- Use `tmp_path` for every file.
+- Tests must pass on Windows: use `pathlib` and do not assume a POSIX shell.
+- Fix every random seed.
+- Mark anything over a few seconds with `@pytest.mark.slow`.
+
+## Adding an engine adapter
+
+1. Describe the call path, the dtype handling and every convention it depends on (degrees of
+   freedom, definition of the statistic) in `docs/DESIGN.md` section 5 first.
+2. Add an adapter test on a small synthetic dataset with an exactly known answer. This is
+   what rules out an adapter mistake (wrong `ddof`, different definition) before an LRE is
+   ever attributed to the engine.
+3. Never call an LRE an engine defect without a minimal standalone reproduction that uses
+   the engine alone (DESIGN section 6.6).
+
+## Code
+
+- Python 3.11+, typed. The core depends on numpy only; engines are optional and imported
+  lazily inside their adapters.
+- Match the surrounding style; ruff enforces the rest (line length 100).
+- Long computations go through the checkpoint store (DESIGN section 6.5) so they can resume
+  after a crash.
