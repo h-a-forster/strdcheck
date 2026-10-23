@@ -79,13 +79,16 @@ Done:
   torch 2.14.1+cpu from the PyTorch CPU index), CI, hygiene files, `docs/DESIGN.md`;
   manifest, downloader (sends its own User-Agent: NIST returns 403 to `Python-urllib`), LRE
   module, CLI `list/fetch/verify`, plugin stub.
+- M2: `results.py` (EngineResult, QuantityRecord, UnitRecord, `score`), `checkpoint.py`
+  (RunStore, atomic unit files, progress.log, config-hash guard, `execute` with at most 3
+  spawned workers, `with_retries`); kill-and-resume test passes.
 - M1: `parse.py` (all 58 files parse; Rat43 header dof typo recorded), `exact.py` (exact
   rational references, float64/float32 ceilings, tiled references, mpmath Gauss-Newton
   refinement), `models.py` (27 models, analytic Jacobians checked against mpmath),
   `scripts/verify_certified.py` -> `results/certified_check.csv` (530 values; none below the
   limit; about 40 s).
 
-Next (in order): M2 results and checkpoint store; M3-M5 adapters; M6 plugin; M7 runner and
+Next (in order): M3-M5 adapters; M6 plugin; M7 runner and
 quick study; M9 report. Cut order if short of time: DESIGN 8.
 
 Open questions for the owner: O1 data licence (bundle the 2.1 MB of StRD files or keep
