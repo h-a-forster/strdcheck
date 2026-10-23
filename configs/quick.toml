@@ -1,0 +1,26 @@
+# Default ("quick") study: DESIGN 6.1-6.4. Target under 15 minutes on 3 workers.
+
+[study]
+name = "quick"
+workers = 3
+repeats = 3          # in-process repeats per Part A / Part C unit (bitwise reproducibility)
+
+[part_a]
+enabled = true
+suites = ["univariate", "anova", "linear", "nonlinear"]
+
+[part_b]
+enabled = true
+seed = 20261023
+sigmas = [1.0]               # subset of the canonical spreads 0.25, 1.0, 2.0
+starts_per_problem = 20
+taus = [2.0, 4.0, 6.0]       # primary tau = 4
+bootstrap = 10000
+permutations = 20000
+
+[part_c]
+enabled = true
+seed = 20261023
+datasets = ["NumAcc3", "NumAcc4", "PiDigits"]
+sizes = [10000, 100000, 1000000]
+orders = ["tiled", "permuted"]

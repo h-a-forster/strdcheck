@@ -79,6 +79,10 @@ Done:
   torch 2.14.1+cpu from the PyTorch CPU index), CI, hygiene files, `docs/DESIGN.md`;
   manifest, downloader (sends its own User-Agent: NIST returns 403 to `Python-urllib`), LRE
   module, CLI `list/fetch/verify`, plugin stub.
+- M7: `configs/quick.toml`, `configs/full.toml`, `study/` (config, runner with phases
+  P/A/B/C, tiled engines, analysis), `env.py` (scrubbed environment record), CLI `study`
+  (`--status`), `table`, `env`; `scripts/run_study.py` retry wrapper (3 attempts, fresh
+  subprocess each). Smoke run (393 units) completed in 156 s.
 - M6: plugin `strd_dataset` fixture (skip or `--strd-fetch`), `--strd-report` CSV, terminal
   summary of the five lowest LREs; `strdcheck.testing` (`params`, `check_univariate`,
   `check_linear`, `check_nonlinear`, `LRETable`); pytester tests.

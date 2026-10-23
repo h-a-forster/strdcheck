@@ -156,10 +156,13 @@ def execute(
     initializer: Callable[..., None] | None = None,
     initargs: Iterable[Any] = (),
     progress_every: int = 50,
+    spawn: bool = False,
 ) -> int:
     """Run every unit not yet in ``store``; return the number of units run now.
 
-    ``fn`` must be a picklable top-level function when ``workers > 1``. A unit that raises
+    ``fn`` must be a picklable top-level function when ``workers > 1`` or ``spawn`` is set
+    (``spawn`` runs even a single worker in a fresh process, so environment settings such as
+    thread counts apply before the engines are imported). A unit that raises
     is recorded with ``status = "error"`` (never dropped). A worker process that dies breaks
     the pool; the exception propagates and the retry wrapper resumes the run.
     """
@@ -186,7 +189,7 @@ def execute(
                 f"({rate:.2f} units/s, about {remaining:.0f} s left)"
             )
 
-    if workers <= 1:
+    if workers <= 1 and not spawn:
         if initializer is not None:
             initializer(*initargs)
         for u in todo:
@@ -199,7 +202,10 @@ def execute(
 
     ctx = mp.get_context("spawn")
     with ProcessPoolExecutor(
-        max_workers=workers, mp_context=ctx, initializer=initializer, initargs=tuple(initargs)
+        max_workers=max(workers, 1),
+        mp_context=ctx,
+        initializer=initializer,
+        initargs=tuple(initargs),
     ) as pool:
         pending: dict[Future[UnitRecord], Any] = {}
         it = iter(todo)
@@ -211,7 +217,7 @@ def execute(
             pending[pool.submit(fn, u)] = u
             return True
 
-        for _ in range(workers * 4):
+        for _ in range(max(workers, 1) * 4):
             if not submit_next():
                 break
         while pending:

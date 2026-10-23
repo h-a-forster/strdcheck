@@ -1,0 +1,26 @@
+# Full-size study (DESIGN 6.7): about 60-75 minutes on 3 workers; not part of the default run.
+
+[study]
+name = "full"
+workers = 3
+repeats = 3          # in-process repeats per Part A / Part C unit (bitwise reproducibility)
+
+[part_a]
+enabled = true
+suites = ["univariate", "anova", "linear", "nonlinear"]
+
+[part_b]
+enabled = true
+seed = 20261023
+sigmas = [0.25, 1.0, 2.0]             # subset of the canonical spreads 0.25, 1.0, 2.0
+starts_per_problem = 200
+taus = [2.0, 4.0, 6.0]       # primary tau = 4
+bootstrap = 10000
+permutations = 20000
+
+[part_c]
+enabled = true
+seed = 20261023
+datasets = ["NumAcc3", "NumAcc4", "PiDigits"]
+sizes = [10000, 100000, 1000000, 10000000, 20000000]
+orders = ["tiled", "permuted"]
