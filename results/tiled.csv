@@ -4,7 +4,7 @@ NumAcc3,100100,100,permuted,duckdb.double.threads-1,11.8277,9.7162,True,2.0.0
 NumAcc3,999999,999,permuted,duckdb.double.threads-1,12.4662,11.212,True,2.0.0
 NumAcc3,10010,10,permuted,duckdb.double.threads-3,12.999,9.4955,True,2.0.0
 NumAcc3,100100,100,permuted,duckdb.double.threads-3,11.8277,9.7162,True,2.0.0
-NumAcc3,999999,999,permuted,duckdb.double.threads-3,11.4562,11.9843,False,2.0.0
+NumAcc3,999999,999,permuted,duckdb.double.threads-3,11.4562,11.6077,False,2.0.0
 NumAcc3,10010,10,permuted,numpy.f64,15.0,15.0,True,2.5.4
 NumAcc3,100100,100,permuted,numpy.f64,15.0,15.0,True,2.5.4
 NumAcc3,999999,999,permuted,numpy.f64,15.0,15.0,True,2.5.4
@@ -14,9 +14,9 @@ NumAcc3,999999,999,permuted,pandas.f64,15.0,15.0,True,3.1.0
 NumAcc3,10010,10,permuted,polars.eager.f64,15.0,11.184,True,2.0.0
 NumAcc3,100100,100,permuted,polars.eager.f64,15.0,12.2796,True,2.0.0
 NumAcc3,999999,999,permuted,polars.eager.f64,15.0,12.5188,True,2.0.0
-NumAcc3,10010,10,permuted,polars.lazy-streaming.f64,15.0,11.287,False,2.0.0
+NumAcc3,10010,10,permuted,polars.lazy-streaming.f64,15.0,11.3736,False,2.0.0
 NumAcc3,100100,100,permuted,polars.lazy-streaming.f64,15.0,11.108,True,2.0.0
-NumAcc3,999999,999,permuted,polars.lazy-streaming.f64,15.0,11.2063,False,2.0.0
+NumAcc3,999999,999,permuted,polars.lazy-streaming.f64,15.0,11.2058,False,2.0.0
 NumAcc3,10010,10,permuted,torch.f64,15.0,13.648,True,2.14.1+cpu
 NumAcc3,100100,100,permuted,torch.f64,15.0,13.0728,True,2.14.1+cpu
 NumAcc3,999999,999,permuted,torch.f64,15.0,11.4005,True,2.14.1+cpu
@@ -25,7 +25,7 @@ NumAcc3,100100,100,tiled,duckdb.double.threads-1,11.8258,12.6802,True,2.0.0
 NumAcc3,999999,999,tiled,duckdb.double.threads-1,12.4599,12.5634,True,2.0.0
 NumAcc3,10010,10,tiled,duckdb.double.threads-3,13.0087,12.6152,True,2.0.0
 NumAcc3,100100,100,tiled,duckdb.double.threads-3,11.8258,12.6802,True,2.0.0
-NumAcc3,999999,999,tiled,duckdb.double.threads-3,11.4563,12.4754,False,2.0.0
+NumAcc3,999999,999,tiled,duckdb.double.threads-3,11.4563,12.3193,False,2.0.0
 NumAcc3,10010,10,tiled,numpy.f64,15.0,15.0,True,2.5.4
 NumAcc3,100100,100,tiled,numpy.f64,15.0,15.0,True,2.5.4
 NumAcc3,999999,999,tiled,numpy.f64,15.0,15.0,True,2.5.4
@@ -36,8 +36,8 @@ NumAcc3,10010,10,tiled,polars.eager.f64,15.0,13.0068,True,2.0.0
 NumAcc3,100100,100,tiled,polars.eager.f64,15.0,12.6044,True,2.0.0
 NumAcc3,999999,999,tiled,polars.eager.f64,15.0,12.7166,True,2.0.0
 NumAcc3,10010,10,tiled,polars.lazy-streaming.f64,15.0,12.2995,False,2.0.0
-NumAcc3,100100,100,tiled,polars.lazy-streaming.f64,15.0,13.7271,False,2.0.0
-NumAcc3,999999,999,tiled,polars.lazy-streaming.f64,15.0,12.6588,True,2.0.0
+NumAcc3,100100,100,tiled,polars.lazy-streaming.f64,15.0,13.7819,True,2.0.0
+NumAcc3,999999,999,tiled,polars.lazy-streaming.f64,15.0,12.6588,False,2.0.0
 NumAcc3,10010,10,tiled,torch.f64,15.0,13.64,True,2.14.1+cpu
 NumAcc3,100100,100,tiled,torch.f64,15.0,12.9801,True,2.14.1+cpu
 NumAcc3,999999,999,tiled,torch.f64,15.0,11.2255,True,2.14.1+cpu
@@ -46,7 +46,7 @@ NumAcc4,100100,100,permuted,duckdb.double.threads-1,13.3588,10.1443,True,2.0.0
 NumAcc4,999999,999,permuted,duckdb.double.threads-1,10.9682,8.884,True,2.0.0
 NumAcc4,10010,10,permuted,duckdb.double.threads-3,12.8268,8.8515,True,2.0.0
 NumAcc4,100100,100,permuted,duckdb.double.threads-3,13.3588,10.1443,True,2.0.0
-NumAcc4,999999,999,permuted,duckdb.double.threads-3,12.0913,9.6043,False,2.0.0
+NumAcc4,999999,999,permuted,duckdb.double.threads-3,12.0913,8.8099,False,2.0.0
 NumAcc4,10010,10,permuted,numpy.f64,15.0,15.0,True,2.5.4
 NumAcc4,100100,100,permuted,numpy.f64,15.0,15.0,True,2.5.4
 NumAcc4,999999,999,permuted,numpy.f64,15.0,15.0,True,2.5.4
@@ -57,8 +57,8 @@ NumAcc4,10010,10,permuted,polars.eager.f64,15.0,10.2021,True,2.0.0
 NumAcc4,100100,100,permuted,polars.eager.f64,15.0,9.778,True,2.0.0
 NumAcc4,999999,999,permuted,polars.eager.f64,15.0,9.4313,True,2.0.0
 NumAcc4,10010,10,permuted,polars.lazy-streaming.f64,15.0,9.6874,False,2.0.0
-NumAcc4,100100,100,permuted,polars.lazy-streaming.f64,15.0,10.3037,True,2.0.0
-NumAcc4,999999,999,permuted,polars.lazy-streaming.f64,15.0,9.5582,False,2.0.0
+NumAcc4,100100,100,permuted,polars.lazy-streaming.f64,15.0,10.264,False,2.0.0
+NumAcc4,999999,999,permuted,polars.lazy-streaming.f64,15.0,9.571,False,2.0.0
 NumAcc4,10010,10,permuted,torch.f64,15.0,13.6507,True,2.14.1+cpu
 NumAcc4,100100,100,permuted,torch.f64,15.0,12.0526,True,2.14.1+cpu
 NumAcc4,999999,999,permuted,torch.f64,15.0,11.8561,True,2.14.1+cpu
@@ -67,7 +67,7 @@ NumAcc4,100100,100,tiled,duckdb.double.threads-1,13.4443,12.7725,True,2.0.0
 NumAcc4,999999,999,tiled,duckdb.double.threads-1,10.9677,12.8413,True,2.0.0
 NumAcc4,10010,10,tiled,duckdb.double.threads-3,12.8257,12.1476,True,2.0.0
 NumAcc4,100100,100,tiled,duckdb.double.threads-3,13.4443,12.7725,True,2.0.0
-NumAcc4,999999,999,tiled,duckdb.double.threads-3,12.0941,12.3301,False,2.0.0
+NumAcc4,999999,999,tiled,duckdb.double.threads-3,12.0941,12.3198,False,2.0.0
 NumAcc4,10010,10,tiled,numpy.f64,15.0,15.0,True,2.5.4
 NumAcc4,100100,100,tiled,numpy.f64,15.0,15.0,True,2.5.4
 NumAcc4,999999,999,tiled,numpy.f64,15.0,15.0,True,2.5.4
@@ -77,9 +77,9 @@ NumAcc4,999999,999,tiled,pandas.f64,15.0,15.0,True,3.1.0
 NumAcc4,10010,10,tiled,polars.eager.f64,15.0,11.451,True,2.0.0
 NumAcc4,100100,100,tiled,polars.eager.f64,15.0,11.2417,True,2.0.0
 NumAcc4,999999,999,tiled,polars.eager.f64,15.0,11.8171,True,2.0.0
-NumAcc4,10010,10,tiled,polars.lazy-streaming.f64,15.0,11.3322,False,2.0.0
+NumAcc4,10010,10,tiled,polars.lazy-streaming.f64,15.0,11.6183,False,2.0.0
 NumAcc4,100100,100,tiled,polars.lazy-streaming.f64,15.0,11.4198,True,2.0.0
-NumAcc4,999999,999,tiled,polars.lazy-streaming.f64,15.0,11.0747,True,2.0.0
+NumAcc4,999999,999,tiled,polars.lazy-streaming.f64,15.0,11.0747,False,2.0.0
 NumAcc4,10010,10,tiled,torch.f64,15.0,13.6453,True,2.14.1+cpu
 NumAcc4,100100,100,tiled,torch.f64,15.0,12.8588,True,2.14.1+cpu
 NumAcc4,999999,999,tiled,torch.f64,15.0,11.977,True,2.14.1+cpu
@@ -88,7 +88,7 @@ PiDigits,100000,20,permuted,duckdb.double.threads-1,15.0,14.7308,True,2.0.0
 PiDigits,1000000,200,permuted,duckdb.double.threads-1,15.0,13.5523,True,2.0.0
 PiDigits,10000,2,permuted,duckdb.double.threads-3,15.0,14.4483,True,2.0.0
 PiDigits,100000,20,permuted,duckdb.double.threads-3,15.0,14.7308,True,2.0.0
-PiDigits,1000000,200,permuted,duckdb.double.threads-3,15.0,14.7686,False,2.0.0
+PiDigits,1000000,200,permuted,duckdb.double.threads-3,15.0,15.0,False,2.0.0
 PiDigits,10000,2,permuted,numpy.f64,15.0,15.0,True,2.5.4
 PiDigits,100000,20,permuted,numpy.f64,15.0,15.0,True,2.5.4
 PiDigits,1000000,200,permuted,numpy.f64,15.0,15.0,True,2.5.4
@@ -100,7 +100,7 @@ PiDigits,100000,20,permuted,polars.eager.f64,15.0,15.0,True,2.0.0
 PiDigits,1000000,200,permuted,polars.eager.f64,15.0,15.0,True,2.0.0
 PiDigits,10000,2,permuted,polars.lazy-streaming.f64,15.0,15.0,True,2.0.0
 PiDigits,100000,20,permuted,polars.lazy-streaming.f64,15.0,15.0,True,2.0.0
-PiDigits,1000000,200,permuted,polars.lazy-streaming.f64,15.0,15.0,False,2.0.0
+PiDigits,1000000,200,permuted,polars.lazy-streaming.f64,15.0,15.0,True,2.0.0
 PiDigits,10000,2,permuted,torch.f64,15.0,14.4878,True,2.14.1+cpu
 PiDigits,100000,20,permuted,torch.f64,15.0,13.2406,True,2.14.1+cpu
 PiDigits,1000000,200,permuted,torch.f64,15.0,11.265,True,2.14.1+cpu
@@ -109,7 +109,7 @@ PiDigits,100000,20,tiled,duckdb.double.threads-1,15.0,15.0,True,2.0.0
 PiDigits,1000000,200,tiled,duckdb.double.threads-1,15.0,14.3476,True,2.0.0
 PiDigits,10000,2,tiled,duckdb.double.threads-3,15.0,14.9649,True,2.0.0
 PiDigits,100000,20,tiled,duckdb.double.threads-3,15.0,15.0,True,2.0.0
-PiDigits,1000000,200,tiled,duckdb.double.threads-3,15.0,14.4298,False,2.0.0
+PiDigits,1000000,200,tiled,duckdb.double.threads-3,15.0,14.9649,False,2.0.0
 PiDigits,10000,2,tiled,numpy.f64,15.0,15.0,True,2.5.4
 PiDigits,100000,20,tiled,numpy.f64,15.0,15.0,True,2.5.4
 PiDigits,1000000,200,tiled,numpy.f64,15.0,15.0,True,2.5.4

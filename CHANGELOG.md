@@ -41,3 +41,11 @@ First release: library, pytest plugin and a published study.
 - Secondary analysis of silent nonlinear failures by residual sum of squares
   (`nonlinear_silent_split.csv`), condition numbers of the linear designs
   (`conditioning.csv`), and `configs/partb-extended.toml` (Part B over all three spreads).
+  The split is ceiling-aware: a silent fit counts as at the minimum when its RSS reaches
+  `min(tau, float64 RSS ceiling - 1)` digits.
+- Run provenance: every open of a run directory is recorded in `attempts.jsonl` (git commit,
+  dirty-tree flag, package versions); resuming with different code is logged as a warning and
+  `summary.json` reports `mixed_provenance` and `error_units`. The analysis skips failed units
+  instead of stopping.
+- `least_squares` standard errors and the nonlinear residual SD are marked `derived`; the
+  numerical rank of the Jacobian is recorded.

@@ -79,8 +79,16 @@ Updated: 2026-10-24.
 Done (v0.1.0, not tagged):
 - M10 release prep: README (install from git, quick start, plugin, validation, citation),
   REPORT.md, CHANGELOG 0.1.0, version 0.1.0 in pyproject, `__init__` and CITATION.cff.
-- M9 study and report: quick study (`configs/quick.toml`, 1,884 units, 0 errors, about
-  7 minutes) committed in `results/`; extended Part B over the three spreads
+- Audit fixes (2026-10-24): ceiling-aware silent split (Lanczos1), analysis tolerates error
+  records, per-attempt provenance (`attempts.jsonl`, `mixed_provenance`), `least_squares` SEs
+  marked derived with rank, `numpy.lstsq.f32` documented as float64 compute, build_manifest
+  User-Agent, sdist ships `configs/`, torch-optional unit count test, REPORT corrections
+  (Part C medians, float32 ranges, 1.5-digit bound, Pontius QR range, provenance note).
+  The quick run was regenerated from scratch at clean commit `0b98cd7` (one attempt, 0
+  errors, about 5 minutes); Part A/B values unchanged, only labels and non-repeatable Part C
+  cells moved.
+- M9 study and report: quick study (`configs/quick.toml`, 1,884 units) committed in
+  `results/`; extended Part B over the three spreads
   (`configs/partb-extended.toml`, 4,860 units) in `results/partb-extended/`. Notable cells
   triaged (REPORT 3.4), standalone repros in `repros/`. Secondary analysis
   `nonlinear_silent_split.csv` separates silent fits at an equivalent minimum (RSS right,
@@ -117,6 +125,7 @@ Done (v0.1.0, not tagged):
   limit; about 40 s).
 
 Next:
+- On publishing: create the `v0.1.0` tag (README tells users to append `@<tag>` to pin).
 - Full-size study (`configs/full.toml`, about 2-2.5 hours at the measured 2.3-2.7 Part B
   units/s): split into one run per spread to keep each under 45 minutes, then regenerate the
   tables and update REPORT.md.

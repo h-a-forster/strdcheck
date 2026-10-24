@@ -10,9 +10,12 @@ data (section 2.1). A deficit is ceiling minus LRE.
 
 ## Summary
 
-- **Univariate statistics.** Every float64 engine path is within 1.4 digits of the
+- **Univariate statistics.** Every float64 engine path is within 1.5 digits of the
   representation ceiling on all nine datasets, including NumAcc3/NumAcc4 (ceilings 9.5 and
-  8.3). float32 paths keep 0 to 7.6 digits. DuckDB `stddev_samp` on an exact `DECIMAL` column
+  8.3); the largest deficit is 1.46 (DuckDB `DOUBLE`, SD of Michelso). float32 paths keep
+  0 to 7.6 digits where float32 cannot hold the data exactly (4.7 on Mavro and Michelso, 0 to
+  1.2 on NumAcc3/NumAcc4) and 15 where it can (NumAcc1); DuckDB on a `FLOAT` column
+  accumulates in double and also keeps 15 on PiDigits, Lottery and Lew. DuckDB `stddev_samp` on an exact `DECIMAL` column
   returns `DOUBLE`, so it is bounded by the float64 ceiling, not the decimal one.
 - **ANOVA.** On SmLs06 (float64 ceiling 9.9), DuckDB group-by on `DOUBLE` and statsmodels
   `anova_lm` keep 6.5 and 6.6 digits, against 9.2-9.3 for numpy, pandas and polars group-by
@@ -22,21 +25,22 @@ data (section 2.1). A deficit is ceiling minus LRE.
   1.4e13, Longley 4.9e9). On Filip the default singular-value cutoffs of `numpy.linalg.lstsq`,
   `torch.linalg.lstsq` and statsmodels `OLS(method="pinv")` drop one singular value and return
   0 correct digits; `numpy.polynomial.Polynomial.fit` (scaled domain) gets 13.8. On Pontius the
-  SVD-based paths keep 6.2 digits and the QR-based paths 12.1-13.2.
+  SVD-based paths keep 6.2 digits, the QR-based paths 12.1-12.4, and the polynomial fits
+  `numpy.polyfit` and `Polynomial.fit` (scaled) 12.1 and 13.2.
 - **Nonlinear least squares from random starts** (27 problems x 20 starts, spread sigma = 1):
   about a third of fits report success but match the certified parameters to fewer than
   4 digits. Silent-failure rate 0.31 (95% CI 0.18-0.45) for `least_squares(method="trf")`
   with an analytic Jacobian and tight tolerances, 0.32 (0.19-0.46) for `curve_fit` defaults,
   0.41 (0.26-0.57) for trf with a 2-point Jacobian and default tolerances. Most silent fits
-  (0.22-0.30 of all fits) also have a residual sum of squares that is wrong to 4 digits, so
+  (0.20-0.29 of all fits) also have a residual sum of squares that is wrong to 4 digits, so
   they are not equivalent minima.
 - **Pre-specified comparisons.** Only C4 (tight vs default tolerances, trf, analytic Jacobian)
   is significant after Holm correction: silent rate 0.311 vs 0.378, difference -0.067
   (95% CI -0.146 to -0.019), Holm p = 0.005; no problem got worse with tight tolerances.
 - **Large n (tiled data).** At n up to 1e6, numpy and pandas keep all 15 digits of the SD of
-  tiled NumAcc3/NumAcc4/PiDigits; polars (eager and streaming), DuckDB and torch keep 8.9-11.2
+  tiled NumAcc3/NumAcc4/PiDigits; polars (eager and streaming), DuckDB and torch keep 8.8-11.2
   digits in their worst cell. DuckDB with 3 threads and polars streaming were not bitwise
-  repeatable across three in-process runs in 6 and 8 of 18 cells.
+  repeatable across three in-process runs in 6 and 9 of 18 cells.
 - No result here is a claimed bug. Every notable cell is explained by documented behaviour
   (cutoffs, defaults, accumulation order, algorithm choice) or by conditioning; standalone
   reproductions are in [`repros/`](repros/).
@@ -48,17 +52,30 @@ data (section 2.1). A deficit is ceiling minus LRE.
 | Data | 58 NIST StRD files, SHA-256 verified (`strdcheck fetch`) |
 | Run | `configs/quick.toml`, config hash `79a04d6102a8a494` |
 | Seeds | 20261023 (Part B starts, Part C permutations, bootstrap and permutation tests) |
-| Units | 1,884: P 58, A 1,160, B 540, C 126; 0 errors |
+| Units | 1,884: P 58, A 1,160, B 540, C 126; 0 errors, one attempt |
 | Part A | every adapter on every certified dataset; 3 in-process repeats with bitwise digests |
 | Part B | 27 problems x 20 starts x sigma 1.0, 14 solver configurations per start (7,560 fits) |
 | Part C | NumAcc3, NumAcc4, PiDigits at n = 1e4, 1e5, 1e6, tiled and permuted, 7 engine paths |
-| Wall time | P 50 s, A 89 s, B 235 s, C 54 s (about 7 minutes, 3 worker processes) |
+| Code | git commit `0b98cd7`, clean tree (recorded per attempt in `summary.json`) |
+| Wall time | P 44 s, A 76 s, B 149 s, C 29 s (about 5 minutes, 3 worker processes) |
 | Machine | AMD Ryzen 7 5700U (8 cores, 16 threads), Windows 11, CPU only |
 | Python | 3.13.1 |
 | Packages | numpy 2.5.4 (scipy-openblas 0.3.34), scipy 1.18.1, pandas 3.1.0, polars 2.0.0, duckdb 2.0.0, statsmodels 0.15.0, torch 2.14.1+cpu, mpmath 1.3.0 |
 
 The full environment record (BLAS/LAPACK build, SIMD, thread pools) is in
 [`results/environment.json`](results/environment.json), with local paths scrubbed.
+
+Provenance. The run in `results/` was regenerated from scratch at commit `0b98cd7` in one
+attempt. An earlier run of the same configuration (commit `b9dc15d`, the basis of the first
+draft of this report) had one ANOVA unit fail on its first attempt (`control.onepass.f64` on
+SmLs08); that unit and the 11 linear Part P units were rerun in the same run directory after
+two code changes (a nan guard in the ANOVA combine step, and cond(X) added to Part P), so
+its units did not share one commit. The regenerated run gives identical Part A, Part B and
+ceiling values; only the labels changed (`derived` and `rank` columns of `lre_table.csv`,
+section 6) and Part C cells that are not bitwise repeatable moved in their last digits. Run
+directories now record every attempt with its commit, dirty-tree flag and package versions
+(`attempts.jsonl`) and warn on a resume with different code. The extended Part B run
+(section 4.4) ran in one attempt at commit `b9dc15d`; the Part B code has not changed since.
 
 Commands:
 
@@ -85,8 +102,9 @@ uv run strdcheck table runs/partb-extended --out results/partb-extended
   independent global solve.
 - **Ceilings.** For each quantity the exact statistic is computed again from the
   float64-rounded and float32-rounded data ([`results/ceilings.csv`](results/ceilings.csv)).
-  An engine can beat its ceiling by a fraction of a digit by chance (torch.f64 on Michelso:
-  13.9 against 13.8).
+  An engine can beat its ceiling by a fraction of a digit through error cancellation, by at
+  most 0.4 digits here (`scipy.stats.f_oneway` on SmLs07: 4.4 against 4.0; SmLs04 10.4
+  against 10.1; torch.f64 on Michelso 13.9 against 13.8).
 - **Controls.** The exact control reaches the cap everywhere. The negative controls lose what
   the textbooks predict: one-pass SD on NumAcc3 keeps 2.2 digits against a ceiling of 9.5 and
   fails on NumAcc4; normal equations keep 0 digits on Filip and 6.2 on Wampler1.
@@ -96,7 +114,7 @@ uv run strdcheck table runs/partb-extended --out results/partb-extended
 
 ### 2.2 Tests
 
-`uv run pytest`: 220 passed, 2 skipped; with `--runslow`: 222 passed. The suite checks exact reference values, the parser on all
+`uv run pytest`: 227 passed, 2 skipped; with `--runslow`: 229 passed. The suite checks exact reference values, the parser on all
 58 files, every model Jacobian against mpmath, adapters on synthetic data with known answers,
 the checkpoint store under interruption, the statistics (Wilson, bootstrap, the sign-flip test
 against its exact value, Holm) and a small end-to-end study.
@@ -114,9 +132,14 @@ adapter) and [`results/lre_table.csv`](results/lre_table.csv) (every quantity, 1
 | numpy, pandas, polars, scipy, statsmodels, statistics (f64) | 14.0-15.0 | 13.1 | 13.4-13.8 | 9.5 | 8.3 |
 | torch.f64 | 14.9 | 13.1 | 13.9 | 9.5 | 8.3 |
 | duckdb.double | 15.0 | 12.1 | 12.4 | 9.5 | 8.3 |
-| float32 paths (numpy, pandas, polars, torch, DuckDB `FLOAT`) | 5.3-7.6 | 4.7 | 4.7 | 0.0-1.2 | 0.0 |
+| float32 paths (numpy, pandas, polars, torch) | 5.3-7.6 | 4.7 | 4.7 | 0.0-1.2 | 0.0 |
+| duckdb.float (`FLOAT` column, double accumulation) | 15.0 | 4.7 | 4.7 | 1.2 | 0.0 |
 
-All float64 paths are within 1.4 digits of the ceiling. `duckdb.decimal` loads the data
+All float64 paths are within 1.5 digits of the ceiling (largest deficit 1.46, DuckDB `DOUBLE`
+SD on Michelso). Every float32 path keeps 15.0 on NumAcc1, whose values float32 holds
+exactly. DuckDB's `avg` and `stddev_samp` on a `FLOAT` column accumulate in double, so
+DuckDB `FLOAT` loses digits only where the float32 data themselves are rounded; PiDigits,
+Lottery and Lew are small integers that float32 holds exactly. `duckdb.decimal` loads the data
 exactly as `DECIMAL(p, s)`, but `stddev_samp` returns `DOUBLE`, so its SD is limited to the
 float64 ceiling (8.3 on NumAcc4, not 15); see
 [`repros/duckdb_decimal_stddev.py`](repros/duckdb_decimal_stddev.py).
@@ -254,10 +277,12 @@ at tau = 6.
 Some models have exchangeable components (the terms of Lanczos, the two peaks of Gauss1-3,
 the cycles of ENSO) or parameters the data barely determine, so a fit can match the certified
 RSS while its parameters differ from the certified ones. Splitting silent fits by whether the
-RSS agrees with the certified minimum to 4 digits
+RSS agrees with the certified minimum to 4 digits, or to within 1 digit of the float64 RSS
+ceiling where that is lower (only Lanczos1, whose certified RSS of 1.4e-25 is rounding noise:
+ceiling 3.1 digits)
 ([`results/nonlinear_silent_split.csv`](results/nonlinear_silent_split.csv)): in every
-configuration 0.04-0.12 of fits are silent at an equivalent minimum and 0.22-0.30 are silent
-with a wrong RSS (trf analytic tight: 0.050 and 0.261; curve_fit defaults: 0.072 and 0.244).
+configuration 0.06-0.12 of fits are silent at an equivalent minimum and 0.20-0.29 are silent
+with a wrong RSS (trf analytic tight: 0.070 and 0.241; curve_fit defaults: 0.089 and 0.228).
 Most silent failures are therefore wrong answers, not relabellings. This split was added after
 the primary analysis was specified and is secondary.
 
@@ -301,8 +326,8 @@ flagged failures also grow (trf analytic tight: 0.036, 0.104, 0.156). At sigma =
 starts the comparisons repeat the primary result: C4 (tight vs default tolerances) differs by
 -0.077 (95% CI -0.159 to -0.025; 0 problems worse, 14 better; Holm p = 0.001), and C1, C2, C3
 and C5 are not significant after Holm correction (Holm p 0.64, 0.16, 0.64, 0.64). Silent fits
-at an equivalent minimum stay at 0.02-0.11 of fits for every spread; silent fits with a wrong
-RSS rise from 0.11-0.13 (sigma = 0.25) to 0.22-0.28 (sigma = 1) and 0.27-0.36 (sigma = 2).
+at an equivalent minimum stay at 0.02-0.12 of fits for every spread; silent fits with a wrong
+RSS rise from 0.10-0.13 (sigma = 0.25) to 0.20-0.28 (sigma = 1) and 0.25-0.34 (sigma = 2).
 These numbers are secondary: the run was added after the primary analysis was fixed.
 
 ## 5. Part C: large n (tiled data)
@@ -315,13 +340,15 @@ mean and SD of the tiled data are derived from exact sums of the original data.
 |---|---|---|---|
 | numpy (pairwise summation) | 15.0 | 15.0 | 0 / 18 |
 | pandas | 15.0 | 15.0 | 0 / 18 |
-| torch | 11.2 | 13.1 | 0 / 18 |
+| torch | 11.2 | 13.0 | 0 / 18 |
 | DuckDB, 1 thread | 8.9 | 12.7 | 0 / 18 |
-| DuckDB, 3 threads | 8.9 | 12.6 | 6 / 18 |
+| DuckDB, 3 threads | 8.8 | 12.5 | 6 / 18 |
 | polars eager | 9.4 | 12.6 | 0 / 18 |
-| polars streaming (lazy, 3 threads) | 9.6 | 12.3 | 8 / 18 |
+| polars streaming (lazy, 3 threads) | 9.6 | 12.0 | 9 / 18 |
 
-The mean is at 15.0 for every engine except DuckDB (11.0-15.0). The non-repeatable cells
+The mean is at 15.0 for every engine except DuckDB (11.0-15.0). The median is over the 18 cells. Cells that are not
+bitwise repeatable take different values in different runs, so their worst and median entries
+can move by about 0.1-0.5 digits between runs. The non-repeatable cells
 (DuckDB with 3 threads at n = 1e6; polars streaming at several sizes) differ between runs
 around the 11th-13th significant digit, as parallel reductions with a scheduling-dependent
 order do; single-threaded DuckDB and eager polars were repeatable. See
@@ -345,8 +372,14 @@ order do; single-threaded DuckDB and eager polars were repeatable. See
   how much the rates depend on the threshold.
 - **Derived quantities.** Standard errors, residual SD and R squared for engines that do not
   report them are derived by strdcheck from the engine's solution with one fixed QR/SVD
-  procedure; their LREs mix engine and derivation error and are marked `derived` in the
-  tables.
+  procedure; their LREs mix engine and derivation error and are marked `derived` in
+  `lre_table.csv`. This includes the standard errors of every `least_squares` configuration
+  (SVD of the returned Jacobian, numerical rank in the `rank` column) and the nonlinear
+  residual SD; `curve_fit` standard errors are its own `pcov`.
+- **float32 coverage.** `numpy.lstsq.f32` measures float32 data, not float32 arithmetic:
+  numpy.linalg upcasts float32 input, solves in float64 and returns float32. It therefore
+  keeps 15 digits on Wampler1/3/4 (the float32 cast of a float64 solution rounds to the
+  exact integer coefficients) where torch `gelsy` in real float32 arithmetic keeps 0.
 - **Nonlinear references** are mpmath refinements of the certified values, checked against
   them, not independent global solves.
 - **Engines and versions.** Results hold for the versions in section 1. GPU paths, R, SAS and

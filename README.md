@@ -34,8 +34,8 @@ wrong answer, which a success flag cannot reveal.
 
 From [REPORT.md](REPORT.md) (one machine, CPU only; see its limitations):
 
-- Univariate statistics: every float64 path is within 1.4 digits of the ceiling; float32
-  paths keep 0-7.6 digits.
+- Univariate statistics: every float64 path is within 1.5 digits of the ceiling; float32
+  paths keep 0-7.6 digits where float32 cannot hold the data exactly and 15 where it can.
 - Linear least squares follows conditioning. On Filip (cond(X) about 1.8e15) the default
   singular-value cutoffs of `numpy.linalg.lstsq`, `torch.linalg.lstsq` and statsmodels
   `OLS(method="pinv")` give 0 correct digits; `numpy.polynomial.Polynomial.fit` gets 13.8.
@@ -44,7 +44,7 @@ From [REPORT.md](REPORT.md) (one machine, CPU only; see its limitations):
   with an analytic Jacobian and tight tolerances). Tight tolerances lower the silent rate of
   trf by 0.067 (Holm p = 0.005).
 - At n = 1e6, numpy and pandas keep all 15 digits of the SD of tiled NumAcc data; DuckDB,
-  polars and torch keep 8.9-11.2 in their worst cell, and multi-threaded DuckDB and polars
+  polars and torch keep 8.8-11.2 in their worst cell, and multi-threaded DuckDB and polars
   streaming are not bitwise repeatable.
 
 ## Install
