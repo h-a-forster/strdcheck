@@ -101,7 +101,17 @@ def test_build_units_counts(strd_dir) -> None:
     assert len([x for x in u["A"] if x.suite == "nonlinear"]) == 27 * 2 * 14
     ids = [x.unit_id for v in u.values() for x in v]
     assert len(ids) == len(set(ids))
-    assert len(u["C"]) == 3 * 3 * 2 * 7
+    # Part C keeps only engine paths whose module is installed (torch is an optional extra).
+    import importlib.util
+
+    from strdcheck.study.tiled import TILED_ADAPTERS
+
+    paths = sum(importlib.util.find_spec(m) is not None for m, _ in TILED_ADAPTERS.values())
+    assert len(TILED_ADAPTERS) == 7
+    assert len(u["C"]) == 3 * 3 * 2 * paths
+    assert {x.adapter for x in u["C"]} == {
+        a for a, (m, _) in TILED_ADAPTERS.items() if importlib.util.find_spec(m) is not None
+    }
 
 
 @pytest.mark.slow
@@ -207,3 +217,59 @@ def test_silent_split_separates_equivalent_minima() -> None:
     assert row["problems"] == 2 and row["problems_with_wrong_rss"] == 1
     assert row["silent_at_min"] == pytest.approx((1 / 4 + 1 / 4) / 2)
     assert row["silent_wrong"] == pytest.approx((2 / 4 + 0) / 2)
+
+
+def test_silent_split_ceiling_aware_rss() -> None:
+    """A silent fit at the float64 RSS ceiling (Lanczos1: 3.06 digits) counts as at_min."""
+    from strdcheck.results import UnitRecord
+
+    fits = [{"adapter": "a", "success": True, "min_param_lre": 0.5, "rss_lre": 3.0}] * 2 + [
+        {"adapter": "a", "success": True, "min_param_lre": 0.5, "rss_lre": 0.3}
+    ]
+    recs = [
+        UnitRecord("B|L", "B", "L", "all", "nonlinear", "ok", extra={"sigma": 1.0, "fits": fits})
+    ]
+    (plain,) = analysis.silent_split(recs, 4.0, 200, 1)
+    assert plain["silent_at_min"] == 0 and plain["silent_wrong"] == pytest.approx(1.0)
+    (aware,) = analysis.silent_split(recs, 4.0, 200, 1, rss_ceilings={"L": 3.0639})
+    assert aware["silent_at_min"] == pytest.approx(2 / 3)
+    assert aware["silent_wrong"] == pytest.approx(1 / 3)
+    assert analysis.rss_threshold(4.0, 3.0639) == pytest.approx(2.0639)
+    assert analysis.rss_threshold(4.0, 10.8) == 4.0
+    assert analysis.rss_threshold(4.0, math.nan) == 4.0
+
+
+def test_write_results_tolerates_error_records(tmp_path: Path) -> None:
+    """One failed unit per part (empty extra and quantities) must not break the tables."""
+    from strdcheck.checkpoint import _error_record
+    from strdcheck.results import UnitRecord
+    from strdcheck.study.runner import Unit
+
+    cfg = StudyConfig(name="err").to_dict()
+    store = RunStore(tmp_path / "run")
+    store.open(cfg)
+    for part, suite in (
+        ("P", "linear"),
+        ("A", "univariate"),
+        ("B", "nonlinear"),
+        ("C", "univariate"),
+    ):
+        u = Unit(f"{part}|x", part, suite, "Norris", "ad", "run", "data")
+        store.write(_error_record(u, RuntimeError("boom")))
+    fit = {"adapter": "a", "success": True, "min_param_lre": 8.0, "rss_lre": 9.0}
+    store.write(
+        UnitRecord(
+            "B|ok",
+            "B",
+            "Misra1a",
+            "all",
+            "nonlinear",
+            "ok",
+            extra={"sigma": 1.0, "s_index": 0, "difficulty": "lower", "fits": [fit]},
+        )
+    )
+    out = tmp_path / "res"
+    analysis.write_results(tmp_path / "run", out)
+    summary = json.loads((out / "summary.json").read_text("utf-8"))
+    assert summary["status"] == {"error": 4, "ok": 1}
+    assert len(summary["error_units"]) == 4

@@ -104,3 +104,15 @@ def test_boxbod_start1_silent_lm(strd_dir) -> None:
     )
     b = min(q.lre for q in score(ds.certified, res) if q.name in ds.param_names())
     assert classify(res.status["success"], b) in {"silent", "ok"}
+
+
+def test_derived_names_and_rank(exact_misra) -> None:
+    """least_squares SEs come from strdcheck's SVD of res.jac: marked derived, rank recorded."""
+    ls = get_adapter("nonlinear", "scipy.least_squares.trf.jac-analytic.tol-default")
+    res = ls.run(exact_misra, start=(240.0, 4.5e-4))
+    assert res.derived == {"se_b1", "se_b2", "resid_sd"}
+    assert res.status["rank"] == 2 and res.status["p"] == 2
+    cf = get_adapter("nonlinear", "scipy.curve_fit.default").run(exact_misra, start=(240.0, 4.5e-4))
+    assert cf.derived == {"resid_sd"}  # curve_fit SEs are its own pcov
+    rows = {q.name: q for q in score(exact_misra.certified, res)}
+    assert rows["se_b1"].derived and not rows["b1"].derived

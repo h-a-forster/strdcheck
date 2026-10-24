@@ -92,3 +92,19 @@ def test_urlopen_sends_user_agent(monkeypatch) -> None:
     monkeypatch.setattr(urllib.request, "urlopen", fake)
     assert fetch_mod._urlopen(fetch_mod.ALLOWED_PREFIX + "x.dat", 5.0) == b"data"
     assert seen == {"ua": fetch_mod.USER_AGENT, "timeout": 5.0}
+
+
+def test_build_manifest_download_uses_strdcheck_opener(monkeypatch) -> None:
+    """scripts/build_manifest.py must send the User-Agent too (NIST 403s Python-urllib)."""
+    import importlib.util
+
+    from strdcheck import fetch as fetch_mod
+
+    path = Path(__file__).resolve().parents[1] / "scripts" / "build_manifest.py"
+    spec = importlib.util.spec_from_file_location("build_manifest", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    seen = []
+    monkeypatch.setattr(fetch_mod, "_urlopen", lambda url, timeout: seen.append(url) or b"ok")
+    assert mod._download(fetch_mod.ALLOWED_PREFIX + "x.dat") == b"ok"
+    assert seen == [fetch_mod.ALLOWED_PREFIX + "x.dat"]

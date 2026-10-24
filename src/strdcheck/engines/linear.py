@@ -86,6 +86,9 @@ def _full_result(ds: Dataset, b, se, resid_sd, r2, status=None) -> EngineResult:
 
 
 def numpy_lstsq(ds: Dataset, dtype: str = "f64") -> EngineResult:
+    """``numpy.linalg.lstsq``. With ``dtype="f32"`` only the data are float32: numpy.linalg
+    upcasts float32 input, solves in float64 and casts the result back to float32, so the
+    adapter measures float32 input and output rounding, not float32 arithmetic."""
     X, y = design(ds, np.float32 if dtype == "f32" else np.float64)
     b, _, rank, _ = np.linalg.lstsq(X, y)
     return _coef_result(ds, b, {"rank": int(rank), "p": X.shape[1]})
@@ -230,7 +233,15 @@ def _simple(ds: Dataset) -> bool:
 
 ADAPTERS = [
     Adapter("numpy.lstsq", SUITE, "numpy", "f64", numpy_lstsq, note="default rcond"),
-    Adapter("numpy.lstsq.f32", SUITE, "numpy", "f32", numpy_lstsq, kwargs={"dtype": "f32"}),
+    Adapter(
+        "numpy.lstsq.f32",
+        SUITE,
+        "numpy",
+        "f32",
+        numpy_lstsq,
+        kwargs={"dtype": "f32"},
+        note="float32 data, float64 compute (numpy.linalg upcasts float32 input)",
+    ),
     Adapter(
         "numpy.polyfit",
         SUITE,

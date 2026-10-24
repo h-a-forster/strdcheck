@@ -102,3 +102,14 @@ def test_m4_done_check_real_data(strd_dir) -> None:
     assert pf - ne >= 5
     _, res = bmin("numpy.lstsq")
     assert res.status["p"] == 11 and 1 <= res.status["rank"] <= 11
+
+
+def test_numpy_lstsq_f32_computes_in_float64(datasets) -> None:
+    """numpy.linalg upcasts float32: the f32 adapter is float32 data with float64 compute."""
+    ds = datasets["Pontius"]
+    X, y = lin.design(ds, np.float32)
+    b64 = np.linalg.lstsq(X.astype(np.float64), y.astype(np.float64))[0].astype(np.float32)
+    res = get_adapter("linear", "numpy.lstsq.f32").run(ds)
+    names = ds.linear_spec().param_names()
+    assert [res.values[n] for n in names] == [float(v) for v in b64]
+    assert "float64 compute" in get_adapter("linear", "numpy.lstsq.f32").note

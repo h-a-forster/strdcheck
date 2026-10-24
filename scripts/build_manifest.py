@@ -19,7 +19,6 @@ import json
 import re
 import sys
 import time
-import urllib.request
 from pathlib import Path
 
 BASE_URL = "https://www.itl.nist.gov/div898/strd/"
@@ -79,11 +78,14 @@ _DIFFICULTY_OVERRIDE = {"Michelso": "lower"}
 
 
 def _download(url: str, timeout: float = 60.0, attempts: int = 3) -> bytes:
+    # strdcheck's opener: NIST-only prefix check and a User-Agent (NIST answers 403 to the
+    # default "Python-urllib" agent).
+    from strdcheck.fetch import _urlopen
+
     last: Exception | None = None
     for i in range(attempts):
         try:
-            with urllib.request.urlopen(url, timeout=timeout) as resp:  # noqa: S310 - fixed host
-                return resp.read()
+            return _urlopen(url, timeout)
         except Exception as exc:  # pragma: no cover - network
             last = exc
             time.sleep(2.0 * (i + 1))

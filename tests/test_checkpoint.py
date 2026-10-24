@@ -176,3 +176,24 @@ def test_with_retries() -> None:
     assert len(logs) == 2
     with pytest.raises(RuntimeError, match="after 2 attempts"):
         with_retries(lambda: 1 / 0, attempts=2, log=logs.append, backoff_s=0)
+
+
+def test_resume_with_different_code_is_logged(tmp_path: Path) -> None:
+    """Units from different code in one run are flagged (warning, attempts, mixed flag)."""
+    env1 = {"git_commit": "aaa", "git_dirty": False, "python": "3.13", "packages": {"x": "1"}}
+    env2 = {**env1, "git_dirty": True}
+    store = RunStore(tmp_path / "run")
+    store.open({"a": 1}, meta={"environment": env1})
+    execute(store, [FakeUnit("u0")], ok_fn, workers=1)
+    assert not store.mixed_provenance()
+    RunStore(tmp_path / "run").open({"a": 1}, meta={"environment": env1})
+    assert "WARNING" not in (tmp_path / "run" / "study.log").read_text()
+    store.open({"a": 1}, meta={"environment": env2})
+    assert "WARNING" in (tmp_path / "run" / "study.log").read_text()
+    att = store.attempts()
+    assert len(att) == 3 and att[2]["provenance"]["git_dirty"] is True
+    assert att[2]["units_done"] == 1
+    # The differing attempt found every unit done: nothing ran under the new code yet.
+    assert not store.mixed_provenance()
+    execute(store, [FakeUnit("u0"), FakeUnit("u1")], ok_fn, workers=1)
+    assert store.mixed_provenance()

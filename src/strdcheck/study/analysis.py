@@ -320,7 +320,7 @@ def _pivot_md(records: list[UnitRecord], suite: str, names: dict[str, set[str]])
 def _fits(records: list[UnitRecord]):
     """Yield (problem, difficulty, sigma, s_index, adapter, success, min_lre, error)."""
     for r in records:
-        if r.part != "B":
+        if r.part != "B" or r.status != "ok":
             continue
         for f in r.extra.get("fits", []):
             err = "error" in f
@@ -377,10 +377,34 @@ def outcome_rates(records: list[UnitRecord], taus: Sequence[float], B: int, seed
     return rows, per_problem, counts, totals
 
 
-def silent_split(records: list[UnitRecord], tau: float, B: int, seed: int) -> list[dict[str, Any]]:
+RSS_CEILING_MARGIN = 1.0
+"""Digits below the float64 RSS ceiling that still count as reaching the minimum."""
+
+
+def rss_threshold(tau: float, f64_rss_ceiling: float) -> float:
+    """RSS LRE a silent fit needs to count as having reached the certified minimum.
+
+    ``tau`` digits, lowered to ``ceiling - RSS_CEILING_MARGIN`` when the float64 data cannot
+    support ``tau`` digits of the certified RSS (Lanczos1: certified RSS 1.4e-25, float64
+    ceiling 3.1 digits). A ``nan`` ceiling leaves ``tau``.
+    """
+    if math.isfinite(f64_rss_ceiling):
+        return min(tau, f64_rss_ceiling - RSS_CEILING_MARGIN)
+    return tau
+
+
+def silent_split(
+    records: list[UnitRecord],
+    tau: float,
+    B: int,
+    seed: int,
+    rss_ceilings: dict[str, float] | None = None,
+) -> list[dict[str, Any]]:
     """Secondary analysis: split silent failures by the residual sum of squares.
 
-    A silent fit whose RSS still agrees with the certified minimum to ``tau`` digits reached
+    A silent fit whose RSS still agrees with the certified minimum to ``tau`` digits (or to
+    within ``RSS_CEILING_MARGIN`` of the float64 RSS ceiling when that is lower, see
+    :func:`rss_threshold`; ``rss_ceilings`` maps problem to that ceiling) reached
     an equivalent minimum (exchangeable model components, such as the terms of a sum of
     exponentials, or a flat direction of the objective) and differs from the certified
     point only in parameter labelling or ill-determined parameters. A silent fit with a wrong
@@ -388,10 +412,12 @@ def silent_split(records: list[UnitRecord], tau: float, B: int, seed: int) -> li
     problem and then averaged, as in :func:`outcome_rates`.
     """
     cnt: dict[tuple, Counter] = defaultdict(Counter)
+    ceil = rss_ceilings or {}
     for r in records:
-        if r.part != "B":
+        if r.part != "B" or r.status != "ok":
             continue
         sigma = float(r.extra["sigma"])
+        thr = rss_threshold(tau, ceil.get(r.dataset, math.nan))
         for f in r.extra.get("fits", []):
             key = (sigma, f["adapter"], r.dataset)
             cnt[key]["fits"] += 1
@@ -401,7 +427,7 @@ def silent_split(records: list[UnitRecord], tau: float, B: int, seed: int) -> li
             if o != "silent":
                 continue
             rss = _f(f.get("rss_lre"))
-            cnt[key]["at_min" if math.isfinite(rss) and rss >= tau else "wrong"] += 1
+            cnt[key]["at_min" if math.isfinite(rss) and rss >= thr else "wrong"] += 1
     rows = []
     for sigma, ad in sorted({(k[0], k[1]) for k in cnt}):
         probs = sorted(k[2] for k in cnt if (k[0], k[1]) == (sigma, ad))
@@ -477,7 +503,7 @@ def comparisons(per_problem, sigma: float, B_boot: int, B_perm: int, seed: int):
 def tiled_rows(records: list[UnitRecord]) -> list[dict[str, Any]]:
     rows = []
     for r in records:
-        if r.part != "C":
+        if r.part != "C" or r.status != "ok":
             continue
         q = {x.name: x for x in r.quantities}
         rows.append(
@@ -498,6 +524,32 @@ def tiled_rows(records: list[UnitRecord]) -> list[dict[str, Any]]:
 
 
 # --- entry point ----------
+
+
+def _rss_ceilings(records: list[UnitRecord], crow: list[dict[str, Any]]) -> dict[str, float]:
+    """Float64 RSS ceiling per Part B problem: from the run's Part P records, else computed.
+
+    A Part-B-only run has no Part P records; the ceiling is then computed from the cached
+    StRD file (mpmath refinement, a few seconds per problem). A problem whose file is not
+    available keeps ``nan`` (the split then uses ``tau`` alone for it).
+    """
+    out = {
+        r["dataset"]: float(r["f64"])
+        for r in crow
+        if r["suite"] == "nonlinear" and r["quantity"] == "rss"
+    }
+    missing = sorted({r.dataset for r in records if r.part == "B" and r.status == "ok"} - set(out))
+    if missing:
+        from strdcheck import exact
+        from strdcheck.parse import load
+
+        for name in missing:
+            try:
+                c = exact.nonlinear_ceilings(load(name))
+                out[name] = float(c["rss"].f64)
+            except (OSError, FileNotFoundError, KeyError, ValueError):
+                out[name] = math.nan
+    return out
 
 
 def write_results(run_dir: str | Path, out_dir: str | Path) -> list[Path]:
@@ -641,7 +693,13 @@ def write_results(run_dir: str | Path, out_dir: str | Path) -> list[Path]:
         for o in OUTCOMES:
             rfields += [o, f"{o}_lo", f"{o}_hi"]
         written.append(_write_csv(out / "nonlinear_rates.csv", rates, rfields))
-        split = silent_split(records, PRIMARY_TAU, int(pb.get("bootstrap", 10000)), seed)
+        split = silent_split(
+            records,
+            PRIMARY_TAU,
+            int(pb.get("bootstrap", 10000)),
+            seed,
+            rss_ceilings=_rss_ceilings(records, crow),
+        )
         written.append(_write_csv(out / "nonlinear_silent_split.csv", split, SPLIT_FIELDS))
         prow = []
         for (sigma, tau, ad, prob), c in sorted(counts.items()):
@@ -753,6 +811,9 @@ def write_results(run_dir: str | Path, out_dir: str | Path) -> list[Path]:
     summary.update(
         {
             "status": dict(status),
+            "error_units": sorted(r.unit_id for r in records if r.status != "ok"),
+            "attempts": store.attempts(),
+            "mixed_provenance": store.mixed_provenance(),
             "parts": dict(Counter(r.part for r in records)),
             "notable": len(notable),
             "part_a_quantities": len(arows),

@@ -11,8 +11,9 @@ significant digits against values NIST certifies to 11-15 digits.
 It ships three things:
 
 - a **library** that parses all 58 StRD files, computes exact rational references and the
-  *representation ceiling* of every certified value (the best LRE any engine can reach once
-  the decimal data are rounded to float64 or float32), and scores engine results;
+  *representation ceiling* of every certified value (the LRE of the exact statistic of the
+  data rounded to float64 or float32; engines rarely exceed it, and then by a fraction of a
+  digit through error cancellation), and scores engine results;
 - a **pytest plugin** so a numerical library can assert, in its own test suite, that it keeps
   N digits on the StRD problems;
 - a **reproducible study** of the Python data stack, with a published LRE table, silent-failure
@@ -52,10 +53,12 @@ strdcheck is installed from GitHub (it is not on PyPI):
 
 ```sh
 # library and pytest plugin (needs numpy only)
-uv add "strdcheck @ git+https://github.com/h-a-forster/strdcheck@v0.1.0"
+uv add "strdcheck @ git+https://github.com/h-a-forster/strdcheck"
 # with the engines the study measures (scipy, pandas, polars, DuckDB, statsmodels, mpmath)
-uv add "strdcheck[engines] @ git+https://github.com/h-a-forster/strdcheck@v0.1.0"
+uv add "strdcheck[engines] @ git+https://github.com/h-a-forster/strdcheck"
 ```
+
+Append `@<tag>` (for example `@v0.1.0`) to the URL to pin a release once it is tagged.
 
 For development or to reproduce the study:
 
@@ -109,7 +112,7 @@ from strdcheck.testing import params
 @pytest.mark.parametrize("strd_dataset", params(suite="univariate"), indirect=True)
 def test_my_std(strd_dataset, strd_assert_lre):
     c = strd_dataset.certified["sd"]
-    ceiling = ceilings(strd_dataset)["sd"].f64  # best LRE possible from float64 data
+    ceiling = ceilings(strd_dataset)["sd"].f64  # LRE of the exact SD of the float64 data
     sd = my_std(strd_dataset.array("y"))
     strd_assert_lre([sd], [c.value], min_lre=ceiling - 1, cap=c.cap, label="sd")
 ```

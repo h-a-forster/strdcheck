@@ -52,22 +52,32 @@ def _jac_matrix(model, b, X, n: int) -> np.ndarray:
     return np.column_stack(cols)
 
 
-def _summary(ds: Dataset, b: np.ndarray, rss: float, jac: np.ndarray | None) -> dict[str, float]:
+DERIVED_LS = frozenset({"resid_sd"})
+"""Names computed by strdcheck for every nonlinear adapter: ``sqrt(RSS / (n - p))``."""
+
+
+def _summary(
+    ds: Dataset, b: np.ndarray, rss: float, jac: np.ndarray | None
+) -> tuple[dict[str, float], int | None]:
+    """Coefficients, RSS, residual SD and SEs (DESIGN 4.5) plus the numerical rank of ``jac``
+    (``None`` when no finite Jacobian is available). SEs are ``nan`` when it is deficient."""
     n, p = ds.n, b.size
     s2 = rss / (n - p)
     vals = {f"b{j + 1}": float(b[j]) for j in range(p)}
     vals["rss"] = float(rss)
     vals["resid_sd"] = math.sqrt(s2) if s2 >= 0 else math.nan
     se = np.full(p, np.nan)
+    rank: int | None = None
     if jac is not None and np.all(np.isfinite(jac)):
         _, s, vt = np.linalg.svd(jac, full_matrices=False)
         thresh = np.finfo(float).eps * max(n, p) * (s[0] if s.size else 0.0)
         keep = s > thresh
+        rank = int(keep.sum())
         if keep.all():
             cov = (vt.T / s**2) @ vt * s2
             se = np.sqrt(np.clip(np.diag(cov), 0, None))
     vals.update({f"se_b{j + 1}": float(se[j]) for j in range(p)})
-    return vals
+    return vals, rank
 
 
 def _nan_values(p: int) -> dict[str, float]:
@@ -102,15 +112,19 @@ def scipy_least_squares(
             fun, x0, jac=jfun if jac == "analytic" else "2-point", method=method, **kw
         )
         rss = float(np.dot(res.fun, res.fun))
-        vals = _summary(ds, res.x, rss, res.jac)
+        vals, rank = _summary(ds, res.x, rss, res.jac)
     status = {
         "success": bool(res.status > 0),
         "status": int(res.status),
         "message": str(res.message)[:200],
         "nfev": int(res.nfev),
         "njev": None if res.njev is None else int(res.njev),
+        "rank": rank,
+        "p": int(res.x.size),
     }
-    return EngineResult(vals, status=status)
+    # least_squares returns no SEs: strdcheck computes them from res.jac (DESIGN 4.5).
+    derived = set(DERIVED_LS) | {f"se_b{j + 1}" for j in range(res.x.size)}
+    return EngineResult(vals, derived=derived, status=status)
 
 
 def scipy_curve_fit(
@@ -144,7 +158,7 @@ def scipy_curve_fit(
         r = f(xdata, *popt) - y
         rss = float(np.dot(r, r))
         J = _jac_matrix(model, popt, X, n)
-        vals = _summary(ds, np.asarray(popt), rss, J)
+        vals, rank = _summary(ds, np.asarray(popt), rss, J)
         # SEs as curve_fit reports them (pcov scaled by RSS / (n - p)).
         se = np.sqrt(np.diag(_pcov)) if np.all(np.isfinite(_pcov)) else np.full(p, np.nan)
         vals.update({f"se_b{j + 1}": float(se[j]) for j in range(p)})
@@ -153,8 +167,10 @@ def scipy_curve_fit(
         "status": int(ier),
         "message": str(mesg)[:200],
         "nfev": int(info.get("nfev", -1)),
+        "rank": rank,
+        "p": p,
     }
-    return EngineResult(vals, status=status)
+    return EngineResult(vals, derived=set(DERIVED_LS), status=status)
 
 
 ADAPTERS: list[Adapter] = []

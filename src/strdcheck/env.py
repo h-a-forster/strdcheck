@@ -72,6 +72,30 @@ def _git_commit() -> str:
         return ""
 
 
+def _git_dirty() -> bool | None:
+    """True when tracked files differ from HEAD (``None`` outside a git checkout)."""
+    try:
+        root = Path(__file__).resolve().parents[2]
+        out = subprocess.run(
+            ["git", "-C", str(root), "status", "--porcelain", "--untracked-files=no"],
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+        return bool(out.stdout.strip()) if out.returncode == 0 else None
+    except (OSError, subprocess.SubprocessError):
+        return None
+
+
+PROVENANCE_KEYS = ("git_commit", "git_dirty", "python", "packages")
+"""Environment fields that must match for units of one run to come from the same code."""
+
+
+def provenance(env: dict[str, Any]) -> dict[str, Any]:
+    """The part of an environment record that identifies the code and package versions."""
+    return {k: env.get(k) for k in PROVENANCE_KEYS}
+
+
 def scrub(obj: Any) -> Any:
     """Replace absolute filesystem paths by their last component (and the home directory)."""
     home = str(Path.home())
@@ -113,6 +137,7 @@ def environment_record() -> dict[str, Any]:
         "logical_cpus": os.cpu_count(),
         "packages": versions,
         "git_commit": _git_commit(),
+        "git_dirty": _git_dirty(),
     }
     try:
         import numpy as np

@@ -2,15 +2,19 @@
 
 Layout of a run directory::
 
-    runs/<run>/manifest.json   config hash, config, environment record
+    runs/<run>/manifest.json   config hash, config, environment record (of the first attempt)
+    runs/<run>/attempts.jsonl  one line per open: time and code/package provenance
     runs/<run>/units/*.json    one UnitRecord per finished unit (atomic write)
     runs/<run>/progress.log    one line per finished unit: time, unit id, status, seconds
     runs/<run>/study.log       free-form log of the study command
 
 A rerun skips units whose file exists and refuses to continue a run directory created with
-a different configuration hash. :func:`execute` runs the remaining units in at most
-``MAX_WORKERS`` spawned processes and writes each record as soon as it arrives, so an
-interrupted run loses at most the units in flight.
+a different configuration hash. A rerun whose code or package versions differ from the
+first attempt (``meta["environment"]``, compared with :func:`strdcheck.env.provenance`) is
+allowed but logged as a warning in ``study.log`` and recorded in ``attempts.jsonl``, so a
+run mixing units from different code is visible to the analysis. :func:`execute` runs the
+remaining units in at most ``MAX_WORKERS`` spawned processes and writes each record as soon
+as it arrives, so an interrupted run loses at most the units in flight.
 """
 
 from __future__ import annotations
@@ -73,14 +77,24 @@ class RunStore:
 
     def open(self, config: Any, meta: dict[str, Any] | None = None) -> str:
         """Create or reopen the run for ``config``; return its hash."""
+        from strdcheck.env import provenance
+
         h = config_hash(config)
         man = self.dir / "manifest.json"
+        now = provenance((meta or {}).get("environment") or {})
         if man.exists():
             old = json.loads(man.read_text("utf-8"))
             if old.get("config_hash") != h:
                 raise ConfigMismatch(
                     f"{self.dir} was created with config {old.get('config_hash')}, not {h}; "
                     "use a new run directory"
+                )
+            first = provenance(old.get("environment") or {})
+            if meta is not None and now != first:
+                diff = sorted(k for k in now if now[k] != first[k])
+                self.log(
+                    "WARNING: resuming with different code or packages than the first attempt "
+                    f"({', '.join(diff)}); units of this run no longer share one provenance"
                 )
         else:
             body = {
@@ -91,10 +105,37 @@ class RunStore:
             }
             atomic_write(man, json.dumps(body, indent=1, sort_keys=True, default=str))
         self.units_dir.mkdir(parents=True, exist_ok=True)
+        if meta is not None:
+            line = {
+                "opened": datetime.now(UTC).isoformat(timespec="seconds"),
+                "units_done": self.count(),
+                "provenance": now,
+            }
+            with (self.dir / "attempts.jsonl").open("a", encoding="utf-8", newline="\n") as fh:
+                fh.write(json.dumps(line, sort_keys=True, default=str) + "\n")
         return h
 
     def manifest(self) -> dict[str, Any]:
         return json.loads((self.dir / "manifest.json").read_text("utf-8"))
+
+    def attempts(self) -> list[dict[str, Any]]:
+        """Every recorded open of this run, oldest first (empty for runs made before it)."""
+        p = self.dir / "attempts.jsonl"
+        if not p.exists():
+            return []
+        return [json.loads(x) for x in p.read_text("utf-8").splitlines() if x.strip()]
+
+    def mixed_provenance(self) -> bool:
+        """True when an attempt that ran units had different code or packages than the first.
+
+        An attempt that found every unit done ran nothing and is ignored.
+        """
+        att = self.attempts()
+        if not att:
+            return False
+        first = att[0]["provenance"]
+        total = self.count()
+        return any(a["provenance"] != first and a["units_done"] < total for a in att[1:])
 
     # -- units ------------------------------------------------------------------------------
 
