@@ -326,7 +326,7 @@ flagged failures also grow (trf analytic tight: 0.036, 0.104, 0.156). At sigma =
 starts the comparisons repeat the primary result: C4 (tight vs default tolerances) differs by
 -0.077 (95% CI -0.159 to -0.025; 0 problems worse, 14 better; Holm p = 0.001), and C1, C2, C3
 and C5 are not significant after Holm correction (Holm p 0.64, 0.16, 0.64, 0.64). Silent fits
-at an equivalent minimum stay at 0.02-0.12 of fits for every spread; silent fits with a wrong
+at an equivalent minimum stay at 0.02-0.11 of fits for every spread; silent fits with a wrong
 RSS rise from 0.10-0.13 (sigma = 0.25) to 0.20-0.28 (sigma = 1) and 0.25-0.34 (sigma = 2).
 These numbers are secondary: the run was added after the primary analysis was fixed.
 
@@ -341,7 +341,7 @@ mean and SD of the tiled data are derived from exact sums of the original data.
 | numpy (pairwise summation) | 15.0 | 15.0 | 0 / 18 |
 | pandas | 15.0 | 15.0 | 0 / 18 |
 | torch | 11.2 | 13.0 | 0 / 18 |
-| DuckDB, 1 thread | 8.9 | 12.7 | 0 / 18 |
+| DuckDB, 1 thread | 8.9 | 12.6 | 0 / 18 |
 | DuckDB, 3 threads | 8.8 | 12.5 | 6 / 18 |
 | polars eager | 9.4 | 12.6 | 0 / 18 |
 | polars streaming (lazy, 3 threads) | 9.6 | 12.0 | 9 / 18 |
