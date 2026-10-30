@@ -78,13 +78,14 @@ Updated: 2026-10-30.
 
 Done (v0.1.0, not tagged):
 - Full-size study (2026-10-30): `configs/full.toml` at clean commit `73eb634`, 17,628/17,628
-  units, 0 errors, 52 minutes in two attempts (the first exited 1 at 39 minutes with nothing
-  in the logs; the resume was clean). Tables in `results/full/`, REPORT 4.4 (replacing the
-  extended run as the three-spread analysis) and 5. Part A/P tables byte-identical to the
+  units, 0 errors, 52 minutes in two calls (the first was stopped from outside at 39 minutes:
+  no exit line in `study.log`; a second call resumed it cleanly; times from the run log).
+  Tables in `results/full/`, REPORT 4.4 (replacing the extended run as the three-spread
+  analysis) and 5. Part A/P tables byte-identical to the
   quick run; overlapping Part B units identical; C4 repeats, nothing else becomes significant.
 - Release polish (2026-10-30): `study --max-minutes` / `run_study.py --max-minutes` stop a
   run at a time limit (exit 3, resumable), so the full study runs in chunks under 45 minutes;
-  measured Part C at n = 1e7 and 2e7 (28 PiDigits units in 183 s); CI also runs on pushes to
+  measured Part C at n = 1e7 and 2e7; CI also runs on pushes to
   `main` (the repository is public); release notes in `docs/release-notes-0.1.0.md`.
 - M10 release prep: README (install from git, quick start, plugin, validation, citation),
   REPORT.md, CHANGELOG 0.1.0, version 0.1.0 in pyproject, `__init__` and CITATION.cff.

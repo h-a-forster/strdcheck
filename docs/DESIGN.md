@@ -487,7 +487,8 @@ Measured on the reference machine (REPORT.md): phase P 50 s, Part A 89 s, Part B
 ### 6.8 Reporting rules
 
 REPORT.md states the environment, versions, sizes, seeds and the exact commands; every number
-comes from committed files in `results/`; intervals accompany every rate; the five
+comes from committed files in `results/` (run times and throughput excepted: they come from
+the run logs); intervals accompany every rate; the five
 pre-specified comparisons are reported with raw and Holm-adjusted p-values whatever their
 outcome; platform dependence (BLAS/LAPACK build, CPU) is stated as a limitation, since LREs
 of LAPACK-based paths can differ on other machines.
