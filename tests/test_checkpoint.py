@@ -121,6 +121,31 @@ def test_execute_inline_records_errors_and_skips(tmp_path: Path) -> None:
         execute(store, units, ok_fn, workers=4)
 
 
+def test_execute_stops_at_deadline(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """No unit starts after the deadline; a rerun without one finishes the rest."""
+    import time
+    import types
+
+    from strdcheck import checkpoint
+
+    clock = [0.0]
+    fake = types.SimpleNamespace(monotonic=lambda: clock[0], perf_counter=time.perf_counter)
+    monkeypatch.setattr(checkpoint, "time", fake)
+
+    def tick_fn(u: FakeUnit) -> UnitRecord:
+        clock[0] += 1.0
+        return ok_fn(u)
+
+    store = RunStore(tmp_path / "run")
+    store.open({})
+    units = [FakeUnit(f"u{i}") for i in range(5)]
+    assert execute(store, units, tick_fn, workers=1, deadline=2.0) == 2
+    assert execute(store, units, ok_fn, workers=2, deadline=2.0) == 0  # expired: no pool
+    assert "3 units left" in (tmp_path / "run" / "study.log").read_text()
+    assert execute(store, units, ok_fn, workers=1) == 3
+    assert store.count() == 5
+
+
 def test_execute_process_pool(tmp_path: Path) -> None:
     store = RunStore(tmp_path / "run")
     store.open({})

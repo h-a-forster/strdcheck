@@ -198,6 +198,7 @@ def execute(
     initargs: Iterable[Any] = (),
     progress_every: int = 50,
     spawn: bool = False,
+    deadline: float | None = None,
 ) -> int:
     """Run every unit not yet in ``store``; return the number of units run now.
 
@@ -205,7 +206,9 @@ def execute(
     (``spawn`` runs even a single worker in a fresh process, so environment settings such as
     thread counts apply before the engines are imported). A unit that raises
     is recorded with ``status = "error"`` (never dropped). A worker process that dies breaks
-    the pool; the exception propagates and the retry wrapper resumes the run.
+    the pool; the exception propagates and the retry wrapper resumes the run. With
+    ``deadline`` (a :func:`time.monotonic` value) no unit starts after it; units already
+    running finish, and a rerun resumes with the rest.
     """
     if workers > MAX_WORKERS:
         raise ValueError(f"at most {MAX_WORKERS} workers")
@@ -217,6 +220,13 @@ def execute(
     store.log(f"execute: {total - len(todo)}/{total} done, {len(todo)} to run, workers={workers}")
     t0 = time.perf_counter()
     done_now = 0
+
+    def expired() -> bool:
+        return deadline is not None and time.monotonic() >= deadline
+
+    if todo and expired():
+        store.log(f"time limit reached: {len(todo)} units left for a rerun")
+        return 0
 
     def finished(rec: UnitRecord) -> None:
         nonlocal done_now
@@ -234,6 +244,8 @@ def execute(
         if initializer is not None:
             initializer(*initargs)
         for u in todo:
+            if expired():
+                break
             try:
                 rec = fn(u)
             except Exception as exc:
@@ -252,7 +264,7 @@ def execute(
         it = iter(todo)
 
         def submit_next() -> bool:
-            u = next(it, None)
+            u = None if expired() else next(it, None)
             if u is None:
                 return False
             pending[pool.submit(fn, u)] = u
@@ -273,6 +285,8 @@ def execute(
                 else:
                     finished(fut.result())
                 submit_next()
+    if done_now < len(todo):
+        store.log(f"time limit reached: {len(todo) - done_now} units left for a rerun")
     return done_now
 
 

@@ -10,6 +10,9 @@ from strdcheck import __version__
 from strdcheck.fetch import fetch, is_cached, resolve_data_dir, source_note
 from strdcheck.manifest import SUITES, list_datasets
 
+EXIT_TIME_LIMIT = 3
+"""Exit code of ``study --max-minutes`` when the time limit stopped a run with units left."""
+
 
 def _cmd_list(args: argparse.Namespace) -> int:
     data_dir = resolve_data_dir(args.data_dir)
@@ -65,9 +68,15 @@ def _cmd_study(args: argparse.Namespace) -> int:
     if not args.config:
         print("--config is required", file=sys.stderr)
         return 2
-    out = run_study(load_config(args.config), args.run, args.data_dir)
+    if args.max_minutes is not None and args.max_minutes <= 0:
+        print("--max-minutes must be positive", file=sys.stderr)
+        return 2
+    max_seconds = None if args.max_minutes is None else 60.0 * args.max_minutes
+    out = run_study(load_config(args.config), args.run, args.data_dir, max_seconds=max_seconds)
     print(f"{out['done']}/{out['total']} units done; ran now: {out['ran']}")
-    return 0 if out["done"] == out["total"] else 1
+    if out["done"] == out["total"]:
+        return 0
+    return EXIT_TIME_LIMIT if max_seconds is not None else 1
 
 
 def _cmd_table(args: argparse.Namespace) -> int:
@@ -122,6 +131,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--run", required=True, help="run directory")
     p.add_argument("--data-dir", default=None, help="StRD cache directory")
     p.add_argument("--status", action="store_true", help="print progress of the run and exit")
+    p.add_argument(
+        "--max-minutes",
+        type=float,
+        default=None,
+        help=f"start no unit later than this after setup; exit {EXIT_TIME_LIMIT} if units remain",
+    )
     p.set_defaults(func=_cmd_study)
 
     p = sub.add_parser("table", help="write results tables from a run directory")

@@ -409,8 +409,20 @@ def _restore(old: dict[str, str | None]) -> None:
             os.environ[k] = v
 
 
-def run_study(cfg: StudyConfig, run_dir: str | Path, data_dir: str | Path | None = None) -> dict:
-    """Run (or resume) a study; returns counts per phase."""
+def run_study(
+    cfg: StudyConfig,
+    run_dir: str | Path,
+    data_dir: str | Path | None = None,
+    max_seconds: float | None = None,
+) -> dict:
+    """Run (or resume) a study; returns counts per phase.
+
+    With ``max_seconds`` no unit starts later than that many seconds after the units are
+    built (setup time is not counted, so every call can make progress); the run stops with
+    units left (``done < total``) and a rerun in the same directory resumes it.
+    """
+    if max_seconds is not None and max_seconds <= 0:
+        raise ValueError("max_seconds must be positive")
     from strdcheck.env import environment_record
     from strdcheck.fetch import resolve_data_dir
 
@@ -425,6 +437,7 @@ def run_study(cfg: StudyConfig, run_dir: str | Path, data_dir: str | Path | None
     )
     counts = {}
     t0 = time.perf_counter()
+    deadline = None if max_seconds is None else time.monotonic() + max_seconds
     for phase in ("P", "A", "B"):
         if not units[phase]:
             continue
@@ -432,7 +445,12 @@ def run_study(cfg: StudyConfig, run_dir: str | Path, data_dir: str | Path | None
         try:
             ts = time.perf_counter()
             counts[phase] = execute(
-                store, units[phase], run_unit, workers=cfg.workers, initializer=worker_init
+                store,
+                units[phase],
+                run_unit,
+                workers=cfg.workers,
+                initializer=worker_init,
+                deadline=deadline,
             )
             store.log(f"phase {phase}: {counts[phase]} run in {time.perf_counter() - ts:.0f} s")
         finally:
@@ -442,13 +460,22 @@ def run_study(cfg: StudyConfig, run_dir: str | Path, data_dir: str | Path | None
         try:
             ts = time.perf_counter()
             counts["C"] = execute(
-                store, units["C"], run_unit, workers=1, spawn=True, initializer=worker_init
+                store,
+                units["C"],
+                run_unit,
+                workers=1,
+                spawn=True,
+                initializer=worker_init,
+                deadline=deadline,
             )
             store.log(f"phase C: {counts['C']} run in {time.perf_counter() - ts:.0f} s")
         finally:
             _restore(old)
+    state = "complete" if store.count() == total else "incomplete"
+    if deadline is not None and store.count() < total:
+        state = "stopped at the time limit"
     store.log(
-        f"study {cfg.name} complete: {store.count()}/{total} units, "
+        f"study {cfg.name} {state}: {store.count()}/{total} units, "
         f"{time.perf_counter() - t0:.0f} s this attempt"
     )
     return {"total": total, "done": store.count(), "ran": counts}
