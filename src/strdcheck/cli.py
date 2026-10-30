@@ -135,7 +135,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--max-minutes",
         type=float,
         default=None,
-        help=f"start no unit later than this after setup; exit {EXIT_TIME_LIMIT} if units remain",
+        help=f"queue no unit later than this after setup; exit {EXIT_TIME_LIMIT} if units remain",
     )
     p.set_defaults(func=_cmd_study)
 

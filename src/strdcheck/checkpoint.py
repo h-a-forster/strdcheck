@@ -207,8 +207,9 @@ def execute(
     thread counts apply before the engines are imported). A unit that raises
     is recorded with ``status = "error"`` (never dropped). A worker process that dies breaks
     the pool; the exception propagates and the retry wrapper resumes the run. With
-    ``deadline`` (a :func:`time.monotonic` value) no unit starts after it; units already
-    running finish, and a rerun resumes with the rest.
+    ``deadline`` (a :func:`time.monotonic` value) no unit is queued after it; units already
+    running or queued (with a pool, up to ``4 * workers``) still run, and a rerun resumes
+    with the rest.
     """
     if workers > MAX_WORKERS:
         raise ValueError(f"at most {MAX_WORKERS} workers")

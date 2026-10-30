@@ -475,7 +475,7 @@ uv run strdcheck fetch
 uv run python scripts/run_study.py --config configs/quick.toml --run runs/quick   # < 15 min target
 uv run strdcheck table runs/quick --out results/
 # Full size (about 1-2.5 h on 3 workers, see REPORT.md for measured rates), in chunks:
-# each call starts no unit after 40 minutes and exits 3 while units remain; repeat it until
+# each call queues no unit after 40 minutes and exits 3 while units remain; repeat it until
 # it exits 0. Every call resumes the same run directory.
 uv run python scripts/run_study.py --config configs/full.toml --run runs/full --max-minutes 40
 uv run strdcheck table runs/full --out results/full

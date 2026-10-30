@@ -2,8 +2,9 @@
 
 Each attempt runs ``strdcheck study`` in a fresh subprocess, so even a crashed worker or
 interpreter does not lose finished units; a rerun skips them. Progress is in
-``<run>/progress.log`` and ``<run>/study.log``. With ``--max-minutes`` an attempt starts no
-unit later than that after its setup; a run stopped there exits with code 3 (not retried)
+``<run>/progress.log`` and ``<run>/study.log``. With ``--max-minutes`` an attempt queues no
+unit later than that after its setup (up to 4 per worker queued before then still run); a
+run stopped there exits with code 3 (not retried)
 and the next call resumes it, which splits a long study into bounded chunks.
 
 Usage:
