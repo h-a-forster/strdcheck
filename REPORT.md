@@ -114,7 +114,7 @@ uv run strdcheck table runs/partb-extended --out results/partb-extended
 
 ### 2.2 Tests
 
-`uv run pytest`: 227 passed, 2 skipped; with `--runslow`: 229 passed. The suite checks exact reference values, the parser on all
+`uv run pytest`: 229 passed, 2 skipped; with `--runslow`: 231 passed. The suite checks exact reference values, the parser on all
 58 files, every model Jacobian against mpmath, adapters on synthetic data with known answers,
 the checkpoint store under interruption, the statistics (Wilson, bootstrap, the sign-flip test
 against its exact value, Holm) and a small end-to-end study.
@@ -362,8 +362,8 @@ order do; single-threaded DuckDB and eager polars were repeatable. See
 - **Size.** The primary analysis uses the quick configuration: 20 starts per problem at one
   spread. The full configuration (`configs/full.toml`: 200 starts, three spreads, Part C up to
   n = 2e7) is documented but was not run. At the measured Part B throughput of about 2.3-2.7
-  units per second on 3 workers it takes 2-2.5 hours and should be split (one spread per run)
-  to keep each run under 45 minutes.
+  units per second on 3 workers it takes 2-2.5 hours, run in chunks of at most 40 minutes
+  (`scripts/run_study.py --max-minutes 40`, repeated until it exits 0).
 - **Random-start design.** Multiplicative log-normal perturbations keep parameter signs and
   scale with the size of each certified parameter; other designs (additive, box-uniform)
   would give other rates. Rates are conditional on this design and on the 27 NIST models.

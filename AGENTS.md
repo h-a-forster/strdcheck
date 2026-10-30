@@ -27,8 +27,8 @@ representation ceiling, plus silent-failure rates of scipy's nonlinear least squ
   DuckDB threads set to 1 in workers except where a configuration sets threads explicitly.
 - Long jobs: every finished unit is written by `strdcheck.checkpoint` (atomic file per unit,
   skip on rerun, `progress.log`), and the study runs inside the retry wrapper. Never keep
-  results only in memory. Keep each run under 45 minutes; the full-size command is in
-  DESIGN 6.7.
+  results only in memory. Keep each run under 45 minutes (`--max-minutes` splits a long run
+  into resumable chunks); the full-size command is in DESIGN 6.7.
 - Data: the StRD files are fetched from `https://www.itl.nist.gov/div898/strd/` and verified
   against `src/strdcheck/data/manifest.json`. Never commit them (licence question O1 in
   DESIGN 10). Commit only small derived results under `results/`, with local paths scrubbed.
@@ -74,9 +74,13 @@ uv run strdcheck fetch               # real StRD files into the user cache (need
 
 ## Status and next steps
 
-Updated: 2026-10-24.
+Updated: 2026-10-30.
 
 Done (v0.1.0, not tagged):
+- Release polish (2026-10-30): `study --max-minutes` / `run_study.py --max-minutes` stop a
+  run at a time limit (exit 3, resumable), so the full study runs in chunks under 45 minutes;
+  measured Part C at n = 1e7 and 2e7 (28 PiDigits units in 183 s); CI also runs on pushes to
+  `main` (the repository is public); release notes in `docs/release-notes-0.1.0.md`.
 - M10 release prep: README (install from git, quick start, plugin, validation, citation),
   REPORT.md, CHANGELOG 0.1.0, version 0.1.0 in pyproject, `__init__` and CITATION.cff.
 - Audit fixes (2026-10-24): ceiling-aware silent split (Lanczos1), analysis tolerates error
@@ -126,9 +130,12 @@ Done (v0.1.0, not tagged):
 
 Next:
 - On publishing: create the `v0.1.0` tag (README tells users to append `@<tag>` to pin).
-- Full-size study (`configs/full.toml`, about 2-2.5 hours at the measured 2.3-2.7 Part B
-  units/s): split into one run per spread to keep each under 45 minutes, then regenerate the
-  tables and update REPORT.md.
+- Full-size study (`configs/full.toml`, 16,200 Part B units, about 2-2.5 hours at the
+  measured 2.3-2.7 Part B units/s): `scripts/run_study.py --config configs/full.toml
+  --run runs/full --max-minutes 40` repeated until it exits 0, then
+  `strdcheck table runs/full --out results/full`; add the results to REPORT.md (sections 4
+  and 5, limitation "Size").
+- Pin the GitHub Actions in `ci.yml` to commit SHAs.
 - Second platform (Linux, a different BLAS) to quantify platform dependence of the LAPACK
   paths (REPORT limitation 1).
 - Optional: canonicalise exchangeable parameters (Lanczos, Gauss, ENSO) in Part B scoring, so

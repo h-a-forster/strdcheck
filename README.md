@@ -138,7 +138,9 @@ uv run strdcheck table runs/quick --out results
 ```
 
 Runs are checkpointed per unit (one JSON file each), resume after an interruption, retry
-automatically, use at most 3 worker processes and log to `runs/<name>/study.log`. The
+automatically, use at most 3 worker processes and log to `runs/<name>/study.log`. With
+`--max-minutes N`, `scripts/run_study.py` starts no unit after N minutes and exits with code 3
+while units remain, so a long run can be done in bounded chunks by repeating the command. The
 full-size configuration (`configs/full.toml`, about 2-2.5 hours) and a secondary run over all
 three random-start spreads (`configs/partb-extended.toml`) are described in
 [docs/DESIGN.md](docs/DESIGN.md) section 6.7.

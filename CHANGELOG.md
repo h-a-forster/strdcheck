@@ -5,7 +5,7 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-10-24
+## [0.1.0] - 2026-10-30
 
 First release: library, pytest plugin and a published study.
 
@@ -49,3 +49,6 @@ First release: library, pytest plugin and a published study.
   instead of stopping.
 - `least_squares` standard errors and the nonlinear residual SD are marked `derived`; the
   numerical rank of the Jacobian is recorded.
+- `strdcheck study --max-minutes` and `scripts/run_study.py --max-minutes`: no unit starts
+  after the limit (counted from the end of setup); a run stopped there exits with code 3 and
+  resumes on the next call, so the full study can run in bounded chunks.
