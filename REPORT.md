@@ -397,8 +397,9 @@ mean drops to 9.8 digits (11.0 at n <= 1e6).
 - **Size.** The primary analysis uses the quick configuration: 20 starts per problem at one
   spread. The full configuration (`configs/full.toml`: 200 starts, three spreads, Part C up to
   n = 2e7) was run once as a secondary analysis (sections 4.4 and 5); it took 52 minutes in
-  chunks of at most 40 minutes (`scripts/run_study.py --max-minutes 40`, repeated until it
-  exits 0), and up to about 2.5 hours at the slower throughput of earlier runs.
+  chunks that queue no unit after 40 minutes (`scripts/run_study.py --max-minutes 40`,
+  repeated until it exits 0), and up to about 2.5 hours at the slower throughput of earlier
+  runs.
 - **Random-start design.** Multiplicative log-normal perturbations keep parameter signs and
   scale with the size of each certified parameter; other designs (additive, box-uniform)
   would give other rates. Rates are conditional on this design and on the 27 NIST models.

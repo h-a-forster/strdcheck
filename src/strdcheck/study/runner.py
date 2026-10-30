@@ -417,9 +417,10 @@ def run_study(
 ) -> dict:
     """Run (or resume) a study; returns counts per phase.
 
-    With ``max_seconds`` no unit starts later than that many seconds after the units are
-    built (setup time is not counted, so every call can make progress); the run stops with
-    units left (``done < total``) and a rerun in the same directory resumes it.
+    With ``max_seconds`` no unit is queued later than that many seconds after the units are
+    built (units already queued still run; setup time is not counted, so every call can make
+    progress); the run stops with units left (``done < total``) and a rerun in the same
+    directory resumes it.
     """
     if max_seconds is not None and max_seconds <= 0:
         raise ValueError("max_seconds must be positive")

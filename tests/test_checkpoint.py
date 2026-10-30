@@ -122,7 +122,7 @@ def test_execute_inline_records_errors_and_skips(tmp_path: Path) -> None:
 
 
 def test_execute_stops_at_deadline(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    """No unit starts after the deadline; a rerun without one finishes the rest."""
+    """No unit is queued after the deadline; a rerun without one finishes the rest."""
     import time
     import types
 
