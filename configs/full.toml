@@ -1,4 +1,4 @@
-# Full-size study (DESIGN 6.7): 16,200 Part B units dominate; about 2-2.5 hours on 3 workers.
+# Full-size study (DESIGN 6.7): 16,200 Part B units dominate; about 1-2.5 hours on 3 workers.
 # Not part of the default run; run it in chunks with `scripts/run_study.py --max-minutes 40`.
 
 [study]

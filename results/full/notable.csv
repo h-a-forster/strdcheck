@@ -1,0 +1,142 @@
+suite,dataset,adapter,start,role,criterion,quantities,derived_only,quantity,lre,ceiling,best_engine_lre,rank,p
+anova,SmLs03,duckdb.groupby.double,,engine,"a: deficit > 2 (float64, ceiling >= 6)",3,False,ss_between,12.7494,15.0,15.0,,
+anova,SmLs03,statsmodels.anova_lm,,engine,"a: deficit > 2 (float64, ceiling >= 6)",3,False,f,12.4844,15.0,15.0,,
+anova,SmLs06,duckdb.groupby.double,,engine,"a: deficit > 2 (float64, ceiling >= 6)",4,False,f,6.4694,10.1912,10.1912,,
+anova,SmLs06,statsmodels.anova_lm,,engine,"a: deficit > 2 (float64, ceiling >= 6)",3,False,f,6.6244,10.1912,10.1912,,
+linear,Filip,numpy.lstsq,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b0 (derived),0.0,15.0,8.2462,10,11
+linear,Filip,numpy.polyfit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b0,0.0,15.0,8.2462,,
+linear,Filip,numpy.Polynomial.fit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",13,True,se_b2 (derived),7.7996,15.0,8.2429,,
+linear,Filip,scipy.lstsq.gelsd,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b10 (derived),2.8373,15.0,8.3027,11,11
+linear,Filip,scipy.lstsq.gelss,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b10 (derived),3.0344,15.0,8.3027,11,11
+linear,Filip,scipy.lstsq.gelsy,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b2 (derived),8.2429,15.0,8.2429,11,11
+linear,Filip,statsmodels.ols.pinv,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b0,0.0,15.0,8.2462,10,11
+linear,Filip,statsmodels.ols.qr,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b5,nan,15.0,8.2497,10,11
+linear,Filip,torch.lstsq.gelsd.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b0 (derived),0.0,15.0,8.2462,10,11
+linear,Filip,torch.lstsq.gelss.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b0 (derived),0.0,15.0,8.2462,10,11
+linear,Filip,torch.lstsq.gelsy.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",24,False,se_b0 (derived),0.0,15.0,8.2462,10,11
+linear,Longley,numpy.lstsq,,engine,"a: deficit > 2 (float64, ceiling >= 6)",7,False,b1,10.9928,14.8026,11.3299,7,7
+linear,Longley,scipy.lstsq.gelsd,,engine,"a: deficit > 2 (float64, ceiling >= 6)",9,False,b1,10.9343,14.8026,11.3299,7,7
+linear,Longley,scipy.lstsq.gelss,,engine,"a: deficit > 2 (float64, ceiling >= 6)",14,False,b1,10.935,14.8026,11.3299,7,7
+linear,Longley,scipy.lstsq.gelsy,,engine,"a: deficit > 2 (float64, ceiling >= 6)",14,False,b1,11.0768,14.8026,11.3299,7,7
+linear,Longley,statsmodels.ols.pinv,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,b1,11.0039,14.8026,11.3299,7,7
+linear,Longley,statsmodels.ols.qr,,engine,"a: deficit > 2 (float64, ceiling >= 6)",14,False,se_b6,7.9657,15.0,14.7898,7,7
+linear,Longley,torch.lstsq.gelsd.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",9,False,b1,10.8862,14.8026,11.3299,7,7
+linear,Longley,torch.lstsq.gelss.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,b1,10.8857,14.8026,11.3299,7,7
+linear,Longley,torch.lstsq.gelsy.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",9,False,b5,10.9772,15.0,11.8929,7,7
+linear,Norris,numpy.lstsq,,engine,"a: deficit > 2 (float64, ceiling >= 6)",1,False,b0,11.883,14.0656,13.398,2,2
+linear,Norris,numpy.Polynomial.fit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",1,False,b0,11.9467,14.0656,13.398,,
+linear,Norris,scipy.linregress,,engine,"a: deficit > 2 (float64, ceiling >= 6)",2,False,se_b1,11.7814,14.0126,14.151,,
+linear,Norris,statsmodels.ols.pinv,,engine,"a: deficit > 2 (float64, ceiling >= 6)",1,False,b0,11.9733,14.0656,13.398,2,2
+linear,Norris,statsmodels.ols.qr,,engine,"a: deficit > 2 (float64, ceiling >= 6)",1,False,b0,11.7731,14.0656,13.398,2,2
+linear,Pontius,numpy.lstsq,,engine,"a: deficit > 2 (float64, ceiling >= 6)",3,False,b0,6.2356,13.5096,13.1869,3,3
+linear,Pontius,scipy.lstsq.gelsd,,engine,"a: deficit > 2 (float64, ceiling >= 6)",3,False,b0,6.2356,13.5096,13.1869,3,3
+linear,Pontius,scipy.lstsq.gelss,,engine,"a: deficit > 2 (float64, ceiling >= 6)",3,False,b0,6.2356,13.5096,13.1869,3,3
+linear,Pontius,statsmodels.ols.pinv,,engine,"a: deficit > 2 (float64, ceiling >= 6)",7,False,b0,6.2356,13.5096,13.1869,3,3
+linear,Pontius,torch.lstsq.gelsd.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",3,False,b0,6.2356,13.5096,13.1869,3,3
+linear,Pontius,torch.lstsq.gelss.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",3,False,b0,6.2356,13.5096,13.1869,3,3
+linear,Wampler1,numpy.lstsq,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,b1,9.5311,15.0,10.3266,6,6
+linear,Wampler1,numpy.polyfit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,b0,8.919,15.0,9.7702,,
+linear,Wampler1,numpy.Polynomial.fit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,b0,8.7132,15.0,9.7702,,
+linear,Wampler1,scipy.lstsq.gelsd,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,b0,9.4247,15.0,9.7702,6,6
+linear,Wampler1,scipy.lstsq.gelss,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,se_b1 (derived),9.3978,15.0,9.7433,6,6
+linear,Wampler1,scipy.lstsq.gelsy,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,se_b1 (derived),9.6973,15.0,9.7433,6,6
+linear,Wampler1,statsmodels.ols.pinv,,engine,"a: deficit > 2 (float64, ceiling >= 6)",12,False,se_b1,7.4133,15.0,9.7433,6,6
+linear,Wampler1,statsmodels.ols.qr,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,b0,9.2633,15.0,9.7702,6,6
+linear,Wampler1,torch.lstsq.gelsd.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,se_b1 (derived),9.0822,15.0,9.7433,6,6
+linear,Wampler1,torch.lstsq.gelss.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,se_b1 (derived),8.9892,15.0,9.7433,6,6
+linear,Wampler1,torch.lstsq.gelsy.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,b0,9.2295,15.0,9.7702,6,6
+linear,Wampler2,numpy.lstsq,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,se_b1 (derived),10.5613,15.0,14.5746,6,6
+linear,Wampler2,scipy.lstsq.gelsd,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,se_b1 (derived),10.9268,15.0,14.5746,6,6
+linear,Wampler2,scipy.lstsq.gelss,,engine,"a: deficit > 2 (float64, ceiling >= 6)",9,False,se_b1 (derived),10.8183,15.0,14.5746,6,6
+linear,Wampler2,statsmodels.ols.pinv,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,se_b1,10.0331,15.0,14.5746,6,6
+linear,Wampler2,torch.lstsq.gelsd.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,se_b1 (derived),10.3049,15.0,14.5746,6,6
+linear,Wampler2,torch.lstsq.gelss.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,se_b1 (derived),10.2756,15.0,14.5746,6,6
+linear,Wampler3,numpy.lstsq,,engine,"a: deficit > 2 (float64, ceiling >= 6)",5,False,b0,9.0756,15.0,9.675,6,6
+linear,Wampler3,numpy.polyfit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,b0,9.3036,15.0,9.675,,
+linear,Wampler3,numpy.Polynomial.fit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",5,False,b0,8.5026,15.0,9.675,,
+linear,Wampler3,scipy.lstsq.gelsd,,engine,"a: deficit > 2 (float64, ceiling >= 6)",5,False,b1,9.2734,15.0,9.8751,6,6
+linear,Wampler3,scipy.lstsq.gelss,,engine,"a: deficit > 2 (float64, ceiling >= 6)",5,False,b1,9.2734,15.0,9.8751,6,6
+linear,Wampler3,scipy.lstsq.gelsy,,engine,"a: deficit > 2 (float64, ceiling >= 6)",4,False,b0,9.675,15.0,9.675,6,6
+linear,Wampler3,statsmodels.ols.pinv,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,b0,9.5729,15.0,9.675,6,6
+linear,Wampler3,statsmodels.ols.qr,,engine,"a: deficit > 2 (float64, ceiling >= 6)",10,False,b0,9.1263,15.0,9.675,6,6
+linear,Wampler3,torch.lstsq.gelsd.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",5,False,b0,8.8068,15.0,9.675,6,6
+linear,Wampler3,torch.lstsq.gelss.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",5,False,b0,8.7746,15.0,9.675,6,6
+linear,Wampler3,torch.lstsq.gelsy.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",5,False,b0,9.3043,15.0,9.675,6,6
+linear,Wampler4,numpy.lstsq,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,7.671,15.0,10.1381,6,6
+linear,Wampler4,numpy.polyfit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",12,False,b1,8.3872,15.0,10.1381,,
+linear,Wampler4,numpy.Polynomial.fit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",5,False,b0,8.6879,15.0,9.4413,,
+linear,Wampler4,scipy.lstsq.gelsd,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,8.0381,15.0,10.1381,6,6
+linear,Wampler4,scipy.lstsq.gelss,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,8.0381,15.0,10.1381,6,6
+linear,Wampler4,scipy.lstsq.gelsy,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,8.6061,15.0,10.1381,6,6
+linear,Wampler4,statsmodels.ols.pinv,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,b1,7.6674,15.0,10.1381,6,6
+linear,Wampler4,statsmodels.ols.qr,,engine,"a: deficit > 2 (float64, ceiling >= 6)",12,False,b1,7.6659,15.0,10.1381,6,6
+linear,Wampler4,torch.lstsq.gelsd.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,8.8588,15.0,10.1381,6,6
+linear,Wampler4,torch.lstsq.gelss.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,8.8588,15.0,10.1381,6,6
+linear,Wampler4,torch.lstsq.gelsy.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",5,False,b1,9.3883,15.0,10.1381,6,6
+linear,Wampler5,numpy.lstsq,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,5.6689,15.0,7.9724,6,6
+linear,Wampler5,numpy.polyfit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",12,False,b1,6.4258,15.0,7.9724,,
+linear,Wampler5,numpy.Polynomial.fit,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,7.9724,15.0,7.9724,,
+linear,Wampler5,scipy.lstsq.gelsd,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,6.0352,15.0,7.9724,6,6
+linear,Wampler5,scipy.lstsq.gelss,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,6.0352,15.0,7.9724,6,6
+linear,Wampler5,scipy.lstsq.gelsy,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,6.6717,15.0,7.9724,6,6
+linear,Wampler5,statsmodels.ols.pinv,,engine,"a: deficit > 2 (float64, ceiling >= 6)",11,False,b1,5.6683,15.0,7.9724,6,6
+linear,Wampler5,statsmodels.ols.qr,,engine,"a: deficit > 2 (float64, ceiling >= 6)",12,False,b1,5.6686,15.0,7.9724,6,6
+linear,Wampler5,torch.lstsq.gelsd.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,6.8119,15.0,7.9724,6,6
+linear,Wampler5,torch.lstsq.gelss.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,6.8119,15.0,7.9724,6,6
+linear,Wampler5,torch.lstsq.gelsy.f64,,engine,"a: deficit > 2 (float64, ceiling >= 6)",6,False,b1,7.0874,15.0,7.9724,6,6
+nonlinear,BoxBOD,scipy.curve_fit.default,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,BoxBOD,scipy.curve_fit.jac-analytic,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,BoxBOD,scipy.least_squares.lm.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,BoxBOD,scipy.least_squares.lm.jac-2point.tol-tight,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,BoxBOD,scipy.least_squares.lm.jac-analytic.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,BoxBOD,scipy.least_squares.lm.jac-analytic.tol-tight,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,ENSO,scipy.curve_fit.default,S1,engine,"b: success reported, < 4 digits",,,min param,3.1967,,,,
+nonlinear,ENSO,scipy.curve_fit.default,S2,engine,"b: success reported, < 4 digits",,,min param,3.0591,,,,
+nonlinear,ENSO,scipy.curve_fit.jac-analytic,S1,engine,"b: success reported, < 4 digits",,,min param,3.1941,,,,
+nonlinear,ENSO,scipy.curve_fit.jac-analytic,S2,engine,"b: success reported, < 4 digits",,,min param,3.058,,,,
+nonlinear,ENSO,scipy.least_squares.dogbox.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,3.0092,,,,
+nonlinear,ENSO,scipy.least_squares.dogbox.jac-2point.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.0588,,,,
+nonlinear,ENSO,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,3.0084,,,,
+nonlinear,ENSO,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.058,,,,
+nonlinear,ENSO,scipy.least_squares.lm.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,3.195,,,,
+nonlinear,ENSO,scipy.least_squares.lm.jac-2point.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.2479,,,,
+nonlinear,ENSO,scipy.least_squares.lm.jac-analytic.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,3.1941,,,,
+nonlinear,ENSO,scipy.least_squares.lm.jac-analytic.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.2494,,,,
+nonlinear,ENSO,scipy.least_squares.trf.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,2.9205,,,,
+nonlinear,ENSO,scipy.least_squares.trf.jac-2point.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,2.8664,,,,
+nonlinear,ENSO,scipy.least_squares.trf.jac-analytic.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,2.921,,,,
+nonlinear,ENSO,scipy.least_squares.trf.jac-analytic.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.058,,,,
+nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,2.1677,,,,
+nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,2.1663,,,,
+nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,engine,"b: success reported, < 4 digits",,,min param,2.1677,,,,
+nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,engine,"b: success reported, < 4 digits",,,min param,2.1663,,,,
+nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,2.1646,,,,
+nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,2.1667,,,,
+nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-tight,S1,engine,"b: success reported, < 4 digits",,,min param,2.1646,,,,
+nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-tight,S2,engine,"b: success reported, < 4 digits",,,min param,2.1667,,,,
+nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,2.1644,,,,
+nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,2.1675,,,,
+nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-tight,S1,engine,"b: success reported, < 4 digits",,,min param,2.1646,,,,
+nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-tight,S2,engine,"b: success reported, < 4 digits",,,min param,2.1663,,,,
+nonlinear,MGH09,scipy.curve_fit.default,S2,engine,"b: success reported, < 4 digits",,,min param,3.9883,,,,
+nonlinear,MGH09,scipy.curve_fit.jac-analytic,S2,engine,"b: success reported, < 4 digits",,,min param,3.9878,,,,
+nonlinear,MGH09,scipy.least_squares.dogbox.jac-2point.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.771,,,,
+nonlinear,MGH09,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,MGH09,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.7712,,,,
+nonlinear,MGH09,scipy.least_squares.lm.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,3.9927,,,,
+nonlinear,MGH09,scipy.least_squares.lm.jac-2point.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.9878,,,,
+nonlinear,MGH09,scipy.least_squares.lm.jac-analytic.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.9878,,,,
+nonlinear,MGH09,scipy.least_squares.trf.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,3.8491,,,,
+nonlinear,MGH09,scipy.least_squares.trf.jac-2point.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.7748,,,,
+nonlinear,MGH09,scipy.least_squares.trf.jac-analytic.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,3.8487,,,,
+nonlinear,MGH09,scipy.least_squares.trf.jac-analytic.tol-default,S2,engine,"b: success reported, < 4 digits",,,min param,3.7753,,,,
+nonlinear,MGH17,scipy.curve_fit.default,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,MGH17,scipy.curve_fit.jac-analytic,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,MGH17,scipy.least_squares.dogbox.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,MGH17,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,MGH17,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,MGH17,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,Rat43,scipy.least_squares.dogbox.jac-2point.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,Rat43,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,Rat43,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,
+nonlinear,Rat43,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,engine,"b: success reported, < 4 digits",,,min param,0.0,,,,

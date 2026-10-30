@@ -1,0 +1,6 @@
+comparison,first,second,sigma,tau,problems,rate_first,rate_second,mean_difference,ci_lo,ci_hi,problems_first_worse,problems_first_better,p_raw,p_holm,reject_at_0.05
+"C1 lm vs trf (analytic, default tol)",scipy.least_squares.lm.jac-analytic.tol-default,scipy.least_squares.trf.jac-analytic.tol-default,1.0,4.0,27,0.3128,0.3611,-0.0483,-0.1287,0.0059,7,13,0.1551,0.4653,False
+"C2 dogbox vs trf (analytic, default tol)",scipy.least_squares.dogbox.jac-analytic.tol-default,scipy.least_squares.trf.jac-analytic.tol-default,1.0,4.0,27,0.3213,0.3611,-0.0398,-0.0741,-0.0056,7,14,0.0336,0.1346,False
+"C3 analytic vs 2-point Jacobian (trf, default tol)",scipy.least_squares.trf.jac-analytic.tol-default,scipy.least_squares.trf.jac-2point.tol-default,1.0,4.0,27,0.3611,0.3919,-0.0307,-0.0857,0.0015,5,7,0.2496,0.4653,False
+"C4 tight vs default tolerances (trf, analytic)",scipy.least_squares.trf.jac-analytic.tol-tight,scipy.least_squares.trf.jac-analytic.tol-default,1.0,4.0,27,0.2843,0.3611,-0.0769,-0.1591,-0.0248,0,16,0.0001,0.0005,True
+C5 curve_fit default vs least_squares trf analytic tight,scipy.curve_fit.default,scipy.least_squares.trf.jac-analytic.tol-tight,1.0,4.0,27,0.3174,0.2843,0.0331,-0.0083,0.0815,13,8,0.1694,0.4653,False

@@ -38,6 +38,8 @@ First release: library, pytest plugin and a published study.
 - `scripts/verify_certified.py` and `results/certified_check.csv`: every certified value
   recomputed (V1).
 - Study results in `results/` and `REPORT.md`; standalone reproductions in `repros/`.
+- Full-size study results (`configs/full.toml`: 200 starts per problem at three spreads, Part C
+  up to n = 2e7) in `results/full/` (REPORT 4.4 and 5).
 - Secondary analysis of silent nonlinear failures by residual sum of squares
   (`nonlinear_silent_split.csv`), condition numbers of the linear designs
   (`conditioning.csv`), and `configs/partb-extended.toml` (Part B over all three spreads).

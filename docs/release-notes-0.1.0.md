@@ -18,14 +18,19 @@ data stack on the 58 NIST Statistical Reference Datasets (StRD).
 ## Results
 
 The quick study (`configs/quick.toml`, 1,884 units, 0 errors, one attempt) and a secondary
-Part B run over three random-start spreads are in `results/` and summarised in `REPORT.md`:
+Part B run over three random-start spreads are in `results/`, the full-size study
+(`configs/full.toml`, 17,628 units, 0 errors) in `results/full/`, all summarised in
+`REPORT.md`:
 
 - every float64 univariate path is within 1.5 digits of its representation ceiling;
 - on Filip the default singular-value cutoffs of `numpy.linalg.lstsq`, `torch.linalg.lstsq`
   and statsmodels `OLS(method="pinv")` give 0 correct digits, `Polynomial.fit` 13.8;
 - from random starts about a third of scipy nonlinear fits report success with fewer than
   4 correct digits (0.31, 95% CI 0.18-0.45, for trf with an analytic Jacobian and tight
-  tolerances); tight tolerances lower the trf silent rate by 0.067 (Holm p = 0.005).
+  tolerances); tight tolerances lower the trf silent rate by 0.067 (Holm p = 0.005);
+- the full-size run (200 starts per problem, three spreads) gives 0.28 (0.16-0.41) for the
+  same configuration and repeats the tolerance effect (-0.077, Holm p = 0.0005) and no other;
+  at n = 1e7 and 2e7 numpy and pandas keep all 15 digits of the SD, the other engines 8.3-9.9.
 
 No result is claimed as an engine bug; notable cells have standalone reproductions in
 `repros/`.
@@ -33,8 +38,8 @@ No result is claimed as an engine bug; notable cells have standalone reproductio
 ## Limitations
 
 One machine (Windows 11, OpenBLAS, CPU only); LAPACK-based results can differ on other
-builds. The full-size configuration (`configs/full.toml`) is not part of this release's
-results.
+builds. The primary analysis is the quick study; the full-size run was made afterwards and is
+reported as secondary.
 
 ## Install
 

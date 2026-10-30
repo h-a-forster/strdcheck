@@ -77,6 +77,11 @@ uv run strdcheck fetch               # real StRD files into the user cache (need
 Updated: 2026-10-30.
 
 Done (v0.1.0, not tagged):
+- Full-size study (2026-10-30): `configs/full.toml` at clean commit `73eb634`, 17,628/17,628
+  units, 0 errors, 52 minutes in two attempts (the first exited 1 at 39 minutes with nothing
+  in the logs; the resume was clean). Tables in `results/full/`, REPORT 4.4 (replacing the
+  extended run as the three-spread analysis) and 5. Part A/P tables byte-identical to the
+  quick run; overlapping Part B units identical; C4 repeats, nothing else becomes significant.
 - Release polish (2026-10-30): `study --max-minutes` / `run_study.py --max-minutes` stop a
   run at a time limit (exit 3, resumable), so the full study runs in chunks under 45 minutes;
   measured Part C at n = 1e7 and 2e7 (28 PiDigits units in 183 s); CI also runs on pushes to
@@ -130,11 +135,6 @@ Done (v0.1.0, not tagged):
 
 Next:
 - On publishing: create the `v0.1.0` tag (README tells users to append `@<tag>` to pin).
-- Full-size study (`configs/full.toml`, 16,200 Part B units, about 2-2.5 hours at the
-  measured 2.3-2.7 Part B units/s): `scripts/run_study.py --config configs/full.toml
-  --run runs/full --max-minutes 40` repeated until it exits 0, then
-  `strdcheck table runs/full --out results/full`; add the results to REPORT.md (sections 4
-  and 5, limitation "Size").
 - Pin the GitHub Actions in `ci.yml` to commit SHAs.
 - Second platform (Linux, a different BLAS) to quantify platform dependence of the LAPACK
   paths (REPORT limitation 1).

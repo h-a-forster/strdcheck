@@ -42,10 +42,12 @@ From [REPORT.md](REPORT.md) (one machine, CPU only; see its limitations):
 - Nonlinear least squares from random starts: about a third of fits report success with fewer
   than 4 correct digits (for example 0.31, 95% CI 0.18-0.45, for `least_squares(method="trf")`
   with an analytic Jacobian and tight tolerances). Tight tolerances lower the silent rate of
-  trf by 0.067 (Holm p = 0.005).
+  trf by 0.067 (Holm p = 0.005). The full-size run (200 starts, three spreads) agrees: 0.28
+  (0.16-0.41) at the same spread, and tight tolerances remain the only significant comparison
+  (Holm p = 0.0005).
 - At n = 1e6, numpy and pandas keep all 15 digits of the SD of tiled NumAcc data; DuckDB,
   polars and torch keep 8.8-11.2 in their worst cell, and multi-threaded DuckDB and polars
-  streaming are not bitwise repeatable.
+  streaming are not bitwise repeatable. At n = 2e7 numpy and pandas still keep 15.
 
 ## Install
 
@@ -141,9 +143,10 @@ Runs are checkpointed per unit (one JSON file each), resume after an interruptio
 automatically, use at most 3 worker processes and log to `runs/<name>/study.log`. With
 `--max-minutes N`, `scripts/run_study.py` starts no unit after N minutes and exits with code 3
 while units remain, so a long run can be done in bounded chunks by repeating the command. The
-full-size configuration (`configs/full.toml`, about 2-2.5 hours) and a secondary run over all
-three random-start spreads (`configs/partb-extended.toml`) are described in
-[docs/DESIGN.md](docs/DESIGN.md) section 6.7.
+full-size configuration (`configs/full.toml`, 52 minutes for the published run in
+[`results/full/`](results/full/), up to about 2.5 hours at the slower throughput of earlier
+runs) and a secondary run over all three random-start spreads (`configs/partb-extended.toml`)
+are described in [docs/DESIGN.md](docs/DESIGN.md) section 6.7.
 
 ## Validation
 
@@ -165,7 +168,7 @@ three random-start spreads (`configs/partb-extended.toml`) are described in
 |---|---|
 | `src/strdcheck/` | manifest, fetch, parser, exact references, models, LRE, engine adapters, study runner and analysis, pytest plugin, CLI |
 | `configs/` | study configurations (quick, full, partb-extended) |
-| `results/` | committed tables from the published run |
+| `results/` | committed tables from the published runs |
 | `repros/` | standalone reproductions of notable cells |
 | `docs/DESIGN.md` | specification, formulas and study design |
 
