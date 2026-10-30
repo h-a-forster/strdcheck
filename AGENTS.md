@@ -136,7 +136,9 @@ Done (v0.1.0, not tagged):
 
 Next:
 - On publishing: create the `v0.1.0` tag (README tells users to append `@<tag>` to pin).
-- Pin the GitHub Actions in `ci.yml` to commit SHAs.
+- Owner: merge `polish-2026-10-30` (and any branch) into `main` by fast-forward or merge
+  commit, never squash or rebase, so commit `73eb634` cited in `results/full/` stays in public
+  history. GitHub Actions in `ci.yml` are pinned to commit SHAs (2026-10-30).
 - Second platform (Linux, a different BLAS) to quantify platform dependence of the LAPACK
   paths (REPORT limitation 1).
 - Optional: canonicalise exchangeable parameters (Lanczos, Gauss, ENSO) in Part B scoring, so
