@@ -43,10 +43,10 @@ From [REPORT.md](REPORT.md) (one machine, CPU only; see its limitations):
 - Nonlinear least squares from random starts: about a third of fits report success with fewer
   than 4 correct digits (for example 0.31, 95% CI 0.18-0.45, for `least_squares(method="trf")`
   with an analytic Jacobian and tight tolerances). Tight tolerances lower the silent rate of
-  trf by 0.067 (Holm p = 0.005), but only 0.041 of that is more correct fits; the other 39% is
-  fits that now report failure. The full-size run (200 starts, three spreads) agrees: 0.28
+  trf by 0.067 (Holm p = 0.005), but only 0.041 of that is more correct fits; 36% of the drop is
+  wrong fits that now report failure. The full-size run (200 starts, three spreads) agrees: 0.28
   (0.16-0.41) at the same spread, and tight tolerances remain the only significant comparison
-  (-0.077, Holm p = 0.0005; 0.042 more correct fits, 45% of the drop now reported failures).
+  (-0.077, Holm p = 0.0005; 0.042 more correct fits, 44% of the drop now reported failures).
 - At n = 1e6, numpy and pandas keep all 15 digits of the SD of tiled NumAcc data; DuckDB,
   polars and torch keep 8.8-11.2 in their worst cell, and multi-threaded DuckDB and polars
   streaming are not bitwise repeatable. At n = 2e7 numpy and pandas still keep 15.

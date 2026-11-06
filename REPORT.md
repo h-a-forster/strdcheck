@@ -41,10 +41,10 @@ data (section 2.1). A deficit is ceiling minus LRE.
 - **Pre-specified comparisons.** Only C4 (tight vs default tolerances, trf, analytic Jacobian)
   is significant after Holm correction: silent rate 0.311 vs 0.378, difference -0.067
   (95% CI -0.146 to -0.019), Holm p = 0.005; no problem's silent rate rose. This is only
-  partly better convergence: the ok rate rises by 0.041 and reported failures by 0.026, so
-  39% of the drop is fits that stop claiming success, not fits that became correct. The
-  full-size run repeats the comparison (-0.077, Holm p = 0.0005; ok +0.042, reported failures
-  +0.035, 45% of the drop) and no other.
+  partly better convergence: the ok rate rises by 0.041 and the flagged rate by 0.024, so
+  36% of the drop is wrong fits that now report failure, not fits that became correct. The
+  full-size run repeats the comparison (-0.077, Holm p = 0.0005; ok +0.042, flagged +0.034,
+  44% of the drop) and no other.
 - **Large n (tiled data).** At n up to 1e6, numpy and pandas keep all 15 digits of the SD of
   tiled NumAcc3/NumAcc4/PiDigits; polars (eager and streaming), DuckDB and torch keep 8.8-11.2
   digits in their worst cell. DuckDB with 3 threads and polars streaming were not bitwise
@@ -324,7 +324,7 @@ Holm correction across the five comparisons
 Only C4 survives the correction, and it tests the silent rate alone. Where the 0.067 went
 ([`results/nonlinear_rates.csv`](results/nonlinear_rates.csv), trf analytic, tight vs default):
 ok rises from 0.5630 to 0.6037 (+0.041), flagged from 0.0574 to 0.0815 (+0.024) and flagged yet
-correct from 0 to 0.0019, so 0.026 of the drop (39%) is fits that now report failure, not fits
+correct from 0 to 0.0019, so 36% of the drop is wrong fits that now report failure, not fits
 that became correct. A visible failure is still better than a silent one, but tight
 tolerances are not a 0.067 gain in correct fits. These shifts are descriptive; no comparison
 tests them. C1-C3 are consistent with small advantages for lm, dogbox
@@ -357,8 +357,8 @@ rising at sigma = 2, where flagged failures also grow (trf analytic tight: 0.033
 0.143). The comparisons repeat the primary result: C4 (tight vs default tolerances) differs by
 -0.077 (95% CI -0.159 to -0.025; 0 problems worse, 16 better; Holm p = 0.0005), and C1, C2, C3
 and C5 are not significant after Holm correction (Holm p 0.47, 0.13, 0.47, 0.47). Of that
-0.077, ok gains 0.042 (0.5680 to 0.6102) and reported failures 0.035 (flagged 0.0681 to 0.1019,
-flagged yet correct 0 to 0.0009), so 45% of the drop is fits that now report failure. The rates
+0.077, ok gains 0.042 (0.5680 to 0.6102), flagged 0.034 (0.0681 to 0.1019) and flagged yet
+correct 0.0009, so 44% of the drop is wrong fits that now report failure. The rates
 still depend on tau (trf analytic default at sigma = 1: 0.32, 0.36, 0.53 at tau = 2, 4, 6).
 Silent fits at an equivalent minimum stay at 0.03-0.12 of fits for every spread; silent fits
 with a wrong RSS rise from 0.10-0.13 (sigma = 0.25) to 0.20-0.27 (sigma = 1) and 0.25-0.34
