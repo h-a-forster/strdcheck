@@ -1,7 +1,7 @@
 # strdcheck design
 
-Status: scaffold (2026-10-23). This document is the specification. Code follows it; when they
-disagree, fix one of them in the same commit.
+Status: implemented as v0.1.0; written 2026-10-23, kept current since. This document is the
+specification. Code follows it; when they disagree, fix one of them in the same commit.
 
 Contents: 1 Goal - 2 Prior art - 3 Scope - 4 Formulas - 5 Architecture and modules -
 6 Study design - 7 pytest plugin - 8 Milestones - 9 Validation strategy - 10 Risks and open
@@ -109,7 +109,7 @@ linear and 750 nonlinear engine calls, each repeated 3 times for a reproducibili
 The default ("quick") study, Parts A + B-quick + C-quick, is budgeted at under 15 minutes on
 3 worker processes and must stay under 45 minutes. The full-size command (Part B with 200
 random starts per problem and three spreads, Part C up to n = 2 x 10^7) is documented in
-section 6.7; measured Part B throughput (2.3-5.8 units/s on 3 workers) puts it at 1-2.5
+section 6.7; measured Part B throughput (2.7-5.8 units/s on 3 workers) puts it at 1-2.5
 hours, so it is not part of the default run and is split into chunks that respect a
 45-minute limit per run (`--max-minutes`, section 6.7).
 
@@ -220,7 +220,7 @@ NIST certifies statistics of the *decimal* data. Engines see binary floats: `100
 limits SS_within to about 3-4 correct digits whatever the engine does.
 
 For every univariate, ANOVA and linear quantity we compute, with exact rational arithmetic
-(`fractions.Fraction`; square roots with `decimal` at 50 digits):
+(`fractions.Fraction`; square roots with `decimal` at 60 digits):
 
     exact_dec  = statistic of the decimal data          (must reproduce NIST: section 9, V1)
     exact_f64  = statistic of the float64-rounded data  (Fraction(float(s)) is exact)
@@ -336,7 +336,7 @@ set[str]`, `status: dict` (success flag, message, nfev, rank), `warnings: list[s
 
 Configuration ids (v0.1 target list; each id appears once in `registry.py`):
 
-- Univariate (14 + 2 controls): `numpy.f64`, `numpy.f32`, `pandas.f64`, `pandas.f32`,
+- Univariate (15 + 2 controls): `numpy.f64`, `numpy.f32`, `pandas.f64`, `pandas.f32`,
   `polars.eager.f64`, `polars.eager.f32`, `polars.lazy-streaming.f64`, `duckdb.double`,
   `duckdb.float`, `duckdb.decimal`, `scipy.describe.f64`, `statsmodels.f64` (mean, sd, acf),
   `torch.f64`, `torch.f32`, `stdlib.statistics` (exact-rational internally; sanity anchor);
@@ -345,7 +345,7 @@ Configuration ids (v0.1 target list; each id appears once in `registry.py`):
 - ANOVA (7 + controls): `statsmodels.anova_lm`, `scipy.f_oneway`, `pandas.groupby`,
   `polars.groupby`, `duckdb.groupby.double`, `duckdb.groupby.decimal`, `numpy.twopass`
   (reference implementation of 4.3), controls as above.
-- Linear (16 + control): `numpy.lstsq`, `numpy.lstsq.f32`, `numpy.polyfit` (polynomial
+- Linear (17 + control): `numpy.lstsq`, `numpy.lstsq.f32`, `numpy.polyfit` (polynomial
   datasets), `numpy.Polynomial.fit` (polynomial; `.convert()` back to the power basis),
   `scipy.lstsq.gelsd`, `scipy.lstsq.gelsy`, `scipy.lstsq.gelss`, `scipy.linregress` (Norris),
   `statsmodels.ols.pinv`, `statsmodels.ols.qr`, `torch.lstsq.gelsy.f64`,
@@ -371,11 +371,13 @@ directory has `manifest.json` (config hash, package versions, environment record
 skips units whose file exists and refuses to mix a different config hash. A unit records:
 computed values, certified text, LRE raw and reported, cap, ceiling, deficit, status,
 warnings, three repeat hashes (bitwise reproducibility), seconds. Units that raise are
-recorded with `status = "error"` and the exception text (never silently dropped); the
-analysis skips them and lists them in `summary.json` (`error_units`).
+recorded with `status = "error"` and the exception text (never silently dropped); a rerun
+skips them like any finished unit, `strdcheck study` then exits 4, and the analysis skips them
+and lists them in `summary.json` (`error_units`).
 
 Every open of a run appends a line to `runs/<run>/attempts.jsonl` (time, units already done,
-git commit, dirty-tree flag, Python and package versions). Resuming with different code or
+units expected, git commit, dirty-tree flag, Python and package versions). `strdcheck table`
+refuses a run with fewer units than the latest attempt expected. Resuming with different code or
 packages is allowed but logged as a warning in `study.log`, and `summary.json` reports
 `mixed_provenance` (true when an attempt that ran units differed from the first one), so a
 run whose units come from different code is visible.
@@ -388,9 +390,9 @@ with at most 3 processes (`MAX_WORKERS = 3`), `spawn` start method on all platfo
 
 Captured once per run: Python, OS, CPU model and logical count, package versions of every
 engine, numpy BLAS/LAPACK build info (`np.show_config(mode="dicts")`), `threadpoolctl`
-info, torch parallel info, DuckDB and polars thread settings, strdcheck version, git
-commit and dirty-tree flag. Written to `results/environment.json` with local user paths scrubbed (paths replaced
-by `<home>` / basename) before commit.
+info, torch parallel info, strdcheck version, and the git commit and dirty-tree flag of a
+source checkout (empty for an installed package). Written to `results/environment.json` with
+local user paths scrubbed (paths replaced by `<home>` / basename) before commit.
 
 ## 6. Study design
 
@@ -452,8 +454,8 @@ Peak memory stays under about 1.5 GB at n = 2e7 (float64 array plus engine copie
 ### 6.5 Long-run safety
 
 Units are checkpointed (5.5). The study command is resumable and wrapped in a retry loop.
-Progress is logged per unit; `strdcheck study --status <run>` prints done/total and rate.
-A stall watch (log not growing for 10 minutes) is part of the operator procedure in AGENTS.md.
+Progress is logged per unit (`study.log` also gives the rate); `strdcheck study --run <run>
+--status --config <config>` prints done/total.
 
 ### 6.6 Triage protocol for anything that looks like an engine defect
 
@@ -481,24 +483,22 @@ uv run python scripts/run_study.py --config configs/full.toml --run runs/full --
 uv run strdcheck table runs/full --out results/full
 ```
 
-Measured on the reference machine (REPORT.md): phase P 50 s, Part A 89 s, Part B quick
-235 s, Part C quick 54 s; about 7 minutes for the quick study in total.
+Measured on the reference machine (REPORT.md section 1): phase P 44 s, Part A 76 s, Part B
+quick 149 s, Part C quick 29 s; about 5 minutes for the quick study in total.
 
 ### 6.8 Reporting rules
 
 REPORT.md states the environment, versions, sizes, seeds and the exact commands; every number
-comes from committed files in `results/` (run times and throughput excepted: they come from
-the run logs); intervals accompany every rate; the five
+comes from committed files in `results/` (run times and throughput from the `study.log` that
+`strdcheck table` copies there); intervals accompany every rate; the five
 pre-specified comparisons are reported with raw and Holm-adjusted p-values whatever their
 outcome; platform dependence (BLAS/LAPACK build, CPU) is stated as a limitation, since LREs
 of LAPACK-based paths can differ on other machines.
 
 ## 7. pytest plugin (M6)
 
-Registered through the `pytest11` entry point. Done now: marker `strd(name)`, options
-`--strd-data-dir` and `--strd-min-lre`, fixtures `strd_data_dir` and `strd_assert_lre`.
-
-M6 adds:
+Registered through the `pytest11` entry point: marker `strd(name)`, options `--strd-data-dir`
+and `--strd-min-lre`, fixtures `strd_data_dir` and `strd_assert_lre`, and:
 
 - `strdcheck.testing.params(suite=None, difficulty=None)` -> list of `pytest.param(name,
   id=name, marks=pytest.mark.strd(name))`, for `@pytest.mark.parametrize`.
@@ -506,11 +506,12 @@ M6 adds:
   clear reason when the file is not cached, unless `--strd-fetch` is given, which downloads
   and verifies it first.
 - Every `strd_assert_lre` call is recorded; `--strd-report PATH` writes a CSV (test id,
-  label, quantity, LRE, cap, threshold, passed) and the terminal summary prints the five
+  label, index, LRE, cap, threshold, passed) and the terminal summary prints the five
   lowest LREs.
 - `strdcheck.testing.check_linear(fit)`, `check_univariate(stats)`, `check_nonlinear(fit)`:
   run a user callable over a suite and return a table of LREs, so a library can assert
-  `min_lre` per difficulty tier in one test.
+  `min_lre` per difficulty tier in one test. An unknown dataset name or Start raises; a
+  returned name that is not a certified quantity counts as an error for that dataset.
 - Plugin tests use `pytester` and synthetic fixture files; no network.
 
 ## 8. Milestones and done-checks
@@ -571,13 +572,14 @@ then `curve_fit.jac-analytic`. M1-M7 and M9 are the minimum for the headline.
   environment record; claims scoped to the recorded machine.
 - **R2 Moving targets.** polars 2.0, DuckDB 2.0 and pandas 3.1 are recent major versions
   (DuckDB 2.0 already changed its relation API during the probe). Versions are pinned in
-  `uv.lock`; adapters target the locked versions and lower bounds are tested in CI on 3.11.
+  `uv.lock`; adapters target the locked versions. CI runs the locked versions only; the test
+  suite also passed on the declared lower bounds (Python 3.11, 2026-11-06), checked by hand.
 - **R3 Adapter mistakes posing as engine bugs.** Mitigated by V4 and the triage protocol
   6.6; the probe already shows the `rcond` trap (section 11).
 - **R4 Ceiling computation cost.** Exact rationals on SmLs03/06/09 (18,009 rows) and Filip
   powers are fine (seconds), but the nonlinear mpmath refinement could be slow on Gauss1-3
-  and Hahn1. Mitigation: cache per dataset; if a refinement exceeds 60 s the ceiling is
-  marked unknown.
+  and Hahn1. Measured: ENSO is the slowest at about 18 s, and Part P results are checkpointed
+  per dataset; a refinement that does not converge marks the ceiling unknown (4.6).
 - **R5 Random-start design.** Multiplicative perturbations around `b*` do not explore sign
   changes and depend on parameter scaling; rates are conditional on this design and are not a
   universal "failure probability".

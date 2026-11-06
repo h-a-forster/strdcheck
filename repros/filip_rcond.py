@@ -2,11 +2,12 @@
 
 Usage: python filip_rcond.py <dir with StRD .dat files>
 
-Expected (documented behaviour, not a defect): numpy.linalg.lstsq and torch.linalg.lstsq
-truncate singular values below rcond * s_max (default rcond = eps * max(M, N)); statsmodels
-OLS(method="pinv") uses a pinv cutoff. The raw-power Filip design has a 2-norm condition
-number near 1e15, so one singular value falls below the cutoff and the solution is the
-minimum-norm solution of a rank-10 problem, far from the certified coefficients.
+Expected (documented behaviour, not a defect): numpy.linalg.lstsq truncates singular values
+below rcond * s_max (default rcond = eps * max(M, N)); torch.linalg.lstsq applies the same
+default rcond in its default driver, pivoted QR (gelsy); statsmodels OLS(method="pinv") uses a
+pinv cutoff. The raw-power Filip design has a 2-norm condition number near 1e15, so one
+singular value falls below the cutoff and the solution is the minimum-norm solution of a
+rank-10 problem, far from the certified coefficients.
 """
 
 import numpy as np

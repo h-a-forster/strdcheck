@@ -12,8 +12,8 @@ It ships three things:
 
 - a **library** that parses all 58 StRD files, computes exact rational references and the
   *representation ceiling* of every certified value (the LRE of the exact statistic of the
-  data rounded to float64 or float32; engines rarely exceed it, and then by a fraction of a
-  digit through error cancellation), and scores engine results;
+  data rounded to float64 or float32; float64 engines exceed it on 5% of quantities, through
+  error cancellation), and scores engine results;
 - a **pytest plugin** so a numerical library can assert, in its own test suite, that it keeps
   N digits on the StRD problems;
 - a **reproducible study** of the Python data stack, with a published LRE table, silent-failure
@@ -35,9 +35,10 @@ wrong answer, which a success flag cannot reveal.
 From [REPORT.md](REPORT.md) (one machine, CPU only; see its limitations):
 
 - Univariate statistics: every float64 path is within 1.5 digits of the ceiling; float32
-  paths keep 0-7.6 digits where float32 cannot hold the data exactly and 15 where it can.
+  paths keep 15 digits on NumAcc1 and 0-7.6 on the other eight datasets (DuckDB `FLOAT`, which
+  accumulates in double, keeps 15 on three of them).
 - Linear least squares follows conditioning. On Filip (cond(X) about 1.8e15) the default
-  singular-value cutoffs of `numpy.linalg.lstsq`, `torch.linalg.lstsq` and statsmodels
+  rank cutoffs of `numpy.linalg.lstsq`, `torch.linalg.lstsq` and statsmodels
   `OLS(method="pinv")` give 0 correct digits; `numpy.polynomial.Polynomial.fit` gets 13.8.
 - Nonlinear least squares from random starts: about a third of fits report success with fewer
   than 4 correct digits (for example 0.31, 95% CI 0.18-0.45, for `least_squares(method="trf")`
@@ -135,7 +136,7 @@ The terminal summary lists the five lowest LREs of the session.
 
 ```sh
 uv run python scripts/verify_certified.py                                         # about 40 s
-uv run python scripts/run_study.py --config configs/quick.toml --run runs/quick   # about 7 min
+uv run python scripts/run_study.py --config configs/quick.toml --run runs/quick   # about 5 min
 uv run strdcheck table runs/quick --out results
 ```
 
@@ -143,8 +144,9 @@ Runs are checkpointed per unit (one JSON file each), resume after an interruptio
 automatically, use at most 3 worker processes and log to `runs/<name>/study.log`. With
 `--max-minutes N`, `scripts/run_study.py` queues no unit after N minutes (up to 4 units per
 worker queued before then still run) and exits with code 3 while units remain, so a long run
-can be done in bounded chunks by repeating the command. The
-full-size configuration (`configs/full.toml`, 52 minutes by the run log for the published run
+can be done in bounded chunks by repeating the command. Exit code 4 means every unit ran but
+some failed (`strdcheck table` lists them in `summary.json`), and `strdcheck table` refuses a
+run with units left. The full-size configuration (`configs/full.toml`, 52 minutes by the run log for the published run
 in [`results/full/`](results/full/), up to about 2.5 hours at the slower throughput of earlier
 runs) and a secondary run over all three random-start spreads (`configs/partb-extended.toml`)
 are described in [docs/DESIGN.md](docs/DESIGN.md) section 6.7.
