@@ -28,6 +28,8 @@ Part B run over three random-start spreads are in `results/`, the full-size stud
 - from random starts about a third of scipy nonlinear fits report success with fewer than
   4 correct digits (0.31, 95% CI 0.18-0.45, for trf with an analytic Jacobian and tight
   tolerances); tight tolerances lower the trf silent rate by 0.067 (Holm p = 0.005);
+- that drop is only partly better convergence: 39% of it (45% in the full-size run) is fits
+  that now report failure, not fits that became correct;
 - the full-size run (200 starts per problem, three spreads) gives 0.28 (0.16-0.41) for the
   same configuration and repeats the tolerance effect (-0.077, Holm p = 0.0005) and no other;
   at n = 1e7 and 2e7 numpy and pandas keep all 15 digits of the SD, the other engines 8.3-9.9.

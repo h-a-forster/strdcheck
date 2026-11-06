@@ -40,8 +40,11 @@ data (section 2.1). A deficit is ceiling minus LRE.
   `curve_fit` at sigma = 1.
 - **Pre-specified comparisons.** Only C4 (tight vs default tolerances, trf, analytic Jacobian)
   is significant after Holm correction: silent rate 0.311 vs 0.378, difference -0.067
-  (95% CI -0.146 to -0.019), Holm p = 0.005; no problem got worse with tight tolerances.
-  The full-size run repeats this (-0.077, Holm p = 0.0005) and no other comparison.
+  (95% CI -0.146 to -0.019), Holm p = 0.005; no problem's silent rate rose. This is only
+  partly better convergence: the ok rate rises by 0.041 and reported failures by 0.026, so
+  39% of the drop is fits that stop claiming success, not fits that became correct. The
+  full-size run repeats the comparison (-0.077, Holm p = 0.0005; ok +0.042, reported failures
+  +0.035, 45% of the drop) and no other.
 - **Large n (tiled data).** At n up to 1e6, numpy and pandas keep all 15 digits of the SD of
   tiled NumAcc3/NumAcc4/PiDigits; polars (eager and streaming), DuckDB and torch keep 8.8-11.2
   digits in their worst cell. DuckDB with 3 threads and polars streaming were not bitwise
@@ -116,7 +119,10 @@ uv run strdcheck table runs/full --out results/full
   The ceiling is a reference, not a bound: an engine's rounding errors can cancel those of the
   input. Of the 10,236 quantities from float64 engine paths, 468 exceed their ceiling, 60 by
   more than 0.4 digits and 5 by more than 1; the largest excess is 1.94 digits (statsmodels
-  `anova_lm`, SS between on SmLs04: 12.0 against 10.1).
+  `anova_lm`, SS between on SmLs04: 12.0 against 10.1). float32 paths exceed theirs by far
+  more: of 363 quantities 53 exceed the ceiling, 33 by more than 0.4 digits and 29 by more
+  than 1 (18 `numpy.lstsq.f32`, which solves in float64, see section 6; 11 torch `gelsy`), up
+  to 6.5 digits (`numpy.lstsq.f32`, R squared on Wampler5: 13.7 against 7.2).
 - **Controls.** The exact control reaches the cap on 96 of 104 values and is within 0.5
   digits of it on the others, where NIST's rounded print differs from the exact value (AtmWtAg
   SS within: 14.5). The negative controls lose what the textbooks predict: one-pass SD on NumAcc3 keeps 2.2 digits against a ceiling of 9.5 and
@@ -315,7 +321,13 @@ Holm correction across the five comparisons
 | C4 | tight vs default tolerances (trf, analytic) | 0.311 vs 0.378 | -0.067 (-0.146, -0.019) | 0 / 11 | 0.001 | **0.005** |
 | C5 | curve_fit defaults vs trf (analytic, tight) | 0.317 vs 0.311 | 0.006 (-0.046, 0.065) | 6 / 8 | 0.908 | 0.908 |
 
-Only C4 survives the correction. C1-C3 are consistent with small advantages for lm, dogbox
+Only C4 survives the correction, and it tests the silent rate alone. Where the 0.067 went
+([`results/nonlinear_rates.csv`](results/nonlinear_rates.csv), trf analytic, tight vs default):
+ok rises from 0.5630 to 0.6037 (+0.041), flagged from 0.0574 to 0.0815 (+0.024) and flagged yet
+correct from 0 to 0.0019, so 0.026 of the drop (39%) is fits that now report failure, not fits
+that became correct. A visible failure is still better than a silent one, but tight
+tolerances are not a 0.067 gain in correct fits. These shifts are descriptive; no comparison
+tests them. C1-C3 are consistent with small advantages for lm, dogbox
 and analytic Jacobians that 27 problems x 20 starts cannot confirm. The bootstrap interval of
 C2 excludes 0 while its Holm-adjusted p does not; the Holm p is the pre-specified decision.
 
@@ -344,7 +356,9 @@ from the number of starts. Silent rates roughly double from sigma = 0.25 to sigm
 rising at sigma = 2, where flagged failures also grow (trf analytic tight: 0.033, 0.102,
 0.143). The comparisons repeat the primary result: C4 (tight vs default tolerances) differs by
 -0.077 (95% CI -0.159 to -0.025; 0 problems worse, 16 better; Holm p = 0.0005), and C1, C2, C3
-and C5 are not significant after Holm correction (Holm p 0.47, 0.13, 0.47, 0.47). The rates
+and C5 are not significant after Holm correction (Holm p 0.47, 0.13, 0.47, 0.47). Of that
+0.077, ok gains 0.042 (0.5680 to 0.6102) and reported failures 0.035 (flagged 0.0681 to 0.1019,
+flagged yet correct 0 to 0.0009), so 45% of the drop is fits that now report failure. The rates
 still depend on tau (trf analytic default at sigma = 1: 0.32, 0.36, 0.53 at tau = 2, 4, 6).
 Silent fits at an equivalent minimum stay at 0.03-0.12 of fits for every spread; silent fits
 with a wrong RSS rise from 0.10-0.13 (sigma = 0.25) to 0.20-0.27 (sigma = 1) and 0.25-0.34
