@@ -27,6 +27,18 @@ def test_shipped_configs_load() -> None:
     assert max(f.part_c.sizes) == 20_000_000
 
 
+def test_git_provenance_only_from_a_source_checkout(tmp_path, monkeypatch) -> None:
+    """An installed package must not report the git state of the repository around it."""
+    from strdcheck import env
+
+    site = tmp_path / "project" / ".venv" / "Lib" / "site-packages"
+    monkeypatch.setattr(env, "__file__", str(site / "strdcheck" / "env.py"))
+    assert env._source_root() is None
+    assert env._git_commit() == "" and env._git_dirty() is None
+    monkeypatch.setattr(env, "__file__", str(tmp_path / "repo" / "src" / "strdcheck" / "env.py"))
+    assert env._source_root() == (tmp_path / "repo").resolve()
+
+
 def test_config_validation(tmp_path: Path) -> None:
     p = tmp_path / "c.toml"
     p.write_text("[study]\nworkers = 5\n")
@@ -239,6 +251,29 @@ def test_silent_split_ceiling_aware_rss() -> None:
     assert analysis.rss_threshold(4.0, math.nan) == 4.0
 
 
+def test_pivot_ceiling_is_the_lowest_over_adapters() -> None:
+    """Adapters report different quantities; the row must not follow the last adapter's set."""
+    from strdcheck.results import QuantityRecord, UnitRecord
+
+    def rec(adapter: str, ceilings: dict[str, float]) -> UnitRecord:
+        qs = [QuantityRecord(k, 1.0, "1.0", 15, 9.0, 9.0, v, v - 9.0) for k, v in ceilings.items()]
+        return UnitRecord(
+            f"A|{adapter}",
+            "A",
+            "Michelso",
+            adapter,
+            "univariate",
+            "ok",
+            quantities=qs,
+            extra={"role": "engine", "dtype": "f64"},
+        )
+
+    both = rec("numpy.f64", {"sd": 13.8, "r1": 13.4})
+    no_r1 = rec("torch.f64", {"sd": 13.8})
+    for recs in ([both, no_r1], [no_r1, both]):
+        assert "*13.4*" in analysis._pivot_md(recs, "univariate", {})
+
+
 def test_write_results_tolerates_error_records(tmp_path: Path) -> None:
     """One failed unit per part (empty extra and quantities) must not break the tables."""
     from strdcheck.checkpoint import _error_record
@@ -268,8 +303,10 @@ def test_write_results_tolerates_error_records(tmp_path: Path) -> None:
             extra={"sigma": 1.0, "s_index": 0, "difficulty": "lower", "fits": [fit]},
         )
     )
+    store.log("failed in D:\\secret-dir\\x.py")
     out = tmp_path / "res"
     analysis.write_results(tmp_path / "run", out)
+    assert "secret-dir" not in (out / "study.log").read_text("utf-8")
     summary = json.loads((out / "summary.json").read_text("utf-8"))
     assert summary["status"] == {"error": 4, "ok": 1}
     assert len(summary["error_units"]) == 4

@@ -1,7 +1,8 @@
 """strdcheck: numerical accuracy of the Python data stack on the NIST StRD.
 
-The public API grows milestone by milestone (``docs/DESIGN.md`` section 8). Available now:
-the dataset manifest, the checksum-verified downloader and the LRE functions.
+Top level: the dataset manifest and the LRE functions. The rest lives in submodules:
+``strdcheck.testing`` and the pytest plugin, ``strdcheck.fetch``, ``strdcheck.parse``,
+``strdcheck.exact``, the study under ``strdcheck.study`` (design in ``docs/DESIGN.md``).
 """
 
 from __future__ import annotations

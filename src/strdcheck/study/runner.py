@@ -415,7 +415,7 @@ def run_study(
     data_dir: str | Path | None = None,
     max_seconds: float | None = None,
 ) -> dict:
-    """Run (or resume) a study; returns counts per phase.
+    """Run (or resume) a study; returns counts per phase and the number of failed units.
 
     With ``max_seconds`` no unit is queued later than that many seconds after the units are
     built (units already queued still run; setup time is not counted, so every call can make
@@ -430,9 +430,9 @@ def run_study(
     run_dir = Path(run_dir)
     dd = resolve_data_dir(data_dir)
     store = RunStore(run_dir)
-    store.open(cfg.to_dict(), meta={"environment": environment_record()})
     units = build_units(cfg, str(run_dir), str(dd))
     total = sum(len(v) for v in units.values())
+    store.open(cfg.to_dict(), meta={"environment": environment_record(), "units_total": total})
     store.log(
         f"study {cfg.name}: {total} units " + ", ".join(f"{k}={len(v)}" for k, v in units.items())
     )
@@ -479,4 +479,7 @@ def run_study(
         f"study {cfg.name} {state}: {store.count()}/{total} units, "
         f"{time.perf_counter() - t0:.0f} s this attempt"
     )
-    return {"total": total, "done": store.count(), "ran": counts}
+    errors = sum(r.status != "ok" for r in store.records())
+    if errors:
+        store.log(f"{errors} units failed (status error; see summary.json after `table`)")
+    return {"total": total, "done": store.count(), "ran": counts, "errors": errors}

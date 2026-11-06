@@ -149,6 +149,14 @@ def test_check_univariate(tmp_path, monkeypatch) -> None:
     assert "ZeroDivisionError" in err.errors["NumAcc1"] and math.isnan(err.min())
     assert "NumAcc1" in st.check_univariate(np.mean, datasets=["numacc1"], data_dir=d).errors
     assert "dataset" in table.format()
+    typo = st.check_univariate(lambda y: {"std": y.std(ddof=1), "mean": y.mean()}, data_dir=d)
+    assert "std" in typo.errors["NumAcc1"] and math.isnan(typo.min())
+    with pytest.raises(KeyError, match="numacc9"):
+        st.check_univariate(np.mean, datasets=["NumAcc1", "NumAcc9"], data_dir=d)
+    with pytest.raises(KeyError, match="norris"):  # a dataset of another suite
+        st.check_univariate(np.mean, datasets=["Norris"], data_dir=d)
+    with pytest.raises(ValueError, match="Starts 1 and 2"):
+        st.check_nonlinear(lambda p: p.start, start=0, data_dir=d)
 
 
 def test_check_linear_and_nonlinear_real(strd_dir) -> None:

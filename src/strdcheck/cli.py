@@ -12,6 +12,8 @@ from strdcheck.manifest import SUITES, list_datasets
 
 EXIT_TIME_LIMIT = 3
 """Exit code of ``study --max-minutes`` when the time limit stopped a run with units left."""
+EXIT_UNIT_ERRORS = 4
+"""Exit code of ``study`` when every unit ran but some failed (a rerun would skip them)."""
 
 
 def _cmd_list(args: argparse.Namespace) -> int:
@@ -73,16 +75,20 @@ def _cmd_study(args: argparse.Namespace) -> int:
         return 2
     max_seconds = None if args.max_minutes is None else 60.0 * args.max_minutes
     out = run_study(load_config(args.config), args.run, args.data_dir, max_seconds=max_seconds)
-    print(f"{out['done']}/{out['total']} units done; ran now: {out['ran']}")
-    if out["done"] == out["total"]:
-        return 0
-    return EXIT_TIME_LIMIT if max_seconds is not None else 1
+    print(f"{out['done']}/{out['total']} units done, {out['errors']} failed; ran: {out['ran']}")
+    if out["done"] != out["total"]:
+        return EXIT_TIME_LIMIT if max_seconds is not None else 1
+    return EXIT_UNIT_ERRORS if out["errors"] else 0
 
 
 def _cmd_table(args: argparse.Namespace) -> int:
-    from strdcheck.study.analysis import write_results
+    from strdcheck.study.analysis import IncompleteRun, write_results
 
-    written = write_results(args.run, args.out)
+    try:
+        written = write_results(args.run, args.out)
+    except IncompleteRun as exc:
+        print(exc, file=sys.stderr)
+        return 1
     for p in written:
         print(p)
     return 0

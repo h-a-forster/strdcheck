@@ -4,8 +4,9 @@ Each attempt runs ``strdcheck study`` in a fresh subprocess, so even a crashed w
 interpreter does not lose finished units; a rerun skips them. Progress is in
 ``<run>/progress.log`` and ``<run>/study.log``. With ``--max-minutes`` an attempt queues no
 unit later than that after its setup (up to 4 per worker queued before then still run); a
-run stopped there exits with code 3 (not retried)
-and the next call resumes it, which splits a long study into bounded chunks.
+run stopped there exits with code 3 (not retried) and the next call resumes it, which splits a
+long study into bounded chunks. Exit code 4: every unit ran but some failed (not retried: their
+records stay, listed in ``summary.json`` by ``strdcheck table``).
 
 Usage:
     uv run python scripts/run_study.py --config configs/quick.toml --run runs/quick
@@ -21,7 +22,7 @@ import time
 from datetime import UTC, datetime
 from pathlib import Path
 
-from strdcheck.cli import EXIT_TIME_LIMIT
+from strdcheck.cli import EXIT_TIME_LIMIT, EXIT_UNIT_ERRORS
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -63,7 +64,7 @@ def main(argv: list[str] | None = None) -> int:
                 f"{datetime.now(UTC).isoformat(timespec='seconds')} run_study: attempt "
                 f"{attempt} exit {code} after {time.perf_counter() - t0:.0f} s\n"
             )
-        if code in (0, EXIT_TIME_LIMIT):
+        if code in (0, EXIT_TIME_LIMIT, EXIT_UNIT_ERRORS):
             return code
         if attempt < args.attempts:
             time.sleep(args.backoff)

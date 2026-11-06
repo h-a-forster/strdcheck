@@ -3,7 +3,7 @@
 Layout of a run directory::
 
     runs/<run>/manifest.json   config hash, config, environment record (of the first attempt)
-    runs/<run>/attempts.jsonl  one line per open: time and code/package provenance
+    runs/<run>/attempts.jsonl  one line per open: time, unit counts, code/package provenance
     runs/<run>/units/*.json    one UnitRecord per finished unit (atomic write)
     runs/<run>/progress.log    one line per finished unit: time, unit id, status, seconds
     runs/<run>/study.log       free-form log of the study command
@@ -109,6 +109,7 @@ class RunStore:
             line = {
                 "opened": datetime.now(UTC).isoformat(timespec="seconds"),
                 "units_done": self.count(),
+                "units_total": meta.get("units_total"),
                 "provenance": now,
             }
             with (self.dir / "attempts.jsonl").open("a", encoding="utf-8", newline="\n") as fh:
@@ -124,6 +125,11 @@ class RunStore:
         if not p.exists():
             return []
         return [json.loads(x) for x in p.read_text("utf-8").splitlines() if x.strip()]
+
+    def units_total(self) -> int | None:
+        """Units the latest attempt expected (``None`` if it did not record them)."""
+        att = self.attempts()
+        return att[-1].get("units_total") if att else None
 
     def mixed_provenance(self) -> bool:
         """True when an attempt that ran units had different code or packages than the first.

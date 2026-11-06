@@ -7,11 +7,12 @@ Outputs (all small, committed):
 - ``notable.csv``: Part A cells meeting the DESIGN 6.2 criteria (input to triage);
 - ``nonlinear_nist_starts.csv``: outcome counts per configuration and difficulty tier;
 - ``nonlinear_rates.csv``: Part B outcome rates with 95% cluster-bootstrap intervals;
+- ``nonlinear_silent_split.csv``: silent fits at an equivalent minimum or with a wrong RSS;
 - ``nonlinear_problem_rates.csv``: per-problem silent-failure rates with Wilson intervals;
 - ``comparisons.csv``: the five pre-specified comparisons (permutation p, Holm);
 - ``tiled.csv``: Part C LREs against derived references;
 - ``ceilings.csv``: representation ceilings; ``conditioning.csv``: cond(X) of the linear
-  designs; ``environment.json``; ``summary.json``.
+  designs; ``environment.json``; ``summary.json``; ``study.log`` (run times, paths scrubbed).
 """
 
 from __future__ import annotations
@@ -28,7 +29,13 @@ import numpy as np
 
 from strdcheck.checkpoint import RunStore
 from strdcheck.engines.nonlinear import OUTCOMES, classify
+from strdcheck.env import scrub
 from strdcheck.results import UnitRecord
+
+
+class IncompleteRun(RuntimeError):
+    """The run directory holds fewer units than its study (stopped at a time limit, killed)."""
+
 
 PRIMARY_TAU = 4.0
 NOTABLE_DEFICIT = 2.0
@@ -295,8 +302,10 @@ def _pivot_md(records: list[UnitRecord], suite: str, names: dict[str, set[str]])
                 txt += "f"
             cell[(r.dataset, r.adapter)] = txt
             if r.extra.get("dtype") == "f64":
-                cs = [q.ceiling for q in qs]
-                ceil[r.dataset] = min(cs) if cs else math.nan
+                # Adapters report different quantities (r1, F only): keep the lowest ceiling.
+                cs = [q.ceiling for q in qs if not math.isnan(q.ceiling)]
+                if cs:
+                    ceil[r.dataset] = min(ceil.get(r.dataset, math.inf), *cs)
         title = f"### {suite}" + (f", NIST {s.replace('S', 'Start ')}" if s else "")
         lines += [title, ""]
         head = "| adapter | " + " | ".join(datasets) + " |"
@@ -557,6 +566,9 @@ def write_results(run_dir: str | Path, out_dir: str | Path) -> list[Path]:
 
     store = RunStore(run_dir)
     man = store.manifest()
+    total = store.units_total()
+    if total is not None and store.count() < total:
+        raise IncompleteRun(f"{run_dir} has {store.count()}/{total} units; resume it first")
     cfg = man["config"]
     records = store.records()
     out = Path(out_dir)
@@ -807,6 +819,10 @@ def write_results(run_dir: str | Path, out_dir: str | Path) -> list[Path]:
         json.dumps(env, indent=1, sort_keys=True) + "\n", encoding="utf-8", newline="\n"
     )
     written.append(out / "environment.json")
+    log = store.dir / "study.log"
+    if log.exists():
+        (out / "study.log").write_text(scrub(log.read_text("utf-8")), "utf-8", newline="\n")
+        written.append(out / "study.log")
     status = Counter(r.status for r in records)
     summary.update(
         {

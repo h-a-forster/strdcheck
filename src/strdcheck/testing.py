@@ -121,7 +121,11 @@ def _run(
 ) -> LRETable:
     table = LRETable()
     wanted = {n.lower() for n in datasets} if datasets is not None else None
-    for info in list_datasets(suite):
+    infos = list_datasets(suite)
+    unknown = sorted((wanted or set()) - {d.name.lower() for d in infos})
+    if unknown:
+        raise KeyError(f"not {suite} StRD datasets: {unknown}")
+    for info in infos:
         if wanted is not None and info.name.lower() not in wanted:
             continue
         try:
@@ -133,6 +137,9 @@ def _run(
             values = call(ds)
             if not isinstance(values, Mapping):
                 raise TypeError(f"expected a mapping of quantity names, got {type(values)}")
+            unknown = sorted(set(values) - set(ds.certified))
+            if unknown:
+                raise KeyError(f"not certified quantities of {info.name}: {unknown}")
         except Exception as exc:  # recorded, not raised: one dataset must not hide the rest
             table.errors[info.name] = f"{type(exc).__name__}: {exc}"
             for name, c in ds.certified.items():
@@ -210,6 +217,9 @@ def check_nonlinear(
     """``fn(problem)`` fits ``problem.f(b, x)`` to ``problem.y`` from ``problem.start``
     (NIST Start ``start``) and returns the parameters or a mapping of quantity names."""
     from strdcheck.models import NUMPY, get_model, predictors, response
+
+    if start not in (1, 2):
+        raise ValueError(f"NIST gives Starts 1 and 2, not {start!r}")
 
     def call(ds: Dataset) -> Mapping[str, float]:
         model = get_model(ds.name)

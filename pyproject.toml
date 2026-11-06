@@ -88,8 +88,8 @@ packages = ["src/strdcheck"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "src/strdcheck", "tests", "docs", "scripts", "configs", "README.md", "LICENSE", "CHANGELOG.md",
-    "CONTRIBUTING.md", "SECURITY.md", "CITATION.cff",
+    "src/strdcheck", "tests", "docs", "scripts", "configs", "repros", "results", "README.md",
+    "REPORT.md", "LICENSE", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", "CITATION.cff",
 ]
 
 [tool.pytest.ini_options]

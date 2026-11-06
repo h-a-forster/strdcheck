@@ -58,9 +58,18 @@ def _cpu_model() -> str:
     return platform.processor()
 
 
+def _source_root() -> Path | None:
+    """The checkout this code runs from; ``None`` for an installed package, whose enclosing
+    git repository (say, a project holding the virtual environment) says nothing about it."""
+    path = Path(__file__).resolve()
+    return path.parents[2] if path.parents[1].name == "src" else None
+
+
 def _git_commit() -> str:
+    root = _source_root()
+    if root is None:
+        return ""
     try:
-        root = Path(__file__).resolve().parents[2]
         out = subprocess.run(
             ["git", "-C", str(root), "rev-parse", "--short", "HEAD"],
             capture_output=True,
@@ -74,8 +83,10 @@ def _git_commit() -> str:
 
 def _git_dirty() -> bool | None:
     """True when tracked files differ from HEAD (``None`` outside a git checkout)."""
+    root = _source_root()
+    if root is None:
+        return None
     try:
-        root = Path(__file__).resolve().parents[2]
         out = subprocess.run(
             ["git", "-C", str(root), "status", "--porcelain", "--untracked-files=no"],
             capture_output=True,
