@@ -115,12 +115,15 @@ def sign_flip_test(diffs: np.ndarray, B: int, seed: int) -> float:
 
 
 def holm(pvalues: Sequence[float]) -> list[float]:
-    """Holm step-down adjusted p-values (monotone, capped at 1)."""
-    m = len(pvalues)
-    order = sorted(range(m), key=lambda i: pvalues[i])
-    adj = [0.0] * m
+    """Holm step-down adjusted p-values (monotone, capped at 1).
+
+    NaN entries stay NaN and do not count toward the family size.
+    """
+    kept = [i for i, p in enumerate(pvalues) if not math.isnan(p)]
+    m = len(kept)
+    adj = [math.nan] * len(pvalues)
     running = 0.0
-    for rank, i in enumerate(order):
+    for rank, i in enumerate(sorted(kept, key=lambda i: pvalues[i])):
         running = max(running, min(1.0, (m - rank) * pvalues[i]))
         adj[i] = running
     return adj

@@ -84,6 +84,10 @@ def test_wilson_holm_bootstrap_permutation() -> None:
     assert all(math.isnan(v) for v in analysis.wilson(0, 0))
     assert analysis.holm([0.01, 0.04, 0.03]) == pytest.approx([0.03, 0.06, 0.06])
     assert analysis.holm([0.5, 0.9]) == pytest.approx([1.0, 1.0])
+    # NaN stays NaN and leaves the family, wherever it sits.
+    assert repr(analysis.holm([0.01, math.nan, 0.02])) == repr([0.02, math.nan, 0.02])
+    assert repr(analysis.holm([math.nan, 0.01, 0.02])) == repr([math.nan, 0.02, 0.02])
+    assert repr(analysis.holm([math.nan, math.nan])) == repr([math.nan, math.nan])
     lo, hi = analysis.cluster_bootstrap_mean(np.ones(10), 500, 1)
     assert lo == hi == 1.0
     # all 8 differences positive: exact two-sided p = 2/256; Monte Carlo close to it
