@@ -13,8 +13,8 @@ data (section 2.1). A deficit is ceiling minus LRE.
 
 - **Univariate statistics.** Every float64 engine path is within 1.5 digits of the
   representation ceiling on all nine datasets, including NumAcc3/NumAcc4 (ceilings 9.5 and
-  8.3); the largest deficit is 1.46 (DuckDB `DOUBLE`, SD of Michelso). float32 paths keep 15
-  digits only on NumAcc1. On PiDigits, Lottery and Lew, whose values float32 holds exactly,
+  8.3); the largest deficit is 1.46 (DuckDB `DOUBLE`, SD of Michelso). counted as the
+  worst of mean, SD and r1, float32 paths keep 15 digits only on NumAcc1. On PiDigits, Lottery and Lew, whose values float32 holds exactly,
   they keep 5.3-7.6, the loss of float32 accumulation: DuckDB on a `FLOAT` column accumulates
   in double and keeps 15. Where float32 rounds the data they keep 6.4 on NumAcc2, 4.7 on Mavro
   and Michelso, and 0 to 1.2 on NumAcc3/NumAcc4. DuckDB `stddev_samp` on an exact `DECIMAL`
