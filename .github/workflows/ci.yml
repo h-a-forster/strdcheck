@@ -62,5 +62,11 @@ jobs:
       - name: Test
         run: uv run pytest
 
+      - name: Report tables rebuild from the committed results
+        shell: bash
+        run: |
+          uv run python scripts/report_tables.py
+          git diff --exit-code -- results/
+
       - name: CLI smoke
         run: uv run strdcheck --version

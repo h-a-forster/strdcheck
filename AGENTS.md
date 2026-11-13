@@ -37,6 +37,9 @@ representation ceiling, plus silent-failure rates of scipy's nonlinear least squ
 - Scratch files go in `tmp/` (gitignored). Do not create `.bak` copies; use git.
 - The repository is public: changes reach it after review; CI runs on pushes to main and on
   pull requests.
+- REPORT tables and the README's key figures are copies of `results/report_tables.md`; change
+  the script, rerun it and copy the rows, never type a number. `tests/test_report_tables.py` and
+  CI check it. Three-decimal figures come from recomputed values, not the 4-decimal CSVs.
 - Statistical honesty: report sizes, seeds, versions and intervals; only the five
   pre-specified comparisons of DESIGN 6.3 get p-values (Holm); never overstate. Anything that
   looks like an engine defect goes through the triage protocol (DESIGN 6.6): standalone
@@ -61,6 +64,7 @@ representation ceiling, plus silent-failure rates of scipy's nonlinear least squ
 | `src/strdcheck/env.py` | scrubbed environment record | done |
 | `scripts/build_manifest.py` | regenerate the manifest from NIST | done |
 | `scripts/verify_certified.py`, `scripts/run_study.py` | V1 check; study retry wrapper | done |
+| `scripts/report_tables.py` | `results/report_tables.md`: every REPORT table and README key figure, from the committed CSVs | done |
 | `configs/`, `results/`, `repros/` | study configs; committed tables; standalone reproductions | done |
 
 ## How to test

@@ -55,6 +55,12 @@ data (section 2.1). A deficit is ceiling minus LRE.
   (cutoffs, defaults, accumulation order, algorithm choice) or by conditioning; standalone
   reproductions are in [`repros/`](repros/).
 
+Every results table below is a copy of a row of
+[`results/report_tables.md`](results/report_tables.md), which `scripts/report_tables.py` renders
+from the committed CSVs (Part B rates, intervals and tests recomputed from the per-problem counts);
+a test and CI hold the copies to it. The CSVs come from the study runs, whose unit files are not
+committed, so they cannot be rebuilt from this repository without rerunning the study.
+
 ## 1. Setup
 
 | Item | Value |
@@ -268,16 +274,16 @@ cluster-bootstrap intervals over problems (10,000 resamples).
 | Configuration | ok | silent (95% CI) | flagged |
 |---|---|---|---|
 | least_squares dogbox, analytic, tight | 0.626 | 0.261 (0.150-0.378) | 0.113 |
-| least_squares lm, analytic, tight | 0.644 | 0.280 (0.150-0.418) | 0.076 |
+| least_squares lm, analytic, tight | 0.644 | 0.280 (0.150-0.419) | 0.076 |
 | least_squares dogbox, 2-point, tight | 0.604 | 0.283 (0.161-0.411) | 0.109 |
-| least_squares trf, analytic, tight | 0.604 | 0.311 (0.176-0.450) | 0.082 |
+| least_squares trf, analytic, tight | 0.604 | 0.311 (0.176-0.450) | 0.081 |
 | least_squares lm, analytic, default | 0.643 | 0.315 (0.176-0.459) | 0.043 |
 | curve_fit, defaults | 0.622 | 0.317 (0.185-0.456) | 0.061 |
 | least_squares lm, 2-point, tight | 0.613 | 0.326 (0.178-0.476) | 0.061 |
-| curve_fit, analytic Jacobian | 0.637 | 0.332 (0.194-0.476) | 0.032 |
+| curve_fit, analytic Jacobian | 0.637 | 0.331 (0.194-0.476) | 0.031 |
 | least_squares dogbox, analytic, default | 0.583 | 0.333 (0.206-0.470) | 0.083 |
 | least_squares lm, 2-point, default | 0.613 | 0.344 (0.193-0.498) | 0.043 |
-| least_squares dogbox, 2-point, default | 0.565 | 0.354 (0.213-0.498) | 0.082 |
+| least_squares dogbox, 2-point, default | 0.565 | 0.354 (0.213-0.498) | 0.081 |
 | least_squares trf, 2-point, tight | 0.567 | 0.361 (0.215-0.509) | 0.063 |
 | least_squares trf, analytic, default | 0.563 | 0.378 (0.235-0.526) | 0.057 |
 | least_squares trf, 2-point, default | 0.531 | 0.413 (0.257-0.570) | 0.056 |
@@ -348,7 +354,7 @@ Tables: [`results/full/`](results/full/).
 | least_squares dogbox, analytic, tight | 0.136 (0.058-0.224) | 0.257 (0.154-0.365) | 0.316 (0.214-0.419) |
 | least_squares trf, analytic, default | 0.194 (0.088-0.315) | 0.361 (0.229-0.500) | 0.418 (0.287-0.550) |
 | least_squares trf, 2-point, default | 0.231 (0.111-0.365) | 0.392 (0.249-0.537) | 0.451 (0.315-0.586) |
-| curve_fit, defaults | 0.168 (0.079-0.271) | 0.317 (0.189-0.452) | 0.401 (0.279-0.525) |
+| curve_fit, defaults | 0.168 (0.079-0.271) | 0.317 (0.189-0.451) | 0.401 (0.279-0.525) |
 
 At sigma = 1 the 14 silent rates span 0.257-0.392 (quick run: 0.261-0.413), and the intervals
 are barely narrower than with 20 starts: the uncertainty comes from having 27 problems, not
