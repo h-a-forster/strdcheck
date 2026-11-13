@@ -287,11 +287,20 @@ def part_b(out: list[str]) -> None:
 
     rates, part_b = per_problem(RESULTS / "full")
     sigmas = [float(s) for s in part_b["sigmas"]]
+    committed_full = {
+        (float(r["sigma"]), r["adapter"]): r
+        for r in read(RESULTS / "full" / "nonlinear_rates.csv")
+        if (r["tau"], r["tier"]) == (PRIMARY_TAU, "all")
+    }
     body = []
     for a in FULL_ROWS:
         cells = []
         for s in sigmas:
             mean, lo, hi = interval(rates[s, analysis.PRIMARY_TAU, a, "silent"], part_b)
+            c = committed_full[s, a]
+            check(f"full {a} sigma {s} silent", mean, c["silent"])
+            check(f"full {a} sigma {s} silent_lo", lo, c["silent_lo"])
+            check(f"full {a} sigma {s} silent_hi", hi, c["silent_hi"])
             cells.append(f"{mean:.3f} ({lo:.3f}-{hi:.3f})")
         body.append([label(a), *cells])
     out += ["## 4.4 Full-size run: silent rate by spread", ""]
