@@ -41,7 +41,10 @@ def test_report_tables_render_from_the_committed_results(monkeypatch):
 
 
 def test_every_report_table_row_is_copied_from_the_rendered_tables():
+    # The platform spread (section 6.1) is rendered by scripts/platform_spread.py.
+    spread = ROOT / "results" / "platforms" / "spread.md"
     source = TABLES.read_text(encoding="utf-8").splitlines()
+    source += spread.read_text(encoding="utf-8").splitlines()
     rows = _result_rows(ROOT / "REPORT.md")
     assert len(rows) > 50
     assert [row for row in rows if row not in source] == []

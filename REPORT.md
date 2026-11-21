@@ -417,9 +417,15 @@ mean drops to 9.8 digits (11.0 at n <= 1e6).
 
 ## 6. Limitations
 
-- **One platform.** One CPU, one OS and one BLAS/LAPACK build (scipy-openblas 0.3.34). LAPACK
-  paths (lstsq drivers, QR, SVD) can give different digits on other builds or CPUs; the
-  univariate and group-by results depend less on the platform.
+- **Two CPUs, one OS, one BLAS/LAPACK build.** The quick run was repeated on a second machine
+  (Intel Core i7-12700K; same Windows 11 build, wheels and scipy-openblas 0.3.34; section
+  6.1). Across the 2 platforms the 1,160 Part A cells of the quick run differ by more than 0.5
+  digits in 21 cells and by more than 2 digits in 0; 1,123 are bitwise identical, and no Part
+  A or Part B cell changes verdict class. Every numpy, scipy, pandas, polars, DuckDB and
+  statsmodels value is bitwise identical; every cell that moved is a `torch.linalg.lstsq` fit
+  (torch's CPU build uses MKL for LAPACK), so the torch figures of section 3.3 hold to about 2
+  digits across these CPUs, not to the decimal shown. Not measured: the Part C spread, the full
+  configuration on the second machine, Linux and other BLAS/LAPACK builds.
 - **Size.** The primary analysis uses the quick configuration: 20 starts per problem at one
   spread. The full configuration (`configs/full.toml`: 200 starts, three spreads, Part C up to
   n = 2e7) was run once as a secondary analysis (sections 4.4 and 5); it took 52 minutes in
@@ -449,6 +455,54 @@ mean drops to 9.8 digits (11.0 at n <= 1e6).
   and McCullough (2024).
 - **Not bug reports.** Notable cells were triaged against documentation and with standalone
   reproductions; none is claimed as a defect or has been filed upstream.
+
+### 6.1 Platform spread
+
+The quick configuration (1,884 units) was rerun on a second machine with
+the same locked packages, and [`scripts/platform_spread.py`](scripts/platform_spread.py)
+compared each (suite, dataset, adapter, start) cell with the published run
+([`results/platforms/spread.csv`](results/platforms/spread.csv),
+[`spread.md`](results/platforms/spread.md); the second machine's tables are in
+[`results/platforms/desktop-win/`](results/platforms/desktop-win/)). A cell's LRE is its
+minimum over non-derived quantities; its difference is the largest over all its quantities.
+
+| Platform | CPU | OS | Python | BLAS/LAPACK | OpenBLAS kernel | torch | commit |
+|---|---|---|---|---|---|---|---|
+| laptop-win | AMD Ryzen 7 5700U with Radeon Graphics | Windows-11-10.0.26200-SP0 | 3.13.1 | scipy-openblas 0.3.34.106.0 | Haswell | MKL | 0b98cd7 |
+| desktop-win | 12th Gen Intel(R) Core(TM) i7-12700K | Windows-11-10.0.26200-SP0 | 3.13.13 | scipy-openblas 0.3.34.106.0 | Haswell | MKL | 84edd6b |
+
+| Part A cells | bitwise identical | differ at all | > 0.5 digits | > 2 digits | largest difference | class changes |
+|---|---|---|---|---|---|---|
+| 1,160 | 1,123 | 30 | 21 | 0 | 1.8 | 0 |
+
+Part B: 378 (sigma, adapter, problem) cells, 0 with different outcome counts.
+
+Part A cells that differ by more than 0.5 digits; no cell changes verdict class (pass, silent or
+reported failure; DESIGN 4.5 outcome classes for nonlinear fits). All are torch `lstsq`.
+
+| Cell (suite, dataset, adapter, start) | LRE laptop-win | LRE desktop-win | max difference |
+|---|---|---|---|
+| linear Wampler5 torch.lstsq.gelsy.f64 | 7.1 | 7.5 | 1.8 |
+| linear Wampler4 torch.lstsq.gelsy.f64 | 9.4 | 9.1 | 1.7 |
+| linear Longley torch.lstsq.gelsd.f64 | 10.9 | 10.8 | 1.6 |
+| linear Wampler2 torch.lstsq.gelss.f64 | 10.5 | 10.3 | 1.5 |
+| linear Wampler2 torch.lstsq.gelsd.f64 | 10.5 | 10.3 | 1.5 |
+| linear Longley torch.lstsq.gelss.f64 | 10.9 | 10.8 | 1.4 |
+| linear Wampler5 torch.lstsq.gelss.f64 | 6.8 | 5.9 | 1.4 |
+| linear Wampler5 torch.lstsq.gelsd.f64 | 6.8 | 5.9 | 1.4 |
+| linear Wampler2 torch.lstsq.gelsy.f64 | 12.6 | 13.0 | 1.2 |
+| linear Wampler3 torch.lstsq.gelsy.f64 | 9.3 | 9.6 | 1.1 |
+| linear Wampler4 torch.lstsq.gelsy.f32 | 0.0 | 0.0 | 1.1 |
+| linear Norris torch.lstsq.gelsy.f32 | 4.0 | 4.7 | 1.0 |
+| linear Wampler4 torch.lstsq.gelsd.f64 | 8.9 | 7.9 | 1.0 |
+| linear Wampler4 torch.lstsq.gelss.f64 | 8.9 | 7.9 | 1.0 |
+| linear Longley torch.lstsq.gelsy.f64 | 11.0 | 10.9 | 0.9 |
+| linear Wampler1 torch.lstsq.gelsy.f64 | 9.2 | 9.6 | 0.8 |
+| linear Pontius torch.lstsq.gelsy.f64 | 12.1 | 12.5 | 0.8 |
+| linear Wampler1 torch.lstsq.gelsd.f64 | 9.2 | 9.0 | 0.7 |
+| linear Wampler1 torch.lstsq.gelss.f64 | 9.1 | 9.1 | 0.7 |
+| linear Wampler5 torch.lstsq.gelsy.f32 | 0.0 | 0.0 | 0.7 |
+| linear Norris torch.lstsq.gelss.f64 | 12.9 | 12.3 | 0.6 |
 
 ## References
 

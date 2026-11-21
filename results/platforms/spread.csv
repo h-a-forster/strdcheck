@@ -1,0 +1,1539 @@
+run,part,suite,dataset,adapter,start,lre_laptop-win,class_laptop-win,lre_desktop-win,class_desktop-win,max_abs_diff,bitwise,class_changes
+quick,A,anova,AtmWtAg,control.exact,,14.5013,pass,14.5013,pass,0.0000,True,False
+quick,A,anova,AtmWtAg,control.onepass.f64,,2.1370,pass,2.1370,pass,0.0000,True,False
+quick,A,anova,AtmWtAg,duckdb.groupby.decimal,,8.7471,pass,8.7471,pass,0.0000,True,False
+quick,A,anova,AtmWtAg,duckdb.groupby.double,,8.4656,pass,8.4656,pass,0.0000,True,False
+quick,A,anova,AtmWtAg,numpy.twopass,,8.4848,pass,8.4848,pass,0.0000,True,False
+quick,A,anova,AtmWtAg,pandas.groupby,,8.4656,pass,8.4656,pass,0.0000,True,False
+quick,A,anova,AtmWtAg,polars.groupby,,8.7900,pass,8.7900,pass,0.0000,True,False
+quick,A,anova,AtmWtAg,scipy.f_oneway,,10.1550,pass,10.1550,pass,0.0000,True,False
+quick,A,anova,AtmWtAg,statsmodels.anova_lm,,8.3993,pass,8.3993,pass,0.0000,True,False
+quick,A,anova,SiRstv,control.exact,,14.7256,pass,14.7256,pass,0.0000,True,False
+quick,A,anova,SiRstv,control.onepass.f64,,10.1366,pass,10.1366,pass,0.0000,True,False
+quick,A,anova,SiRstv,duckdb.groupby.decimal,,12.3085,pass,12.3085,pass,0.0000,True,False
+quick,A,anova,SiRstv,duckdb.groupby.double,,12.4672,pass,12.4672,pass,0.0000,True,False
+quick,A,anova,SiRstv,numpy.twopass,,12.4248,pass,12.4248,pass,0.0000,True,False
+quick,A,anova,SiRstv,pandas.groupby,,12.9458,pass,12.9458,pass,0.0000,True,False
+quick,A,anova,SiRstv,polars.groupby,,13.3872,pass,13.3872,pass,0.0000,True,False
+quick,A,anova,SiRstv,scipy.f_oneway,,13.0582,pass,13.0582,pass,0.0000,True,False
+quick,A,anova,SiRstv,statsmodels.anova_lm,,12.2422,pass,12.2422,pass,0.0000,True,False
+quick,A,anova,SmLs01,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs01,control.onepass.f64,,13.0308,pass,13.0308,pass,0.0000,True,False
+quick,A,anova,SmLs01,duckdb.groupby.decimal,,14.9935,pass,14.9935,pass,0.0000,True,False
+quick,A,anova,SmLs01,duckdb.groupby.double,,14.3875,pass,14.3875,pass,0.0000,True,False
+quick,A,anova,SmLs01,numpy.twopass,,14.3875,pass,14.3875,pass,0.0000,True,False
+quick,A,anova,SmLs01,pandas.groupby,,14.3875,pass,14.3875,pass,0.0000,True,False
+quick,A,anova,SmLs01,polars.groupby,,14.7028,pass,14.7028,pass,0.0000,True,False
+quick,A,anova,SmLs01,scipy.f_oneway,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs01,statsmodels.anova_lm,,14.5171,pass,14.5171,pass,0.0000,True,False
+quick,A,anova,SmLs02,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs02,control.onepass.f64,,13.2217,pass,13.2217,pass,0.0000,True,False
+quick,A,anova,SmLs02,duckdb.groupby.decimal,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs02,duckdb.groupby.double,,14.0647,pass,14.0647,pass,0.0000,True,False
+quick,A,anova,SmLs02,numpy.twopass,,14.7015,pass,14.7015,pass,0.0000,True,False
+quick,A,anova,SmLs02,pandas.groupby,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs02,polars.groupby,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs02,scipy.f_oneway,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs02,statsmodels.anova_lm,,13.4682,pass,13.4682,pass,0.0000,True,False
+quick,A,anova,SmLs03,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs03,control.onepass.f64,,13.2173,pass,13.2173,pass,0.0000,True,False
+quick,A,anova,SmLs03,duckdb.groupby.decimal,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs03,duckdb.groupby.double,,12.7494,silent,12.7494,silent,0.0000,True,False
+quick,A,anova,SmLs03,numpy.twopass,,14.7507,pass,14.7507,pass,0.0000,True,False
+quick,A,anova,SmLs03,pandas.groupby,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs03,polars.groupby,,14.7404,pass,14.7404,pass,0.0000,True,False
+quick,A,anova,SmLs03,scipy.f_oneway,,13.6349,pass,13.6349,pass,0.0000,True,False
+quick,A,anova,SmLs03,statsmodels.anova_lm,,12.4844,silent,12.4844,silent,0.0000,True,False
+quick,A,anova,SmLs04,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs04,control.onepass.f64,,1.8711,pass,1.8711,pass,0.0000,True,False
+quick,A,anova,SmLs04,duckdb.groupby.decimal,,9.3192,pass,9.3192,pass,0.0000,True,False
+quick,A,anova,SmLs04,duckdb.groupby.double,,8.5190,pass,8.5190,pass,0.0000,True,False
+quick,A,anova,SmLs04,numpy.twopass,,8.7299,pass,8.7299,pass,0.0000,True,False
+quick,A,anova,SmLs04,pandas.groupby,,8.7299,pass,8.7299,pass,0.0000,True,False
+quick,A,anova,SmLs04,polars.groupby,,9.3192,pass,9.3192,pass,0.0000,True,False
+quick,A,anova,SmLs04,scipy.f_oneway,,10.4323,pass,10.4323,pass,0.0000,True,False
+quick,A,anova,SmLs04,statsmodels.anova_lm,,10.2777,pass,10.2777,pass,0.0000,True,False
+quick,A,anova,SmLs05,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs05,control.onepass.f64,,1.7528,pass,1.7528,pass,0.0000,True,False
+quick,A,anova,SmLs05,duckdb.groupby.decimal,,9.2918,pass,9.2918,pass,0.0000,True,False
+quick,A,anova,SmLs05,duckdb.groupby.double,,8.2867,pass,8.2867,pass,0.0000,True,False
+quick,A,anova,SmLs05,numpy.twopass,,9.2862,pass,9.2862,pass,0.0000,True,False
+quick,A,anova,SmLs05,pandas.groupby,,9.2918,pass,9.2918,pass,0.0000,True,False
+quick,A,anova,SmLs05,polars.groupby,,9.2918,pass,9.2918,pass,0.0000,True,False
+quick,A,anova,SmLs05,scipy.f_oneway,,10.2091,pass,10.2091,pass,0.0000,True,False
+quick,A,anova,SmLs05,statsmodels.anova_lm,,8.5790,pass,8.5790,pass,0.0000,True,False
+quick,A,anova,SmLs06,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs06,control.onepass.f64,,1.7355,pass,1.7355,pass,0.0000,True,False
+quick,A,anova,SmLs06,duckdb.groupby.decimal,,9.1558,pass,9.1558,pass,0.0000,True,False
+quick,A,anova,SmLs06,duckdb.groupby.double,,6.4694,silent,6.4694,silent,0.0000,True,False
+quick,A,anova,SmLs06,numpy.twopass,,9.2862,pass,9.2862,pass,0.0000,True,False
+quick,A,anova,SmLs06,pandas.groupby,,9.1558,pass,9.1558,pass,0.0000,True,False
+quick,A,anova,SmLs06,polars.groupby,,9.1558,pass,9.1558,pass,0.0000,True,False
+quick,A,anova,SmLs06,scipy.f_oneway,,10.1912,pass,10.1912,pass,0.0000,True,False
+quick,A,anova,SmLs06,statsmodels.anova_lm,,6.6243,silent,6.6243,silent,0.0000,True,False
+quick,A,anova,SmLs07,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs07,control.onepass.f64,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,anova,SmLs07,duckdb.groupby.decimal,,3.2986,pass,3.2986,pass,0.0000,True,False
+quick,A,anova,SmLs07,duckdb.groupby.double,,2.6967,pass,2.6967,pass,0.0000,True,False
+quick,A,anova,SmLs07,numpy.twopass,,2.7087,pass,2.7087,pass,0.0000,True,False
+quick,A,anova,SmLs07,pandas.groupby,,2.7087,pass,2.7087,pass,0.0000,True,False
+quick,A,anova,SmLs07,polars.groupby,,3.2986,pass,3.2986,pass,0.0000,True,False
+quick,A,anova,SmLs07,scipy.f_oneway,,4.4127,pass,4.4127,pass,0.0000,True,False
+quick,A,anova,SmLs07,statsmodels.anova_lm,,2.8763,pass,2.8763,pass,0.0000,True,False
+quick,A,anova,SmLs08,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs08,control.onepass.f64,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,anova,SmLs08,duckdb.groupby.decimal,,3.2725,pass,3.2725,pass,0.0000,True,False
+quick,A,anova,SmLs08,duckdb.groupby.double,,2.0095,pass,2.0095,pass,0.0000,True,False
+quick,A,anova,SmLs08,numpy.twopass,,3.2671,pass,3.2671,pass,0.0000,True,False
+quick,A,anova,SmLs08,pandas.groupby,,3.2725,pass,3.2725,pass,0.0000,True,False
+quick,A,anova,SmLs08,polars.groupby,,3.2711,pass,3.2711,pass,0.0000,True,False
+quick,A,anova,SmLs08,scipy.f_oneway,,4.1891,pass,4.1891,pass,0.0000,True,False
+quick,A,anova,SmLs08,statsmodels.anova_lm,,1.7764,pass,1.7764,pass,0.0000,True,False
+quick,A,anova,SmLs09,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,anova,SmLs09,control.onepass.f64,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,anova,SmLs09,duckdb.groupby.decimal,,3.1349,pass,3.1349,pass,0.0000,True,False
+quick,A,anova,SmLs09,duckdb.groupby.double,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,anova,SmLs09,numpy.twopass,,3.2654,pass,3.2654,pass,0.0000,True,False
+quick,A,anova,SmLs09,pandas.groupby,,3.1345,pass,3.1345,pass,0.0000,True,False
+quick,A,anova,SmLs09,polars.groupby,,3.1349,pass,3.1349,pass,0.0000,True,False
+quick,A,anova,SmLs09,scipy.f_oneway,,4.1712,pass,4.1712,pass,0.0000,True,False
+quick,A,anova,SmLs09,statsmodels.anova_lm,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,linear,Filip,control.normal-equations.f64,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,linear,Filip,numpy.Polynomial.fit,,13.7966,silent,13.7966,silent,0.0000,True,False
+quick,A,linear,Filip,numpy.lstsq,,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,linear,Filip,numpy.lstsq.f32,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,linear,Filip,numpy.polyfit,,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,linear,Filip,scipy.lstsq.gelsd,,5.6611,silent,5.6611,silent,0.0000,True,False
+quick,A,linear,Filip,scipy.lstsq.gelss,,5.6611,silent,5.6611,silent,0.0000,True,False
+quick,A,linear,Filip,scipy.lstsq.gelsy,,7.9002,silent,7.9002,silent,0.0000,True,False
+quick,A,linear,Filip,statsmodels.ols.pinv,,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,linear,Filip,statsmodels.ols.qr,,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,linear,Filip,torch.lstsq.gelsd.f64,,0.0000,silent,0.0000,silent,0.0000,False,False
+quick,A,linear,Filip,torch.lstsq.gelss.f64,,0.0000,silent,0.0000,silent,0.0000,False,False
+quick,A,linear,Filip,torch.lstsq.gelsy.f32,,0.0000,pass,0.0000,pass,0.0000,False,False
+quick,A,linear,Filip,torch.lstsq.gelsy.f64,,0.0000,silent,0.0000,silent,0.0000,False,False
+quick,A,linear,Longley,control.normal-equations.f64,,7.3793,pass,7.3793,pass,0.0000,True,False
+quick,A,linear,Longley,numpy.lstsq,,10.9928,silent,10.9928,silent,0.0000,True,False
+quick,A,linear,Longley,numpy.lstsq.f32,,4.8726,pass,4.8726,pass,0.0000,True,False
+quick,A,linear,Longley,scipy.lstsq.gelsd,,10.9343,silent,10.9343,silent,0.0000,True,False
+quick,A,linear,Longley,scipy.lstsq.gelss,,10.9350,silent,10.9350,silent,0.0000,True,False
+quick,A,linear,Longley,scipy.lstsq.gelsy,,11.0768,silent,11.0768,silent,0.0000,True,False
+quick,A,linear,Longley,statsmodels.ols.pinv,,11.0039,silent,11.0039,silent,0.0000,True,False
+quick,A,linear,Longley,statsmodels.ols.qr,,7.9657,silent,7.9657,silent,0.0000,True,False
+quick,A,linear,Longley,torch.lstsq.gelsd.f64,,10.8862,silent,10.8398,silent,1.5518,False,False
+quick,A,linear,Longley,torch.lstsq.gelss.f64,,10.8857,silent,10.8398,silent,1.4185,False,False
+quick,A,linear,Longley,torch.lstsq.gelsy.f32,,0.0000,pass,0.0000,pass,0.0000,False,False
+quick,A,linear,Longley,torch.lstsq.gelsy.f64,,10.9772,silent,10.9169,silent,0.9351,False,False
+quick,A,linear,NoInt1,control.normal-equations.f64,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt1,numpy.lstsq,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt1,numpy.lstsq.f32,,8.5452,pass,8.5452,pass,0.0000,True,False
+quick,A,linear,NoInt1,scipy.lstsq.gelsd,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt1,scipy.lstsq.gelss,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt1,scipy.lstsq.gelsy,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt1,statsmodels.ols.pinv,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt1,statsmodels.ols.qr,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt1,torch.lstsq.gelsd.f64,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt1,torch.lstsq.gelss.f64,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt1,torch.lstsq.gelsy.f32,,6.9505,pass,6.9505,pass,0.0000,True,False
+quick,A,linear,NoInt1,torch.lstsq.gelsy.f64,,14.7152,pass,14.7152,pass,0.0000,True,False
+quick,A,linear,NoInt2,control.normal-equations.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,NoInt2,numpy.lstsq,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,NoInt2,numpy.lstsq.f32,,7.5257,pass,7.5257,pass,0.0000,True,False
+quick,A,linear,NoInt2,scipy.lstsq.gelsd,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,NoInt2,scipy.lstsq.gelss,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,NoInt2,scipy.lstsq.gelsy,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,NoInt2,statsmodels.ols.pinv,,14.8286,pass,14.8286,pass,0.0000,True,False
+quick,A,linear,NoInt2,statsmodels.ols.qr,,14.8797,pass,14.8797,pass,0.0000,True,False
+quick,A,linear,NoInt2,torch.lstsq.gelsd.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,NoInt2,torch.lstsq.gelss.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,NoInt2,torch.lstsq.gelsy.f32,,7.2827,pass,7.2827,pass,0.0000,True,False
+quick,A,linear,NoInt2,torch.lstsq.gelsy.f64,,15.0000,pass,15.0000,pass,0.0623,False,False
+quick,A,linear,Norris,control.normal-equations.f64,,11.8155,pass,11.8155,pass,0.0000,True,False
+quick,A,linear,Norris,duckdb.regr,,13.3262,pass,13.3262,pass,0.0000,True,False
+quick,A,linear,Norris,numpy.Polynomial.fit,,11.9467,silent,11.9467,silent,0.0000,True,False
+quick,A,linear,Norris,numpy.lstsq,,11.8830,silent,11.8830,silent,0.0000,True,False
+quick,A,linear,Norris,numpy.lstsq.f32,,5.0242,pass,5.0242,pass,0.0000,True,False
+quick,A,linear,Norris,numpy.polyfit,,12.2545,pass,12.2545,pass,0.0000,True,False
+quick,A,linear,Norris,pandas.cov,,12.7708,pass,12.7708,pass,0.0000,True,False
+quick,A,linear,Norris,polars.cov,,12.7708,pass,12.7708,pass,0.0000,True,False
+quick,A,linear,Norris,scipy.linregress,,11.7808,silent,11.7808,silent,0.0000,True,False
+quick,A,linear,Norris,scipy.lstsq.gelsd,,12.3045,pass,12.3045,pass,0.0000,True,False
+quick,A,linear,Norris,scipy.lstsq.gelss,,13.3980,pass,13.3980,pass,0.0000,True,False
+quick,A,linear,Norris,scipy.lstsq.gelsy,,13.0713,pass,13.0713,pass,0.0000,True,False
+quick,A,linear,Norris,statsmodels.ols.pinv,,11.9733,silent,11.9733,silent,0.0000,True,False
+quick,A,linear,Norris,statsmodels.ols.qr,,11.7731,silent,11.7731,silent,0.0000,True,False
+quick,A,linear,Norris,torch.lstsq.gelsd.f64,,12.2444,pass,12.3045,pass,0.0804,False,False
+quick,A,linear,Norris,torch.lstsq.gelss.f64,,12.9445,pass,12.3045,pass,0.6400,False,False
+quick,A,linear,Norris,torch.lstsq.gelsy.f32,,4.0179,pass,4.6507,pass,1.0093,False,False
+quick,A,linear,Norris,torch.lstsq.gelsy.f64,,12.6913,pass,13.0702,pass,0.3789,False,False
+quick,A,linear,Pontius,control.normal-equations.f64,,11.5330,pass,11.5330,pass,0.0000,True,False
+quick,A,linear,Pontius,numpy.Polynomial.fit,,13.1869,pass,13.1869,pass,0.0000,True,False
+quick,A,linear,Pontius,numpy.lstsq,,6.2356,silent,6.2356,silent,0.0000,True,False
+quick,A,linear,Pontius,numpy.lstsq.f32,,5.8118,pass,5.8118,pass,0.0000,True,False
+quick,A,linear,Pontius,numpy.polyfit,,12.0721,pass,12.0721,pass,0.0000,True,False
+quick,A,linear,Pontius,scipy.lstsq.gelsd,,6.2356,silent,6.2356,silent,0.0000,True,False
+quick,A,linear,Pontius,scipy.lstsq.gelss,,6.2356,silent,6.2356,silent,0.0000,True,False
+quick,A,linear,Pontius,scipy.lstsq.gelsy,,12.3063,pass,12.3063,pass,0.0000,True,False
+quick,A,linear,Pontius,statsmodels.ols.pinv,,6.2356,silent,6.2356,silent,0.0000,True,False
+quick,A,linear,Pontius,statsmodels.ols.qr,,12.3938,pass,12.3938,pass,0.0000,True,False
+quick,A,linear,Pontius,torch.lstsq.gelsd.f64,,6.2356,silent,6.3171,silent,0.3526,False,False
+quick,A,linear,Pontius,torch.lstsq.gelss.f64,,6.2356,silent,6.3171,silent,0.3646,False,False
+quick,A,linear,Pontius,torch.lstsq.gelsy.f32,,0.0000,pass,0.0000,pass,0.0000,False,False
+quick,A,linear,Pontius,torch.lstsq.gelsy.f64,,12.1428,pass,12.5125,pass,0.7628,False,False
+quick,A,linear,Wampler1,control.normal-equations.f64,,6.2464,pass,6.2464,pass,0.0000,True,False
+quick,A,linear,Wampler1,numpy.Polynomial.fit,,8.7132,silent,8.7132,silent,0.0000,True,False
+quick,A,linear,Wampler1,numpy.lstsq,,9.5311,silent,9.5311,silent,0.0000,True,False
+quick,A,linear,Wampler1,numpy.lstsq.f32,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,Wampler1,numpy.polyfit,,8.9190,silent,8.9190,silent,0.0000,True,False
+quick,A,linear,Wampler1,scipy.lstsq.gelsd,,9.4247,silent,9.4247,silent,0.0000,True,False
+quick,A,linear,Wampler1,scipy.lstsq.gelss,,9.4247,silent,9.4247,silent,0.0000,True,False
+quick,A,linear,Wampler1,scipy.lstsq.gelsy,,9.7320,silent,9.7320,silent,0.0000,True,False
+quick,A,linear,Wampler1,statsmodels.ols.pinv,,7.4133,silent,7.4133,silent,0.0000,True,False
+quick,A,linear,Wampler1,statsmodels.ols.qr,,9.2633,silent,9.2633,silent,0.0000,True,False
+quick,A,linear,Wampler1,torch.lstsq.gelsd.f64,,9.1610,silent,9.0300,silent,0.7113,False,False
+quick,A,linear,Wampler1,torch.lstsq.gelss.f64,,9.0917,silent,9.0701,silent,0.7113,False,False
+quick,A,linear,Wampler1,torch.lstsq.gelsy.f32,,0.0000,pass,0.0000,pass,0.0025,False,False
+quick,A,linear,Wampler1,torch.lstsq.gelsy.f64,,9.2295,silent,9.6346,silent,0.8487,False,False
+quick,A,linear,Wampler2,control.normal-equations.f64,,9.3728,pass,9.3728,pass,0.0000,True,False
+quick,A,linear,Wampler2,numpy.Polynomial.fit,,12.2928,pass,12.2928,pass,0.0000,True,False
+quick,A,linear,Wampler2,numpy.lstsq,,10.1122,silent,10.1122,silent,0.0000,True,False
+quick,A,linear,Wampler2,numpy.lstsq.f32,,4.7954,pass,4.7954,pass,0.0000,True,False
+quick,A,linear,Wampler2,numpy.polyfit,,12.3932,pass,12.3932,pass,0.0000,True,False
+quick,A,linear,Wampler2,scipy.lstsq.gelsd,,10.2129,silent,10.2129,silent,0.0000,True,False
+quick,A,linear,Wampler2,scipy.lstsq.gelss,,10.2132,silent,10.2132,silent,0.0000,True,False
+quick,A,linear,Wampler2,scipy.lstsq.gelsy,,13.0717,pass,13.0717,pass,0.0000,True,False
+quick,A,linear,Wampler2,statsmodels.ols.pinv,,10.0331,silent,10.0331,silent,0.0000,True,False
+quick,A,linear,Wampler2,statsmodels.ols.qr,,13.2984,pass,13.2984,pass,0.0000,True,False
+quick,A,linear,Wampler2,torch.lstsq.gelsd.f64,,10.4789,silent,10.3459,silent,1.5232,False,False
+quick,A,linear,Wampler2,torch.lstsq.gelss.f64,,10.4789,silent,10.3458,silent,1.5237,False,False
+quick,A,linear,Wampler2,torch.lstsq.gelsy.f32,,0.0000,pass,0.0000,pass,0.0000,False,False
+quick,A,linear,Wampler2,torch.lstsq.gelsy.f64,,12.6005,pass,13.0316,pass,1.1839,False,False
+quick,A,linear,Wampler3,control.normal-equations.f64,,6.2464,pass,6.2464,pass,0.0000,True,False
+quick,A,linear,Wampler3,numpy.Polynomial.fit,,8.5026,silent,8.5026,silent,0.0000,True,False
+quick,A,linear,Wampler3,numpy.lstsq,,9.0756,silent,9.0756,silent,0.0000,True,False
+quick,A,linear,Wampler3,numpy.lstsq.f32,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,Wampler3,numpy.polyfit,,9.3036,silent,9.3036,silent,0.0000,True,False
+quick,A,linear,Wampler3,scipy.lstsq.gelsd,,9.2734,silent,9.2734,silent,0.0000,True,False
+quick,A,linear,Wampler3,scipy.lstsq.gelss,,9.2734,silent,9.2734,silent,0.0000,True,False
+quick,A,linear,Wampler3,scipy.lstsq.gelsy,,9.6750,silent,9.6750,silent,0.0000,True,False
+quick,A,linear,Wampler3,statsmodels.ols.pinv,,9.5729,silent,9.5729,silent,0.0000,True,False
+quick,A,linear,Wampler3,statsmodels.ols.qr,,9.1263,silent,9.1263,silent,0.0000,True,False
+quick,A,linear,Wampler3,torch.lstsq.gelsd.f64,,8.8068,silent,8.8194,silent,0.2325,False,False
+quick,A,linear,Wampler3,torch.lstsq.gelss.f64,,8.7746,silent,8.8433,silent,0.2325,False,False
+quick,A,linear,Wampler3,torch.lstsq.gelsy.f32,,0.0000,pass,0.0000,pass,0.0230,False,False
+quick,A,linear,Wampler3,torch.lstsq.gelsy.f64,,9.3043,silent,9.6393,silent,1.1310,False,False
+quick,A,linear,Wampler4,control.normal-equations.f64,,6.2464,pass,6.2464,pass,0.0000,True,False
+quick,A,linear,Wampler4,numpy.Polynomial.fit,,8.6879,silent,8.6879,silent,0.0000,True,False
+quick,A,linear,Wampler4,numpy.lstsq,,7.6710,silent,7.6710,silent,0.0000,True,False
+quick,A,linear,Wampler4,numpy.lstsq.f32,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,linear,Wampler4,numpy.polyfit,,8.3872,silent,8.3872,silent,0.0000,True,False
+quick,A,linear,Wampler4,scipy.lstsq.gelsd,,8.0381,silent,8.0381,silent,0.0000,True,False
+quick,A,linear,Wampler4,scipy.lstsq.gelss,,8.0381,silent,8.0381,silent,0.0000,True,False
+quick,A,linear,Wampler4,scipy.lstsq.gelsy,,8.6061,silent,8.6061,silent,0.0000,True,False
+quick,A,linear,Wampler4,statsmodels.ols.pinv,,7.6674,silent,7.6674,silent,0.0000,True,False
+quick,A,linear,Wampler4,statsmodels.ols.qr,,7.6659,silent,7.6659,silent,0.0000,True,False
+quick,A,linear,Wampler4,torch.lstsq.gelsd.f64,,8.8588,silent,7.8951,silent,0.9637,False,False
+quick,A,linear,Wampler4,torch.lstsq.gelss.f64,,8.8588,silent,7.8951,silent,0.9637,False,False
+quick,A,linear,Wampler4,torch.lstsq.gelsy.f32,,0.0000,pass,0.0000,pass,1.1207,False,False
+quick,A,linear,Wampler4,torch.lstsq.gelsy.f64,,9.3883,silent,9.1319,silent,1.7397,False,False
+quick,A,linear,Wampler5,control.normal-equations.f64,,6.2464,pass,6.2464,pass,0.0000,True,False
+quick,A,linear,Wampler5,numpy.Polynomial.fit,,7.9724,silent,7.9724,silent,0.0000,True,False
+quick,A,linear,Wampler5,numpy.lstsq,,5.6689,silent,5.6689,silent,0.0000,True,False
+quick,A,linear,Wampler5,numpy.lstsq.f32,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,linear,Wampler5,numpy.polyfit,,6.4258,silent,6.4258,silent,0.0000,True,False
+quick,A,linear,Wampler5,scipy.lstsq.gelsd,,6.0352,silent,6.0352,silent,0.0000,True,False
+quick,A,linear,Wampler5,scipy.lstsq.gelss,,6.0352,silent,6.0352,silent,0.0000,True,False
+quick,A,linear,Wampler5,scipy.lstsq.gelsy,,6.6717,silent,6.6717,silent,0.0000,True,False
+quick,A,linear,Wampler5,statsmodels.ols.pinv,,5.6683,silent,5.6683,silent,0.0000,True,False
+quick,A,linear,Wampler5,statsmodels.ols.qr,,5.6686,silent,5.6686,silent,0.0000,True,False
+quick,A,linear,Wampler5,torch.lstsq.gelsd.f64,,6.8119,silent,5.9004,silent,1.3866,False,False
+quick,A,linear,Wampler5,torch.lstsq.gelss.f64,,6.8119,silent,5.9004,silent,1.3884,False,False
+quick,A,linear,Wampler5,torch.lstsq.gelsy.f32,,0.0000,pass,0.0000,pass,0.6703,False,False
+quick,A,linear,Wampler5,torch.lstsq.gelsy.f64,,7.0874,silent,7.5193,silent,1.7557,False,False
+quick,A,nonlinear,Bennett5,scipy.curve_fit.default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.curve_fit.default,S2,4.4951,ok,4.4951,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.curve_fit.jac-analytic,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.curve_fit.jac-analytic,S2,3.9409,ok,3.9409,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-2point.tol-default,S1,5.1949,ok,5.1949,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-2point.tol-default,S2,5.2596,ok,5.2596,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,5.3760,ok,5.3760,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,5.2596,ok,5.2596,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,10.7696,ok,10.7696,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,10.5266,ok,10.5266,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,10.7770,ok,10.7770,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.6389,ok,10.6389,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.lm.jac-2point.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.lm.jac-2point.tol-default,S2,5.4611,ok,5.4611,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.lm.jac-2point.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.lm.jac-2point.tol-tight,S2,6.0319,ok,6.0319,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.lm.jac-analytic.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.lm.jac-analytic.tol-default,S2,4.0902,ok,4.0902,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.lm.jac-analytic.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.lm.jac-analytic.tol-tight,S2,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.trf.jac-2point.tol-default,S1,1.8888,flagged,1.8888,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.trf.jac-2point.tol-default,S2,5.3822,ok,5.3822,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.trf.jac-2point.tol-tight,S1,1.8888,flagged,1.8888,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.trf.jac-2point.tol-tight,S2,5.3795,ok,5.3795,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.trf.jac-analytic.tol-default,S1,1.8891,flagged,1.8891,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.trf.jac-analytic.tol-default,S2,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.trf.jac-analytic.tol-tight,S1,1.8891,flagged,1.8891,flagged,0.0000,True,False
+quick,A,nonlinear,Bennett5,scipy.least_squares.trf.jac-analytic.tol-tight,S2,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.curve_fit.default,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.curve_fit.default,S2,4.4046,ok,4.4046,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.curve_fit.jac-analytic,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.curve_fit.jac-analytic,S2,4.4045,ok,4.4045,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-2point.tol-default,S1,5.0931,ok,5.0931,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-2point.tol-default,S2,5.3735,ok,5.3735,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,8.6342,ok,8.6342,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,8.1590,ok,8.1590,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,5.0935,ok,5.0935,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,5.3743,ok,5.3743,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,8.4529,ok,8.4529,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,8.7339,ok,8.7339,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.lm.jac-2point.tol-default,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.lm.jac-2point.tol-default,S2,5.1257,ok,5.1257,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.lm.jac-2point.tol-tight,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.9595,ok,7.9595,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.lm.jac-analytic.tol-default,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.lm.jac-analytic.tol-default,S2,5.1253,ok,5.1253,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.lm.jac-analytic.tol-tight,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.lm.jac-analytic.tol-tight,S2,9.1555,ok,9.1555,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.trf.jac-2point.tol-default,S1,5.4111,ok,5.4111,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.trf.jac-2point.tol-default,S2,5.3900,ok,5.3900,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.trf.jac-2point.tol-tight,S1,8.2962,ok,8.2962,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.9706,ok,7.9706,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.trf.jac-analytic.tol-default,S1,5.4105,ok,5.4105,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.trf.jac-analytic.tol-default,S2,5.3902,ok,5.3902,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.trf.jac-analytic.tol-tight,S1,8.0997,ok,8.0997,ok,0.0000,True,False
+quick,A,nonlinear,BoxBOD,scipy.least_squares.trf.jac-analytic.tol-tight,S2,8.7499,ok,8.7499,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.curve_fit.default,S1,4.8115,ok,4.8115,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.curve_fit.default,S2,5.2818,ok,5.2818,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.curve_fit.jac-analytic,S1,4.8110,ok,4.8110,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.curve_fit.jac-analytic,S2,5.2792,ok,5.2792,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-2point.tol-default,S1,6.6555,ok,6.6555,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-2point.tol-default,S2,5.8510,ok,5.8510,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,7.8569,ok,7.8569,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,8.1989,ok,8.1989,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,6.6494,ok,6.6494,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,5.8505,ok,5.8505,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,7.7348,ok,7.7348,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,8.5057,ok,8.5057,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.lm.jac-2point.tol-default,S1,5.8464,ok,5.8464,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.lm.jac-2point.tol-default,S2,5.8491,ok,5.8491,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.lm.jac-2point.tol-tight,S1,8.3294,ok,8.3294,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.lm.jac-2point.tol-tight,S2,8.1754,ok,8.1754,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.lm.jac-analytic.tol-default,S1,5.8459,ok,5.8459,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.lm.jac-analytic.tol-default,S2,5.8505,ok,5.8505,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.lm.jac-analytic.tol-tight,S1,9.6933,ok,9.6933,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.lm.jac-analytic.tol-tight,S2,8.5057,ok,8.5057,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.trf.jac-2point.tol-default,S1,5.1922,ok,5.1922,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.trf.jac-2point.tol-default,S2,5.8509,ok,5.8509,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.trf.jac-2point.tol-tight,S1,8.3580,ok,8.3580,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.trf.jac-2point.tol-tight,S2,8.2317,ok,8.2317,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.trf.jac-analytic.tol-default,S1,5.1921,ok,5.1921,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.trf.jac-analytic.tol-default,S2,5.8505,ok,5.8505,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.trf.jac-analytic.tol-tight,S1,9.2806,ok,9.2806,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut1,scipy.least_squares.trf.jac-analytic.tol-tight,S2,8.5059,ok,8.5059,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.curve_fit.default,S1,5.2610,ok,5.2610,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.curve_fit.default,S2,4.9666,ok,4.9666,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.curve_fit.jac-analytic,S1,5.2525,ok,5.2525,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.curve_fit.jac-analytic,S2,4.9681,ok,4.9681,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-2point.tol-default,S1,5.6608,ok,5.6608,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-2point.tol-default,S2,5.8946,ok,5.8946,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,8.3561,ok,8.3561,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,8.1828,ok,8.1828,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,5.6609,ok,5.6609,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,5.8952,ok,5.8952,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,8.3497,ok,8.3497,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,8.6081,ok,8.6081,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.lm.jac-2point.tol-default,S1,6.1781,ok,6.1781,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.lm.jac-2point.tol-default,S2,5.8928,ok,5.8928,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.4563,ok,7.4563,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.2939,ok,7.2939,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.lm.jac-analytic.tol-default,S1,6.1796,ok,6.1796,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.lm.jac-analytic.tol-default,S2,5.8952,ok,5.8952,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.lm.jac-analytic.tol-tight,S1,7.5235,ok,7.5235,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.lm.jac-analytic.tol-tight,S2,8.5815,ok,8.5815,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.trf.jac-2point.tol-default,S1,5.6720,ok,5.6720,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.trf.jac-2point.tol-default,S2,5.8943,ok,5.8943,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.8660,ok,7.8660,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.trf.jac-2point.tol-tight,S2,8.2883,ok,8.2883,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.trf.jac-analytic.tol-default,S1,5.6739,ok,5.6739,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.trf.jac-analytic.tol-default,S2,5.8952,ok,5.8952,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.trf.jac-analytic.tol-tight,S1,8.3610,ok,8.3610,ok,0.0000,True,False
+quick,A,nonlinear,Chwirut2,scipy.least_squares.trf.jac-analytic.tol-tight,S2,8.5815,ok,8.5815,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.curve_fit.default,S1,5.9536,ok,5.9536,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.curve_fit.default,S2,6.7009,ok,6.7009,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.curve_fit.jac-analytic,S1,5.9579,ok,5.9579,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.curve_fit.jac-analytic,S2,6.6844,ok,6.6844,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.dogbox.jac-2point.tol-default,S1,8.0231,ok,8.0231,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.dogbox.jac-2point.tol-default,S2,8.8152,ok,8.8152,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,9.4573,ok,9.4573,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,9.7569,ok,9.7569,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,7.9719,ok,7.9719,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,8.6997,ok,8.6997,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,8.7910,ok,8.7910,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.lm.jac-2point.tol-default,S1,7.9684,ok,7.9684,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.lm.jac-2point.tol-default,S2,8.8152,ok,8.8152,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.lm.jac-2point.tol-tight,S1,9.3176,ok,9.3176,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.lm.jac-2point.tol-tight,S2,9.6217,ok,9.6217,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.lm.jac-analytic.tol-default,S1,7.9719,ok,7.9719,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.lm.jac-analytic.tol-default,S2,8.6997,ok,8.6997,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.lm.jac-analytic.tol-tight,S1,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.lm.jac-analytic.tol-tight,S2,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.trf.jac-2point.tol-default,S1,7.9390,ok,7.9390,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.trf.jac-2point.tol-default,S2,8.8152,ok,8.8152,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.trf.jac-2point.tol-tight,S1,9.5383,ok,9.5383,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.trf.jac-2point.tol-tight,S2,9.5020,ok,9.5020,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.trf.jac-analytic.tol-default,S1,7.9719,ok,7.9719,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.trf.jac-analytic.tol-default,S2,8.6997,ok,8.6997,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.trf.jac-analytic.tol-tight,S1,10.2114,ok,10.2114,ok,0.0000,True,False
+quick,A,nonlinear,DanWood,scipy.least_squares.trf.jac-analytic.tol-tight,S2,8.7093,ok,8.7093,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.curve_fit.default,S1,3.1967,silent,3.1967,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.curve_fit.default,S2,3.0591,silent,3.0591,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.curve_fit.jac-analytic,S1,3.1941,silent,3.1941,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.curve_fit.jac-analytic,S2,3.0580,silent,3.0580,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.dogbox.jac-2point.tol-default,S1,3.0092,silent,3.0092,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.dogbox.jac-2point.tol-default,S2,3.0588,silent,3.0588,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,6.1771,ok,6.1771,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,5.9874,ok,5.9874,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,3.0084,silent,3.0084,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,3.0580,silent,3.0580,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,6.4517,ok,6.4517,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,6.5013,ok,6.5013,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.lm.jac-2point.tol-default,S1,3.1950,silent,3.1950,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.lm.jac-2point.tol-default,S2,3.2479,silent,3.2479,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.lm.jac-2point.tol-tight,S1,6.3286,ok,6.3286,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.lm.jac-2point.tol-tight,S2,6.3944,ok,6.3944,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.lm.jac-analytic.tol-default,S1,3.1941,silent,3.1941,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.lm.jac-analytic.tol-default,S2,3.2494,silent,3.2494,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.lm.jac-analytic.tol-tight,S1,6.6373,ok,6.6373,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.lm.jac-analytic.tol-tight,S2,6.5013,ok,6.5013,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.trf.jac-2point.tol-default,S1,2.9205,silent,2.9205,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.trf.jac-2point.tol-default,S2,2.8664,silent,2.8664,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.trf.jac-2point.tol-tight,S1,5.8993,ok,5.8993,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.trf.jac-2point.tol-tight,S2,5.9399,ok,5.9399,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.trf.jac-analytic.tol-default,S1,2.9210,silent,2.9210,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.trf.jac-analytic.tol-default,S2,3.0580,silent,3.0580,silent,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.trf.jac-analytic.tol-tight,S1,6.5556,ok,6.5556,ok,0.0000,True,False
+quick,A,nonlinear,ENSO,scipy.least_squares.trf.jac-analytic.tol-tight,S2,6.5013,ok,6.5013,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.curve_fit.default,S1,5.9606,ok,5.9606,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.curve_fit.default,S2,5.8032,ok,5.8032,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.curve_fit.jac-analytic,S1,5.9598,ok,5.9598,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.curve_fit.jac-analytic,S2,5.8059,ok,5.8059,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-2point.tol-default,S1,7.2267,ok,7.2267,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-2point.tol-default,S2,7.1568,ok,7.1568,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,9.5263,ok,9.5263,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,9.2907,ok,9.2907,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,7.2241,ok,7.2241,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,7.1583,ok,7.1583,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,9.7720,ok,9.7720,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,9.6328,ok,9.6328,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.lm.jac-2point.tol-default,S1,7.1953,ok,7.1953,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.lm.jac-2point.tol-default,S2,7.1584,ok,7.1584,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.lm.jac-2point.tol-tight,S1,9.7294,ok,9.7294,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.lm.jac-2point.tol-tight,S2,9.3313,ok,9.3313,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.lm.jac-analytic.tol-default,S1,7.1946,ok,7.1946,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.lm.jac-analytic.tol-default,S2,7.1583,ok,7.1583,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.lm.jac-analytic.tol-tight,S1,9.6970,ok,9.6970,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.lm.jac-analytic.tol-tight,S2,9.6071,ok,9.6071,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.trf.jac-2point.tol-default,S1,6.9417,ok,6.9417,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.trf.jac-2point.tol-default,S2,7.1576,ok,7.1576,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.trf.jac-2point.tol-tight,S1,9.8090,ok,9.8090,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.trf.jac-2point.tol-tight,S2,9.7612,ok,9.7612,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.trf.jac-analytic.tol-default,S1,6.9477,ok,6.9477,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.trf.jac-analytic.tol-default,S2,7.1583,ok,7.1583,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.trf.jac-analytic.tol-tight,S1,10.5112,ok,10.5112,ok,0.0000,True,False
+quick,A,nonlinear,Eckerle4,scipy.least_squares.trf.jac-analytic.tol-tight,S2,9.6328,ok,9.6328,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.curve_fit.default,S1,4.7966,ok,4.7966,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.curve_fit.default,S2,4.9428,ok,4.9428,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.curve_fit.jac-analytic,S1,4.7971,ok,4.7971,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.curve_fit.jac-analytic,S2,4.9436,ok,4.9436,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-2point.tol-default,S1,6.8875,ok,6.8875,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-2point.tol-default,S2,8.0624,ok,8.0624,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,8.0297,ok,8.0297,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.9799,ok,7.9799,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,6.9243,ok,6.9243,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,8.6427,ok,8.6427,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,10.6381,ok,10.6381,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.5615,ok,10.5615,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.lm.jac-2point.tol-default,S1,6.8863,ok,6.8863,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.lm.jac-2point.tol-default,S2,8.0855,ok,8.0855,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.lm.jac-2point.tol-tight,S1,8.0543,ok,8.0543,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.lm.jac-2point.tol-tight,S2,8.0855,ok,8.0855,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.lm.jac-analytic.tol-default,S1,6.9243,ok,6.9243,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.lm.jac-analytic.tol-default,S2,8.6427,ok,8.6427,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.lm.jac-analytic.tol-tight,S1,10.6381,ok,10.6381,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.lm.jac-analytic.tol-tight,S2,8.6427,ok,8.6427,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.trf.jac-2point.tol-default,S1,6.8874,ok,6.8874,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.trf.jac-2point.tol-default,S2,8.0996,ok,8.0996,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.trf.jac-2point.tol-tight,S1,8.0165,ok,8.0165,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.trf.jac-2point.tol-tight,S2,8.0719,ok,8.0719,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.trf.jac-analytic.tol-default,S1,6.9243,ok,6.9243,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.trf.jac-analytic.tol-default,S2,8.6427,ok,8.6427,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.trf.jac-analytic.tol-tight,S1,10.6381,ok,10.6381,ok,0.0000,True,False
+quick,A,nonlinear,Gauss1,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.5615,ok,10.5615,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.curve_fit.default,S1,6.2424,ok,6.2424,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.curve_fit.default,S2,6.4078,ok,6.4078,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.curve_fit.jac-analytic,S1,6.2539,ok,6.2539,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.curve_fit.jac-analytic,S2,6.3560,ok,6.3560,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-2point.tol-default,S1,8.3830,ok,8.3830,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-2point.tol-default,S2,8.1073,ok,8.1073,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,9.5128,ok,9.5128,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,9.2498,ok,9.2498,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,8.4011,ok,8.4011,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,8.1009,ok,8.1009,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,10.1049,ok,10.1049,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.3286,ok,10.3286,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.lm.jac-2point.tol-default,S1,8.3445,ok,8.3445,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.lm.jac-2point.tol-default,S2,8.1221,ok,8.1221,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.lm.jac-2point.tol-tight,S1,8.3445,ok,8.3445,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.lm.jac-2point.tol-tight,S2,9.0475,ok,9.0475,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.lm.jac-analytic.tol-default,S1,8.4011,ok,8.4011,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.lm.jac-analytic.tol-default,S2,8.1009,ok,8.1009,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.lm.jac-analytic.tol-tight,S1,10.0032,ok,10.0032,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.lm.jac-analytic.tol-tight,S2,9.9078,ok,9.9078,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.trf.jac-2point.tol-default,S1,8.3495,ok,8.3495,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.trf.jac-2point.tol-default,S2,8.0978,ok,8.0978,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.trf.jac-2point.tol-tight,S1,9.1838,ok,9.1838,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.trf.jac-2point.tol-tight,S2,9.2134,ok,9.2134,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.trf.jac-analytic.tol-default,S1,8.4011,ok,8.4011,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.trf.jac-analytic.tol-default,S2,8.1009,ok,8.1009,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.trf.jac-analytic.tol-tight,S1,10.0032,ok,10.0032,ok,0.0000,True,False
+quick,A,nonlinear,Gauss2,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.3286,ok,10.3286,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.curve_fit.default,S1,5.9150,ok,5.9150,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.curve_fit.default,S2,5.5206,ok,5.5206,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.curve_fit.jac-analytic,S1,5.9480,ok,5.9480,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.curve_fit.jac-analytic,S2,5.5080,ok,5.5080,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-2point.tol-default,S1,8.6034,ok,8.6034,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-2point.tol-default,S2,8.4892,ok,8.4892,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,8.5831,ok,8.5831,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,9.1567,ok,9.1567,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,9.2021,ok,9.2021,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,8.9318,ok,8.9318,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,9.2038,ok,9.2038,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.4202,ok,10.4202,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.lm.jac-2point.tol-default,S1,8.6479,ok,8.6479,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.lm.jac-2point.tol-default,S2,7.7719,ok,7.7719,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.lm.jac-2point.tol-tight,S1,8.6479,ok,8.6479,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.lm.jac-2point.tol-tight,S2,8.7452,ok,8.7452,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.lm.jac-analytic.tol-default,S1,9.2021,ok,9.2021,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.lm.jac-analytic.tol-default,S2,7.7658,ok,7.7658,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.lm.jac-analytic.tol-tight,S1,10.4462,ok,10.4462,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.lm.jac-analytic.tol-tight,S2,9.5086,ok,9.5086,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.trf.jac-2point.tol-default,S1,8.8072,ok,8.8072,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.trf.jac-2point.tol-default,S2,7.8338,ok,7.8338,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.trf.jac-2point.tol-tight,S1,9.0318,ok,9.0318,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.trf.jac-2point.tol-tight,S2,8.8363,ok,8.8363,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.trf.jac-analytic.tol-default,S1,9.2021,ok,9.2021,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.trf.jac-analytic.tol-default,S2,7.8364,ok,7.8364,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.trf.jac-analytic.tol-tight,S1,9.2021,ok,9.2021,ok,0.0000,True,False
+quick,A,nonlinear,Gauss3,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.4700,ok,10.4700,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.curve_fit.default,S1,4.6424,ok,4.6424,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.curve_fit.default,S2,4.3616,ok,4.3616,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.curve_fit.jac-analytic,S1,4.6397,ok,4.6397,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.curve_fit.jac-analytic,S2,4.3615,ok,4.3615,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-default,S1,2.1677,silent,2.1677,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-default,S2,2.1663,silent,2.1663,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,2.1677,silent,2.1677,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,2.1663,silent,2.1663,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,5.2253,ok,5.2253,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,6.6491,ok,6.6491,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,8.5071,ok,8.5071,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.5901,ok,10.5901,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-default,S1,2.1646,silent,2.1646,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-default,S2,2.1667,silent,2.1667,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-tight,S1,2.1646,silent,2.1646,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-tight,S2,2.1667,silent,2.1667,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.lm.jac-analytic.tol-default,S1,5.9016,ok,5.9016,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.lm.jac-analytic.tol-default,S2,6.6623,ok,6.6623,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.lm.jac-analytic.tol-tight,S1,9.0631,ok,9.0631,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.lm.jac-analytic.tol-tight,S2,8.2450,ok,8.2450,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-default,S1,2.1644,silent,2.1644,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-default,S2,2.1675,silent,2.1675,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-tight,S1,2.1646,silent,2.1646,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-tight,S2,2.1663,silent,2.1663,silent,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.trf.jac-analytic.tol-default,S1,6.1122,ok,6.1122,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.trf.jac-analytic.tol-default,S2,6.6491,ok,6.6491,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.trf.jac-analytic.tol-tight,S1,10.0979,ok,10.0979,ok,0.0000,True,False
+quick,A,nonlinear,Hahn1,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.1240,ok,10.1240,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.curve_fit.default,S1,5.6639,ok,5.6639,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.curve_fit.default,S2,5.0993,ok,5.0993,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.curve_fit.jac-analytic,S1,5.6428,ok,5.6428,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.curve_fit.jac-analytic,S2,5.0924,ok,5.0924,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-2point.tol-default,S1,5.1224,ok,5.1224,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-2point.tol-default,S2,4.9573,ok,4.9573,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,5.1224,ok,5.1224,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,4.9573,ok,4.9573,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,6.3693,ok,6.3693,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,5.8198,ok,5.8198,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,8.6456,ok,8.6456,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,9.0536,ok,9.0536,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.lm.jac-2point.tol-default,S1,5.1184,ok,5.1184,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.lm.jac-2point.tol-default,S2,4.9528,ok,4.9528,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.lm.jac-2point.tol-tight,S1,5.1217,ok,5.1217,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.lm.jac-2point.tol-tight,S2,4.9527,ok,4.9527,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.lm.jac-analytic.tol-default,S1,6.3693,ok,6.3693,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.lm.jac-analytic.tol-default,S2,5.8198,ok,5.8198,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.lm.jac-analytic.tol-tight,S1,7.4398,ok,7.4398,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.lm.jac-analytic.tol-tight,S2,10.5287,ok,10.5287,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.trf.jac-2point.tol-default,S1,5.1155,ok,5.1155,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.trf.jac-2point.tol-default,S2,4.9549,ok,4.9549,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.trf.jac-2point.tol-tight,S1,5.1155,ok,5.1155,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.trf.jac-2point.tol-tight,S2,4.9549,ok,4.9549,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.trf.jac-analytic.tol-default,S1,6.3693,ok,6.3693,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.trf.jac-analytic.tol-default,S2,5.8198,ok,5.8198,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.trf.jac-analytic.tol-tight,S1,7.5778,ok,7.5778,ok,0.0000,True,False
+quick,A,nonlinear,Kirby2,scipy.least_squares.trf.jac-analytic.tol-tight,S2,9.0306,ok,9.0306,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.curve_fit.default,S1,3.2291,ok,3.2291,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.curve_fit.default,S2,2.8529,ok,2.8529,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.curve_fit.jac-analytic,S1,3.2766,ok,3.2766,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.curve_fit.jac-analytic,S2,2.9569,ok,2.9569,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-2point.tol-default,S1,0.0000,ok,0.0000,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-2point.tol-default,S2,2.0655,ok,2.0655,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,3.5722,ok,3.5722,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,2.8051,ok,2.8051,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,0.0000,ok,0.0000,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,2.1353,ok,2.1353,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,3.0115,ok,3.0115,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,2.8894,ok,2.8894,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.lm.jac-2point.tol-default,S1,2.9429,ok,2.9429,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.lm.jac-2point.tol-default,S2,3.0146,ok,3.0146,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.lm.jac-2point.tol-tight,S1,2.9429,ok,2.9429,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.lm.jac-2point.tol-tight,S2,2.6472,ok,2.6472,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.lm.jac-analytic.tol-default,S1,3.2766,ok,3.2766,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.lm.jac-analytic.tol-default,S2,2.9569,ok,2.9569,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.lm.jac-analytic.tol-tight,S1,3.0137,ok,3.0137,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.lm.jac-analytic.tol-tight,S2,2.6016,ok,2.6016,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.trf.jac-2point.tol-default,S1,0.0000,ok,0.0000,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.trf.jac-2point.tol-default,S2,2.0456,ok,2.0456,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.trf.jac-2point.tol-tight,S1,3.7868,ok,3.7868,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.trf.jac-2point.tol-tight,S2,2.8402,ok,2.8402,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.trf.jac-analytic.tol-default,S1,0.0000,ok,0.0000,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.trf.jac-analytic.tol-default,S2,2.1215,ok,2.1215,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.trf.jac-analytic.tol-tight,S1,2.9087,ok,2.9087,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos1,scipy.least_squares.trf.jac-analytic.tol-tight,S2,2.8267,ok,2.8267,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.curve_fit.default,S1,4.8270,ok,4.8270,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.curve_fit.default,S2,4.0414,ok,4.0414,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.curve_fit.jac-analytic,S1,8.3943,ok,8.3943,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.curve_fit.jac-analytic,S2,9.0273,ok,9.0273,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-2point.tol-default,S1,6.3162,ok,6.3162,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-2point.tol-default,S2,6.1680,ok,6.1680,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,6.5324,ok,6.5324,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,6.8658,ok,6.8658,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,7.3123,ok,7.3123,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,9.0964,ok,9.0964,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,10.1305,ok,10.1305,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.3473,ok,10.3473,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.lm.jac-2point.tol-default,S1,8.2773,ok,8.2773,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.lm.jac-2point.tol-default,S2,6.3031,ok,6.3031,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.3199,ok,7.3199,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.lm.jac-2point.tol-tight,S2,6.3004,ok,6.3004,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.lm.jac-analytic.tol-default,S1,8.4302,ok,8.4302,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.lm.jac-analytic.tol-default,S2,9.0966,ok,9.0966,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.lm.jac-analytic.tol-tight,S1,8.4302,ok,8.4302,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.lm.jac-analytic.tol-tight,S2,9.1012,ok,9.1012,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.trf.jac-2point.tol-default,S1,6.4288,ok,6.4288,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.trf.jac-2point.tol-default,S2,6.8083,ok,6.8083,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.trf.jac-2point.tol-tight,S1,6.4112,ok,6.4112,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.0643,ok,7.0643,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.trf.jac-analytic.tol-default,S1,8.6019,ok,8.6019,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.trf.jac-analytic.tol-default,S2,9.0966,ok,9.0966,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.trf.jac-analytic.tol-tight,S1,8.6041,ok,8.6041,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos2,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.0880,ok,10.0880,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.curve_fit.default,S1,4.3382,ok,4.3382,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.curve_fit.default,S2,4.5668,ok,4.5668,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.curve_fit.jac-analytic,S1,5.2896,ok,5.2896,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.curve_fit.jac-analytic,S2,7.8657,ok,7.8657,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-2point.tol-default,S1,4.8331,ok,4.8331,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-2point.tol-default,S2,5.5165,ok,5.5165,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,5.6279,ok,5.6279,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,5.5122,ok,5.5122,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,6.2171,ok,6.2171,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,6.4076,ok,6.4076,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,6.2171,ok,6.2171,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,6.4076,ok,6.4076,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.lm.jac-2point.tol-default,S1,5.1033,ok,5.1033,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.lm.jac-2point.tol-default,S2,6.0242,ok,6.0242,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.lm.jac-2point.tol-tight,S1,5.7415,ok,5.7415,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.lm.jac-2point.tol-tight,S2,6.0242,ok,6.0242,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.lm.jac-analytic.tol-default,S1,6.7598,ok,6.7598,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.lm.jac-analytic.tol-default,S2,7.8717,ok,7.8717,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.lm.jac-analytic.tol-tight,S1,9.6871,ok,9.6871,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.lm.jac-analytic.tol-tight,S2,7.8770,ok,7.8770,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.trf.jac-2point.tol-default,S1,4.6014,ok,4.6014,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.trf.jac-2point.tol-default,S2,5.4557,ok,5.4557,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.trf.jac-2point.tol-tight,S1,4.9462,ok,4.9462,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.trf.jac-2point.tol-tight,S2,6.0428,ok,6.0428,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.trf.jac-analytic.tol-default,S1,6.3757,ok,6.3757,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.trf.jac-analytic.tol-default,S2,6.4076,ok,6.4076,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.trf.jac-analytic.tol-tight,S1,6.9628,ok,6.9628,ok,0.0000,True,False
+quick,A,nonlinear,Lanczos3,scipy.least_squares.trf.jac-analytic.tol-tight,S2,7.8992,ok,7.8992,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.curve_fit.default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.curve_fit.default,S2,3.8967,silent,3.8967,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.curve_fit.jac-analytic,S1,3.9512,ok,3.9512,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.curve_fit.jac-analytic,S2,3.8972,silent,3.8972,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.dogbox.jac-2point.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.dogbox.jac-2point.tol-default,S2,3.7710,silent,3.7710,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.3496,ok,7.3496,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,3.7712,silent,3.7712,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,7.2538,ok,7.2538,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.lm.jac-2point.tol-default,S1,3.9927,silent,3.9927,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.lm.jac-2point.tol-default,S2,3.9878,silent,3.9878,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.3709,ok,7.3709,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.4499,ok,7.4499,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.lm.jac-analytic.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.lm.jac-analytic.tol-default,S2,3.9878,silent,3.9878,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.lm.jac-analytic.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.lm.jac-analytic.tol-tight,S2,7.6230,ok,7.6230,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.trf.jac-2point.tol-default,S1,3.8491,silent,3.8491,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.trf.jac-2point.tol-default,S2,3.7748,silent,3.7748,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.5529,ok,7.5529,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.7195,ok,7.7195,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.trf.jac-analytic.tol-default,S1,3.8487,silent,3.8487,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.trf.jac-analytic.tol-default,S2,3.7753,silent,3.7753,silent,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.trf.jac-analytic.tol-tight,S1,7.9486,ok,7.9486,ok,0.0000,True,False
+quick,A,nonlinear,MGH09,scipy.least_squares.trf.jac-analytic.tol-tight,S2,7.4604,ok,7.4604,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.curve_fit.default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.curve_fit.default,S2,5.5177,ok,5.5177,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.curve_fit.jac-analytic,S1,6.0934,ok,6.0934,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.curve_fit.jac-analytic,S2,8.9745,ok,8.9745,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.dogbox.jac-2point.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.dogbox.jac-2point.tol-default,S2,6.9943,ok,6.9943,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.1627,ok,7.1627,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,10.9204,ok,10.9204,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.9215,ok,10.9215,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.lm.jac-2point.tol-default,S1,6.8303,ok,6.8303,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.lm.jac-2point.tol-default,S2,6.9049,ok,6.9049,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.lm.jac-2point.tol-tight,S1,6.8495,ok,6.8495,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.1016,ok,7.1016,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.lm.jac-analytic.tol-default,S1,9.8052,ok,9.8052,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.lm.jac-analytic.tol-default,S2,8.9745,ok,8.9745,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.lm.jac-analytic.tol-tight,S1,10.9215,ok,10.9215,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.lm.jac-analytic.tol-tight,S2,9.0213,ok,9.0213,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.trf.jac-2point.tol-default,S1,7.1506,ok,7.1506,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.trf.jac-2point.tol-default,S2,7.6763,ok,7.6763,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.1505,ok,7.1505,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.7177,ok,7.7177,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.trf.jac-analytic.tol-default,S1,10.9212,ok,10.9212,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.trf.jac-analytic.tol-default,S2,10.9235,ok,10.9235,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.trf.jac-analytic.tol-tight,S1,10.9212,ok,10.9212,ok,0.0000,True,False
+quick,A,nonlinear,MGH10,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.9211,ok,10.9211,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.curve_fit.default,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.curve_fit.default,S2,4.7002,ok,4.7002,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.curve_fit.jac-analytic,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.curve_fit.jac-analytic,S2,4.6156,ok,4.6156,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.dogbox.jac-2point.tol-default,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.dogbox.jac-2point.tol-default,S2,6.8441,ok,6.8441,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,6.8307,ok,6.8307,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,8.2292,ok,8.2292,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.7921,ok,10.7921,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.lm.jac-2point.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.lm.jac-2point.tol-default,S2,5.8887,ok,5.8887,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.lm.jac-2point.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.lm.jac-2point.tol-tight,S2,6.9623,ok,6.9623,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.lm.jac-analytic.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.lm.jac-analytic.tol-default,S2,6.5986,ok,6.5986,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.lm.jac-analytic.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.lm.jac-analytic.tol-tight,S2,9.6942,ok,9.6942,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.trf.jac-2point.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.trf.jac-2point.tol-default,S2,5.8592,ok,5.8592,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.trf.jac-2point.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.0343,ok,7.0343,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.trf.jac-analytic.tol-default,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.trf.jac-analytic.tol-default,S2,6.7076,ok,6.7076,ok,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.trf.jac-analytic.tol-tight,S1,0.0000,flagged,0.0000,flagged,0.0000,True,False
+quick,A,nonlinear,MGH17,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.8304,ok,10.8304,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.curve_fit.default,S1,6.6499,ok,6.6499,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.curve_fit.default,S2,7.3522,ok,7.3522,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.curve_fit.jac-analytic,S1,6.6411,ok,6.6411,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.curve_fit.jac-analytic,S2,7.3407,ok,7.3407,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-2point.tol-default,S1,7.4244,ok,7.4244,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-2point.tol-default,S2,7.7772,ok,7.7772,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,7.4395,ok,7.4395,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.7772,ok,7.7772,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,9.7925,ok,9.7925,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,10.1261,ok,10.1261,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,9.8788,ok,9.8788,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.4519,ok,10.4519,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.lm.jac-2point.tol-default,S1,7.4037,ok,7.4037,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.lm.jac-2point.tol-default,S2,7.8523,ok,7.8523,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.4043,ok,7.4043,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.8361,ok,7.8361,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.lm.jac-analytic.tol-default,S1,9.7807,ok,9.7807,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.lm.jac-analytic.tol-default,S2,10.1261,ok,10.1261,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.lm.jac-analytic.tol-tight,S1,9.7807,ok,9.7807,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.lm.jac-analytic.tol-tight,S2,10.1261,ok,10.1261,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.trf.jac-2point.tol-default,S1,7.4126,ok,7.4126,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.trf.jac-2point.tol-default,S2,7.9141,ok,7.9141,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.4126,ok,7.4126,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.9167,ok,7.9167,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.trf.jac-analytic.tol-default,S1,9.7925,ok,9.7925,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.trf.jac-analytic.tol-default,S2,10.1261,ok,10.1261,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.trf.jac-analytic.tol-tight,S1,10.4526,ok,10.4526,ok,0.0000,True,False
+quick,A,nonlinear,Misra1a,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.1271,ok,10.1271,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.curve_fit.default,S1,6.2565,ok,6.2565,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.curve_fit.default,S2,6.5078,ok,6.5078,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.curve_fit.jac-analytic,S1,6.6957,ok,6.6957,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.curve_fit.jac-analytic,S2,9.0901,ok,9.0901,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-2point.tol-default,S1,7.2787,ok,7.2787,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-2point.tol-default,S2,7.2854,ok,7.2854,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,7.2820,ok,7.2820,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.2841,ok,7.2841,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,9.2991,ok,9.2991,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,8.0061,ok,8.0061,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,8.4810,ok,8.4810,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.lm.jac-2point.tol-default,S1,7.2725,ok,7.2725,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.lm.jac-2point.tol-default,S2,7.2845,ok,7.2845,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.2829,ok,7.2829,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.2845,ok,7.2845,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.lm.jac-analytic.tol-default,S1,9.4971,ok,9.4971,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.lm.jac-analytic.tol-default,S2,9.3311,ok,9.3311,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.lm.jac-analytic.tol-tight,S1,10.9256,ok,10.9256,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.lm.jac-analytic.tol-tight,S2,9.3317,ok,9.3317,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.trf.jac-2point.tol-default,S1,7.2803,ok,7.2803,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.trf.jac-2point.tol-default,S2,7.2873,ok,7.2873,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.2693,ok,7.2693,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.2813,ok,7.2813,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.trf.jac-analytic.tol-default,S1,9.2991,ok,9.2991,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.trf.jac-analytic.tol-default,S2,10.5950,ok,10.5950,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.trf.jac-analytic.tol-tight,S1,9.9278,ok,9.9278,ok,0.0000,True,False
+quick,A,nonlinear,Misra1b,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.9619,ok,10.9619,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.curve_fit.default,S1,7.2945,ok,7.2945,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.curve_fit.default,S2,6.6754,ok,6.6754,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.curve_fit.jac-analytic,S1,8.0481,ok,8.0481,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.curve_fit.jac-analytic,S2,7.3170,ok,7.3170,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-2point.tol-default,S1,7.0910,ok,7.0910,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-2point.tol-default,S2,7.0864,ok,7.0864,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,7.1034,ok,7.1034,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.0865,ok,7.0865,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,9.6740,ok,9.6740,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,10.1030,ok,10.1030,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,10.7985,ok,10.7985,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,10.7986,ok,10.7986,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.lm.jac-2point.tol-default,S1,7.0908,ok,7.0908,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.lm.jac-2point.tol-default,S2,7.0861,ok,7.0861,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.0895,ok,7.0895,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.1017,ok,7.1017,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.lm.jac-analytic.tol-default,S1,8.2797,ok,8.2797,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.lm.jac-analytic.tol-default,S2,10.1030,ok,10.1030,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.lm.jac-analytic.tol-tight,S1,8.2797,ok,8.2797,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.lm.jac-analytic.tol-tight,S2,10.7974,ok,10.7974,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.trf.jac-2point.tol-default,S1,7.0938,ok,7.0938,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.trf.jac-2point.tol-default,S2,7.0942,ok,7.0942,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.0938,ok,7.0938,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.0943,ok,7.0943,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.trf.jac-analytic.tol-default,S1,9.6740,ok,9.6740,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.trf.jac-analytic.tol-default,S2,10.7974,ok,10.7974,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.trf.jac-analytic.tol-tight,S1,10.7897,ok,10.7897,ok,0.0000,True,False
+quick,A,nonlinear,Misra1c,scipy.least_squares.trf.jac-analytic.tol-tight,S2,10.8016,ok,10.8016,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.curve_fit.default,S1,7.4929,ok,7.4929,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.curve_fit.default,S2,6.1263,ok,6.1263,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.curve_fit.jac-analytic,S1,8.4608,ok,8.4608,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.curve_fit.jac-analytic,S2,6.0992,ok,6.0992,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-2point.tol-default,S1,7.2135,ok,7.2135,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-2point.tol-default,S2,7.2199,ok,7.2199,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,7.2134,ok,7.2134,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.2187,ok,7.2187,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,8.9374,ok,8.9374,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.lm.jac-2point.tol-default,S1,7.2183,ok,7.2183,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.lm.jac-2point.tol-default,S2,7.2199,ok,7.2199,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.2183,ok,7.2183,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.2199,ok,7.2199,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.lm.jac-analytic.tol-default,S1,8.7079,ok,8.7079,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.lm.jac-analytic.tol-default,S2,8.9374,ok,8.9374,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.lm.jac-analytic.tol-tight,S1,8.7079,ok,8.7079,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.lm.jac-analytic.tol-tight,S2,8.9833,ok,8.9833,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.trf.jac-2point.tol-default,S1,7.2004,ok,7.2004,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.trf.jac-2point.tol-default,S2,7.2199,ok,7.2199,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.2044,ok,7.2044,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.2187,ok,7.2187,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.trf.jac-analytic.tol-default,S1,8.7591,ok,8.7591,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.trf.jac-analytic.tol-default,S2,8.9374,ok,8.9374,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.trf.jac-analytic.tol-tight,S1,9.3653,ok,9.3653,ok,0.0000,True,False
+quick,A,nonlinear,Misra1d,scipy.least_squares.trf.jac-analytic.tol-tight,S2,9.0630,ok,9.0630,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.curve_fit.default,S1,4.7179,ok,4.7179,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.curve_fit.default,S2,5.0161,ok,5.0161,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.curve_fit.jac-analytic,S1,4.7250,ok,4.7250,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.curve_fit.jac-analytic,S2,5.1079,ok,5.1079,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.dogbox.jac-2point.tol-default,S1,7.1887,ok,7.1887,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.dogbox.jac-2point.tol-default,S2,6.2948,ok,6.2948,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,7.3755,ok,7.3755,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.3034,ok,7.3034,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,7.7470,ok,7.7470,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,6.2551,ok,6.2551,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,9.3893,ok,9.3893,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,8.0095,ok,8.0095,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.lm.jac-2point.tol-default,S1,6.3647,ok,6.3647,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.lm.jac-2point.tol-default,S2,6.8125,ok,6.8125,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.4307,ok,7.4307,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.lm.jac-2point.tol-tight,S2,6.8125,ok,6.8125,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.lm.jac-analytic.tol-default,S1,6.3122,ok,6.3122,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.lm.jac-analytic.tol-default,S2,6.6950,ok,6.6950,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.lm.jac-analytic.tol-tight,S1,7.9451,ok,7.9451,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.lm.jac-analytic.tol-tight,S2,8.3275,ok,8.3275,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.trf.jac-2point.tol-default,S1,6.6965,ok,6.6965,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.trf.jac-2point.tol-default,S2,7.2561,ok,7.2561,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.2981,ok,7.2981,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.2578,ok,7.2578,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.trf.jac-analytic.tol-default,S1,6.8031,ok,6.8031,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.trf.jac-analytic.tol-default,S2,8.3470,ok,8.3470,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.trf.jac-analytic.tol-tight,S1,8.4376,ok,8.4376,ok,0.0000,True,False
+quick,A,nonlinear,Nelson,scipy.least_squares.trf.jac-analytic.tol-tight,S2,8.3470,ok,8.3470,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.curve_fit.default,S1,5.1984,ok,5.1984,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.curve_fit.default,S2,5.5690,ok,5.5690,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.curve_fit.jac-analytic,S1,5.1988,ok,5.1988,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.curve_fit.jac-analytic,S2,5.5661,ok,5.5661,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.dogbox.jac-2point.tol-default,S1,6.8887,ok,6.8887,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.dogbox.jac-2point.tol-default,S2,7.0620,ok,7.0620,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,8.1628,ok,8.1628,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.9877,ok,7.9877,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,6.9418,ok,6.9418,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,7.1389,ok,7.1389,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,9.4824,ok,9.4824,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,8.4307,ok,8.4307,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.lm.jac-2point.tol-default,S1,6.8245,ok,6.8245,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.lm.jac-2point.tol-default,S2,7.0627,ok,7.0627,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.8339,ok,7.8339,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.lm.jac-2point.tol-tight,S2,8.0039,ok,8.0039,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.lm.jac-analytic.tol-default,S1,6.7805,ok,6.7805,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.lm.jac-analytic.tol-default,S2,7.1389,ok,7.1389,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.lm.jac-analytic.tol-tight,S1,10.3937,ok,10.3937,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.lm.jac-analytic.tol-tight,S2,9.3216,ok,9.3216,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.trf.jac-2point.tol-default,S1,7.1680,ok,7.1680,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.trf.jac-2point.tol-default,S2,7.0620,ok,7.0620,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.8840,ok,7.8840,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.9798,ok,7.9798,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.trf.jac-analytic.tol-default,S1,7.0886,ok,7.0886,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.trf.jac-analytic.tol-default,S2,7.1389,ok,7.1389,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.trf.jac-analytic.tol-tight,S1,11.0000,ok,11.0000,ok,0.0000,True,False
+quick,A,nonlinear,Rat42,scipy.least_squares.trf.jac-analytic.tol-tight,S2,9.6365,ok,9.6365,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.curve_fit.default,S1,5.0566,ok,5.0566,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.curve_fit.default,S2,4.4042,ok,4.4042,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.curve_fit.jac-analytic,S1,5.0708,ok,5.0708,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.curve_fit.jac-analytic,S2,4.4031,ok,4.4031,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.dogbox.jac-2point.tol-default,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.dogbox.jac-2point.tol-default,S2,4.8468,ok,4.8468,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,6.7393,ok,6.7393,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,4.8623,ok,4.8623,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,0.0000,silent,0.0000,silent,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,8.3803,ok,8.3803,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.lm.jac-2point.tol-default,S1,5.0792,ok,5.0792,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.lm.jac-2point.tol-default,S2,4.8528,ok,4.8528,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.lm.jac-2point.tol-tight,S1,6.9024,ok,6.9024,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.lm.jac-2point.tol-tight,S2,6.8048,ok,6.8048,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.lm.jac-analytic.tol-default,S1,5.0708,ok,5.0708,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.lm.jac-analytic.tol-default,S2,4.8623,ok,4.8623,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.lm.jac-analytic.tol-tight,S1,7.9550,ok,7.9550,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.lm.jac-analytic.tol-tight,S2,8.3803,ok,8.3803,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.trf.jac-2point.tol-default,S1,4.9429,ok,4.9429,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.trf.jac-2point.tol-default,S2,4.8789,ok,4.8789,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.3230,ok,7.3230,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.6073,ok,7.6073,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.trf.jac-analytic.tol-default,S1,4.9346,ok,4.9346,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.trf.jac-analytic.tol-default,S2,4.8623,ok,4.8623,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.trf.jac-analytic.tol-tight,S1,8.4811,ok,8.4811,ok,0.0000,True,False
+quick,A,nonlinear,Rat43,scipy.least_squares.trf.jac-analytic.tol-tight,S2,8.3803,ok,8.3803,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.curve_fit.default,S1,4.4108,ok,4.4108,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.curve_fit.default,S2,4.4221,ok,4.4221,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.curve_fit.jac-analytic,S1,4.4104,ok,4.4104,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.curve_fit.jac-analytic,S2,4.4190,ok,4.4190,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-2point.tol-default,S1,5.4447,ok,5.4447,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-2point.tol-default,S2,5.4754,ok,5.4754,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,7.1498,ok,7.1498,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.1724,ok,7.1724,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,5.4784,ok,5.4784,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,5.4860,ok,5.4860,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,7.1669,ok,7.1669,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,8.6217,ok,8.6217,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.lm.jac-2point.tol-default,S1,5.4561,ok,5.4561,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.lm.jac-2point.tol-default,S2,5.4573,ok,5.4573,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.lm.jac-2point.tol-tight,S1,6.4318,ok,6.4318,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.7821,ok,7.7821,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.lm.jac-analytic.tol-default,S1,5.4784,ok,5.4784,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.lm.jac-analytic.tol-default,S2,5.4860,ok,5.4860,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.lm.jac-analytic.tol-tight,S1,8.6102,ok,8.6102,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.lm.jac-analytic.tol-tight,S2,8.6217,ok,8.6217,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.trf.jac-2point.tol-default,S1,5.5587,ok,5.5587,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.trf.jac-2point.tol-default,S2,5.4948,ok,5.4948,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.1789,ok,7.1789,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.trf.jac-2point.tol-tight,S2,7.1819,ok,7.1819,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.trf.jac-analytic.tol-default,S1,5.4784,ok,5.4784,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.trf.jac-analytic.tol-default,S2,5.4860,ok,5.4860,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.trf.jac-analytic.tol-tight,S1,8.6124,ok,8.6124,ok,0.0000,True,False
+quick,A,nonlinear,Roszman1,scipy.least_squares.trf.jac-analytic.tol-tight,S2,8.6217,ok,8.6217,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.curve_fit.default,S1,3.6544,ok,3.6544,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.curve_fit.default,S2,3.7083,ok,3.7083,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.curve_fit.jac-analytic,S1,3.6576,ok,3.6576,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.curve_fit.jac-analytic,S2,3.7090,ok,3.7090,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.dogbox.jac-2point.tol-default,S1,4.4496,ok,4.4496,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.dogbox.jac-2point.tol-default,S2,4.3526,ok,4.3526,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.dogbox.jac-2point.tol-tight,S1,7.3679,ok,7.3679,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.dogbox.jac-2point.tol-tight,S2,7.7140,ok,7.7140,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.dogbox.jac-analytic.tol-default,S1,4.4499,ok,4.4499,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.dogbox.jac-analytic.tol-default,S2,4.3554,ok,4.3554,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.dogbox.jac-analytic.tol-tight,S1,7.6376,ok,7.6376,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.dogbox.jac-analytic.tol-tight,S2,7.9599,ok,7.9599,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.lm.jac-2point.tol-default,S1,4.6351,ok,4.6351,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.lm.jac-2point.tol-default,S2,4.6953,ok,4.6953,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.lm.jac-2point.tol-tight,S1,7.5730,ok,7.5730,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.lm.jac-2point.tol-tight,S2,7.0370,ok,7.0370,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.lm.jac-analytic.tol-default,S1,4.6475,ok,4.6475,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.lm.jac-analytic.tol-default,S2,4.6987,ok,4.6987,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.lm.jac-analytic.tol-tight,S1,7.8216,ok,7.8216,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.lm.jac-analytic.tol-tight,S2,7.7311,ok,7.7311,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.trf.jac-2point.tol-default,S1,4.4022,ok,4.4022,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.trf.jac-2point.tol-default,S2,4.3552,ok,4.3552,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.trf.jac-2point.tol-tight,S1,7.2134,ok,7.2134,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.trf.jac-2point.tol-tight,S2,6.9706,ok,6.9706,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.trf.jac-analytic.tol-default,S1,4.4019,ok,4.4019,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.trf.jac-analytic.tol-default,S2,4.3554,ok,4.3554,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.trf.jac-analytic.tol-tight,S1,8.5310,ok,8.5310,ok,0.0000,True,False
+quick,A,nonlinear,Thurber,scipy.least_squares.trf.jac-analytic.tol-tight,S2,7.7613,ok,7.7613,ok,0.0000,True,False
+quick,A,univariate,Lew,control.exact,,14.8401,pass,14.8401,pass,0.0000,True,False
+quick,A,univariate,Lew,control.onepass.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lew,duckdb.decimal,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lew,duckdb.double,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lew,duckdb.float,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lew,numpy.f32,,7.2445,pass,7.2445,pass,0.0000,True,False
+quick,A,univariate,Lew,numpy.f64,,14.8401,pass,14.8401,pass,0.0000,True,False
+quick,A,univariate,Lew,pandas.f32,,7.2445,pass,7.2445,pass,0.0000,True,False
+quick,A,univariate,Lew,pandas.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lew,polars.eager.f32,,7.2750,pass,7.2750,pass,0.0000,True,False
+quick,A,univariate,Lew,polars.eager.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lew,polars.lazy-streaming.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lew,scipy.describe.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lew,statsmodels.f64,,14.8401,pass,14.8401,pass,0.0000,True,False
+quick,A,univariate,Lew,stdlib.statistics,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lew,torch.f32,,7.2750,pass,7.2750,pass,0.0000,True,False
+quick,A,univariate,Lew,torch.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,control.exact,,14.9403,pass,14.9403,pass,0.0000,True,False
+quick,A,univariate,Lottery,control.onepass.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,duckdb.decimal,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,duckdb.double,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,duckdb.float,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,numpy.f32,,7.0007,pass,7.0007,pass,0.0000,True,False
+quick,A,univariate,Lottery,numpy.f64,,14.8989,pass,14.8989,pass,0.0000,True,False
+quick,A,univariate,Lottery,pandas.f32,,7.3235,pass,7.3235,pass,0.0000,True,False
+quick,A,univariate,Lottery,pandas.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,polars.eager.f32,,7.4616,pass,7.4616,pass,0.0000,True,False
+quick,A,univariate,Lottery,polars.eager.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,polars.lazy-streaming.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,scipy.describe.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,statsmodels.f64,,14.8611,pass,14.8611,pass,0.0000,True,False
+quick,A,univariate,Lottery,stdlib.statistics,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Lottery,torch.f32,,7.3235,pass,7.3235,pass,0.0000,True,False
+quick,A,univariate,Lottery,torch.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Mavro,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Mavro,control.onepass.f64,,8.3606,pass,8.3606,pass,0.0000,True,False
+quick,A,univariate,Mavro,duckdb.decimal,,12.0501,pass,12.0501,pass,0.0000,True,False
+quick,A,univariate,Mavro,duckdb.double,,12.0501,pass,12.0501,pass,0.0000,True,False
+quick,A,univariate,Mavro,duckdb.float,,4.6575,pass,4.6575,pass,0.0000,True,False
+quick,A,univariate,Mavro,numpy.f32,,4.6562,pass,4.6562,pass,0.0000,True,False
+quick,A,univariate,Mavro,numpy.f64,,13.1218,pass,13.1218,pass,0.0000,True,False
+quick,A,univariate,Mavro,pandas.f32,,4.6576,pass,4.6576,pass,0.0000,True,False
+quick,A,univariate,Mavro,pandas.f64,,13.1218,pass,13.1218,pass,0.0000,True,False
+quick,A,univariate,Mavro,polars.eager.f32,,4.6576,pass,4.6576,pass,0.0000,True,False
+quick,A,univariate,Mavro,polars.eager.f64,,13.1218,pass,13.1218,pass,0.0000,True,False
+quick,A,univariate,Mavro,polars.lazy-streaming.f64,,13.1218,pass,13.1218,pass,0.0000,True,False
+quick,A,univariate,Mavro,scipy.describe.f64,,13.1218,pass,13.1218,pass,0.0000,True,False
+quick,A,univariate,Mavro,statsmodels.f64,,13.1218,pass,13.1218,pass,0.0000,True,False
+quick,A,univariate,Mavro,stdlib.statistics,,13.1218,pass,13.1218,pass,0.0000,True,False
+quick,A,univariate,Mavro,torch.f32,,4.6576,pass,4.6576,pass,0.0000,True,False
+quick,A,univariate,Mavro,torch.f64,,13.1218,pass,13.1218,pass,0.0000,True,False
+quick,A,univariate,Michelso,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,Michelso,control.onepass.f64,,9.1077,pass,9.1077,pass,0.0000,True,False
+quick,A,univariate,Michelso,duckdb.decimal,,12.3823,pass,12.3823,pass,0.0000,True,False
+quick,A,univariate,Michelso,duckdb.double,,12.3823,pass,12.3823,pass,0.0000,True,False
+quick,A,univariate,Michelso,duckdb.float,,4.6713,pass,4.6713,pass,0.0000,True,False
+quick,A,univariate,Michelso,numpy.f32,,4.6718,pass,4.6718,pass,0.0000,True,False
+quick,A,univariate,Michelso,numpy.f64,,13.4327,pass,13.4327,pass,0.0000,True,False
+quick,A,univariate,Michelso,pandas.f32,,4.6718,pass,4.6718,pass,0.0000,True,False
+quick,A,univariate,Michelso,pandas.f64,,13.8469,pass,13.8469,pass,0.0000,True,False
+quick,A,univariate,Michelso,polars.eager.f32,,4.6718,pass,4.6718,pass,0.0000,True,False
+quick,A,univariate,Michelso,polars.eager.f64,,13.8416,pass,13.8416,pass,0.0000,True,False
+quick,A,univariate,Michelso,polars.lazy-streaming.f64,,13.8416,pass,13.8416,pass,0.0000,True,False
+quick,A,univariate,Michelso,scipy.describe.f64,,13.8469,pass,13.8469,pass,0.0000,True,False
+quick,A,univariate,Michelso,statsmodels.f64,,13.4327,pass,13.4327,pass,0.0000,True,False
+quick,A,univariate,Michelso,stdlib.statistics,,13.8416,pass,13.8416,pass,0.0000,True,False
+quick,A,univariate,Michelso,torch.f32,,4.6718,pass,4.6718,pass,0.0000,True,False
+quick,A,univariate,Michelso,torch.f64,,13.8577,pass,13.8577,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,control.onepass.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,duckdb.decimal,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,duckdb.double,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,duckdb.float,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,numpy.f32,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,numpy.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,pandas.f32,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,pandas.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,polars.eager.f32,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,polars.eager.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,polars.lazy-streaming.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,scipy.describe.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,statsmodels.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,stdlib.statistics,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,torch.f32,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc1,torch.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,control.onepass.f64,,13.6455,pass,13.6455,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,duckdb.decimal,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,duckdb.double,,14.0338,pass,14.0338,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,duckdb.float,,6.4466,pass,6.4466,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,numpy.f32,,6.4466,pass,6.4466,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,numpy.f64,,14.9128,pass,14.9128,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,pandas.f32,,6.4466,pass,6.4466,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,pandas.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,polars.eager.f32,,6.4466,pass,6.4466,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,polars.eager.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,polars.lazy-streaming.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,scipy.describe.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,statsmodels.f64,,14.9128,pass,14.9128,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,stdlib.statistics,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,torch.f32,,6.4466,pass,6.4466,pass,0.0000,True,False
+quick,A,univariate,NumAcc2,torch.f64,,14.2045,pass,14.2045,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,control.onepass.f64,,2.2028,pass,2.2028,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,duckdb.decimal,,9.4546,pass,9.4546,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,duckdb.double,,9.4546,pass,9.4546,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,duckdb.float,,1.2045,pass,1.2045,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,numpy.f32,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,numpy.f64,,9.4569,pass,9.4569,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,pandas.f32,,1.2045,pass,1.2045,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,pandas.f64,,9.4569,pass,9.4569,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,polars.eager.f32,,1.2045,pass,1.2045,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,polars.eager.f64,,9.4568,pass,9.4568,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,polars.lazy-streaming.f64,,9.4568,pass,9.4568,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,scipy.describe.f64,,9.4569,pass,9.4569,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,statsmodels.f64,,9.4569,pass,9.4569,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,stdlib.statistics,,9.4569,pass,9.4569,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,torch.f32,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc3,torch.f64,,9.4569,pass,9.4569,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,control.onepass.f64,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,duckdb.decimal,,8.2527,pass,8.2527,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,duckdb.double,,8.2527,pass,8.2527,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,duckdb.float,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,numpy.f32,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,numpy.f64,,8.2527,pass,8.2527,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,pandas.f32,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,pandas.f64,,8.2527,pass,8.2527,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,polars.eager.f32,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,polars.eager.f64,,8.2522,pass,8.2522,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,polars.lazy-streaming.f64,,8.2522,pass,8.2522,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,scipy.describe.f64,,8.2527,pass,8.2527,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,statsmodels.f64,,8.2527,pass,8.2527,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,stdlib.statistics,,8.2527,pass,8.2527,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,torch.f32,,0.0000,pass,0.0000,pass,0.0000,True,False
+quick,A,univariate,NumAcc4,torch.f64,,8.2527,pass,8.2527,pass,0.0000,True,False
+quick,A,univariate,PiDigits,control.exact,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,PiDigits,control.onepass.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,PiDigits,duckdb.decimal,,14.9649,pass,14.9649,pass,0.0000,True,False
+quick,A,univariate,PiDigits,duckdb.double,,14.9649,pass,14.9649,pass,0.0000,True,False
+quick,A,univariate,PiDigits,duckdb.float,,14.9649,pass,14.9649,pass,0.0000,True,False
+quick,A,univariate,PiDigits,numpy.f32,,5.2983,pass,5.2983,pass,0.0000,True,False
+quick,A,univariate,PiDigits,numpy.f64,,13.9889,pass,13.9889,pass,0.0000,True,False
+quick,A,univariate,PiDigits,pandas.f32,,7.2413,pass,7.2413,pass,0.0000,True,False
+quick,A,univariate,PiDigits,pandas.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,PiDigits,polars.eager.f32,,7.5887,pass,7.5887,pass,0.0000,True,False
+quick,A,univariate,PiDigits,polars.eager.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,PiDigits,polars.lazy-streaming.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,PiDigits,scipy.describe.f64,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,PiDigits,statsmodels.f64,,13.9889,pass,13.9889,pass,0.0000,True,False
+quick,A,univariate,PiDigits,stdlib.statistics,,15.0000,pass,15.0000,pass,0.0000,True,False
+quick,A,univariate,PiDigits,torch.f32,,7.5887,pass,7.5887,pass,0.0000,True,False
+quick,A,univariate,PiDigits,torch.f64,,14.9069,pass,14.9069,pass,0.0000,True,False
+quick,B,nonlinear,Bennett5,scipy.curve_fit.default,sigma 1.0,,ok=5 silent=1 flagged=14 flagged_ok=0 error=0,,ok=5 silent=1 flagged=14 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=6 silent=2 flagged=12 flagged_ok=0 error=0,,ok=6 silent=2 flagged=12 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=13 silent=1 flagged=6 flagged_ok=0 error=0,,ok=13 silent=1 flagged=6 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=11 silent=1 flagged=6 flagged_ok=2 error=0,,ok=11 silent=1 flagged=6 flagged_ok=2 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=13 silent=1 flagged=6 flagged_ok=0 error=0,,ok=13 silent=1 flagged=6 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=13 silent=0 flagged=7 flagged_ok=0 error=0,,ok=13 silent=0 flagged=7 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=5 silent=1 flagged=14 flagged_ok=0 error=0,,ok=5 silent=1 flagged=14 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=5 silent=1 flagged=14 flagged_ok=0 error=0,,ok=5 silent=1 flagged=14 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=4 silent=2 flagged=14 flagged_ok=0 error=0,,ok=4 silent=2 flagged=14 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=5 silent=1 flagged=14 flagged_ok=0 error=0,,ok=5 silent=1 flagged=14 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=3 silent=4 flagged=13 flagged_ok=0 error=0,,ok=3 silent=4 flagged=13 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=3 silent=3 flagged=13 flagged_ok=1 error=0,,ok=3 silent=3 flagged=13 flagged_ok=1 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=3 silent=4 flagged=13 flagged_ok=0 error=0,,ok=3 silent=4 flagged=13 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Bennett5,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=3 silent=1 flagged=15 flagged_ok=1 error=0,,ok=3 silent=1 flagged=15 flagged_ok=1 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,BoxBOD,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut1,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Chwirut2,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,DanWood,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.curve_fit.default,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,ENSO,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.curve_fit.default,sigma 1.0,,ok=2 silent=14 flagged=4 flagged_ok=0 error=0,,ok=2 silent=14 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=6 silent=14 flagged=0 flagged_ok=0 error=0,,ok=6 silent=14 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=6 silent=14 flagged=0 flagged_ok=0 error=0,,ok=6 silent=14 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=6 silent=14 flagged=0 flagged_ok=0 error=0,,ok=6 silent=14 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=3 silent=14 flagged=3 flagged_ok=0 error=0,,ok=3 silent=14 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=3 silent=14 flagged=3 flagged_ok=0 error=0,,ok=3 silent=14 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=3 silent=14 flagged=3 flagged_ok=0 error=0,,ok=3 silent=14 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=3 silent=14 flagged=3 flagged_ok=0 error=0,,ok=3 silent=14 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Eckerle4,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.curve_fit.default,sigma 1.0,,ok=2 silent=15 flagged=3 flagged_ok=0 error=0,,ok=2 silent=15 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=0 silent=16 flagged=4 flagged_ok=0 error=0,,ok=0 silent=16 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=1 silent=10 flagged=9 flagged_ok=0 error=0,,ok=1 silent=10 flagged=9 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=15 flagged=5 flagged_ok=0 error=0,,ok=0 silent=15 flagged=5 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=0 silent=11 flagged=9 flagged_ok=0 error=0,,ok=0 silent=11 flagged=9 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=2 silent=13 flagged=5 flagged_ok=0 error=0,,ok=2 silent=13 flagged=5 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=1 silent=17 flagged=2 flagged_ok=0 error=0,,ok=1 silent=17 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=1 silent=16 flagged=3 flagged_ok=0 error=0,,ok=1 silent=16 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,ok=2 silent=17 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss1,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=2 silent=15 flagged=3 flagged_ok=0 error=0,,ok=2 silent=15 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.curve_fit.default,sigma 1.0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=1 silent=17 flagged=2 flagged_ok=0 error=0,,ok=1 silent=17 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=1 silent=17 flagged=2 flagged_ok=0 error=0,,ok=1 silent=17 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=1 silent=17 flagged=2 flagged_ok=0 error=0,,ok=1 silent=17 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=1 silent=16 flagged=3 flagged_ok=0 error=0,,ok=1 silent=16 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=0 silent=14 flagged=6 flagged_ok=0 error=0,,ok=0 silent=14 flagged=6 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss2,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.curve_fit.default,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=0 silent=13 flagged=7 flagged_ok=0 error=0,,ok=0 silent=13 flagged=7 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=10 flagged=10 flagged_ok=0 error=0,,ok=0 silent=10 flagged=10 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=15 flagged=5 flagged_ok=0 error=0,,ok=0 silent=15 flagged=5 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=0 silent=12 flagged=8 flagged_ok=0 error=0,,ok=0 silent=12 flagged=8 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,ok=0 silent=18 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Gauss3,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,ok=0 silent=17 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.curve_fit.default,sigma 1.0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,ok=0 silent=19 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=16 silent=4 flagged=0 flagged_ok=0 error=0,,ok=16 silent=4 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=17 silent=2 flagged=1 flagged_ok=0 error=0,,ok=17 silent=2 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=17 silent=1 flagged=2 flagged_ok=0 error=0,,ok=17 silent=1 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Hahn1,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=17 silent=1 flagged=2 flagged_ok=0 error=0,,ok=17 silent=1 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.curve_fit.default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Kirby2,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=18 silent=0 flagged=2 flagged_ok=0 error=0,,ok=18 silent=0 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.curve_fit.default,sigma 1.0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=8 silent=12 flagged=0 flagged_ok=0 error=0,,ok=8 silent=12 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=8 silent=12 flagged=0 flagged_ok=0 error=0,,ok=8 silent=12 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=7 silent=10 flagged=3 flagged_ok=0 error=0,,ok=7 silent=10 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=7 silent=10 flagged=3 flagged_ok=0 error=0,,ok=7 silent=10 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=7 silent=13 flagged=0 flagged_ok=0 error=0,,ok=7 silent=13 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=7 silent=13 flagged=0 flagged_ok=0 error=0,,ok=7 silent=13 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=7 silent=13 flagged=0 flagged_ok=0 error=0,,ok=7 silent=13 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos1,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=7 silent=13 flagged=0 flagged_ok=0 error=0,,ok=7 silent=13 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.curve_fit.default,sigma 1.0,,ok=3 silent=16 flagged=1 flagged_ok=0 error=0,,ok=3 silent=16 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=3 silent=11 flagged=6 flagged_ok=0 error=0,,ok=3 silent=11 flagged=6 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=3 silent=11 flagged=6 flagged_ok=0 error=0,,ok=3 silent=11 flagged=6 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=2 silent=11 flagged=7 flagged_ok=0 error=0,,ok=2 silent=11 flagged=7 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=2 silent=11 flagged=7 flagged_ok=0 error=0,,ok=2 silent=11 flagged=7 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,ok=3 silent=17 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=2 silent=18 flagged=0 flagged_ok=0 error=0,,ok=2 silent=18 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=2 silent=18 flagged=0 flagged_ok=0 error=0,,ok=2 silent=18 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=2 silent=18 flagged=0 flagged_ok=0 error=0,,ok=2 silent=18 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos2,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=2 silent=18 flagged=0 flagged_ok=0 error=0,,ok=2 silent=18 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.curve_fit.default,sigma 1.0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=6 silent=10 flagged=4 flagged_ok=0 error=0,,ok=6 silent=10 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=6 silent=10 flagged=4 flagged_ok=0 error=0,,ok=6 silent=10 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=5 silent=10 flagged=5 flagged_ok=0 error=0,,ok=5 silent=10 flagged=5 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=5 silent=9 flagged=6 flagged_ok=0 error=0,,ok=5 silent=9 flagged=6 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Lanczos3,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.curve_fit.default,sigma 1.0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,ok=9 silent=11 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=10 silent=10 flagged=0 flagged_ok=0 error=0,,ok=10 silent=10 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=19 silent=0 flagged=1 flagged_ok=0 error=0,,ok=19 silent=0 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=19 silent=0 flagged=1 flagged_ok=0 error=0,,ok=19 silent=0 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=19 silent=1 flagged=0 flagged_ok=0 error=0,,ok=19 silent=1 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=19 silent=1 flagged=0 flagged_ok=0 error=0,,ok=19 silent=1 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=19 silent=1 flagged=0 flagged_ok=0 error=0,,ok=19 silent=1 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=19 silent=1 flagged=0 flagged_ok=0 error=0,,ok=19 silent=1 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,ok=0 silent=20 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH09,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.curve_fit.default,sigma 1.0,,ok=16 silent=0 flagged=4 flagged_ok=0 error=0,,ok=16 silent=0 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=14 silent=2 flagged=4 flagged_ok=0 error=0,,ok=14 silent=2 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=14 silent=0 flagged=6 flagged_ok=0 error=0,,ok=14 silent=0 flagged=6 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=14 silent=3 flagged=3 flagged_ok=0 error=0,,ok=14 silent=3 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=14 silent=1 flagged=5 flagged_ok=0 error=0,,ok=14 silent=1 flagged=5 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=17 silent=1 flagged=2 flagged_ok=0 error=0,,ok=17 silent=1 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=17 silent=0 flagged=3 flagged_ok=0 error=0,,ok=17 silent=0 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=17 silent=1 flagged=2 flagged_ok=0 error=0,,ok=17 silent=1 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=17 silent=0 flagged=3 flagged_ok=0 error=0,,ok=17 silent=0 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=11 silent=7 flagged=2 flagged_ok=0 error=0,,ok=11 silent=7 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=8 silent=7 flagged=2 flagged_ok=3 error=0,,ok=8 silent=7 flagged=2 flagged_ok=3 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=11 silent=7 flagged=2 flagged_ok=0 error=0,,ok=11 silent=7 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH10,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=11 silent=7 flagged=2 flagged_ok=0 error=0,,ok=11 silent=7 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.curve_fit.default,sigma 1.0,,ok=14 silent=5 flagged=1 flagged_ok=0 error=0,,ok=14 silent=5 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=14 silent=5 flagged=1 flagged_ok=0 error=0,,ok=14 silent=5 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=13 silent=2 flagged=5 flagged_ok=0 error=0,,ok=13 silent=2 flagged=5 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=13 silent=2 flagged=5 flagged_ok=0 error=0,,ok=13 silent=2 flagged=5 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=13 silent=4 flagged=3 flagged_ok=0 error=0,,ok=13 silent=4 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=13 silent=4 flagged=3 flagged_ok=0 error=0,,ok=13 silent=4 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=14 silent=5 flagged=1 flagged_ok=0 error=0,,ok=14 silent=5 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=14 silent=5 flagged=1 flagged_ok=0 error=0,,ok=14 silent=5 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=11 silent=0 flagged=9 flagged_ok=0 error=0,,ok=11 silent=0 flagged=9 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=11 silent=0 flagged=9 flagged_ok=0 error=0,,ok=11 silent=0 flagged=9 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=11 silent=0 flagged=9 flagged_ok=0 error=0,,ok=11 silent=0 flagged=9 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,MGH17,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=11 silent=0 flagged=9 flagged_ok=0 error=0,,ok=11 silent=0 flagged=9 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1a,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1b,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1c,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Misra1d,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.curve_fit.default,sigma 1.0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=14 silent=3 flagged=3 flagged_ok=0 error=0,,ok=14 silent=3 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=14 silent=2 flagged=4 flagged_ok=0 error=0,,ok=14 silent=2 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Nelson,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,ok=12 silent=8 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=13 silent=3 flagged=4 flagged_ok=0 error=0,,ok=13 silent=3 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=13 silent=3 flagged=4 flagged_ok=0 error=0,,ok=13 silent=3 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=13 silent=3 flagged=4 flagged_ok=0 error=0,,ok=13 silent=3 flagged=4 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=13 silent=2 flagged=5 flagged_ok=0 error=0,,ok=13 silent=2 flagged=5 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat42,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.curve_fit.default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,ok=17 silent=3 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,ok=18 silent=2 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,ok=18 silent=1 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,ok=14 silent=6 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=14 silent=5 flagged=0 flagged_ok=0 error=1,,ok=14 silent=5 flagged=0 flagged_ok=0 error=1,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=13 silent=6 flagged=0 flagged_ok=0 error=1,,ok=13 silent=6 flagged=0 flagged_ok=0 error=1,,,False
+quick,B,nonlinear,Rat43,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=13 silent=5 flagged=1 flagged_ok=0 error=1,,ok=13 silent=5 flagged=1 flagged_ok=0 error=1,,,False
+quick,B,nonlinear,Roszman1,scipy.curve_fit.default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Roszman1,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,ok=20 silent=0 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.curve_fit.default,sigma 1.0,,ok=5 silent=14 flagged=1 flagged_ok=0 error=0,,ok=5 silent=14 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.curve_fit.jac-analytic,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.dogbox.jac-2point.tol-default,sigma 1.0,,ok=4 silent=15 flagged=1 flagged_ok=0 error=0,,ok=4 silent=15 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.dogbox.jac-2point.tol-tight,sigma 1.0,,ok=4 silent=14 flagged=2 flagged_ok=0 error=0,,ok=4 silent=14 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.dogbox.jac-analytic.tol-default,sigma 1.0,,ok=4 silent=15 flagged=1 flagged_ok=0 error=0,,ok=4 silent=15 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.dogbox.jac-analytic.tol-tight,sigma 1.0,,ok=4 silent=15 flagged=1 flagged_ok=0 error=0,,ok=4 silent=15 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.lm.jac-2point.tol-default,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.lm.jac-2point.tol-tight,sigma 1.0,,ok=5 silent=12 flagged=3 flagged_ok=0 error=0,,ok=5 silent=12 flagged=3 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.lm.jac-analytic.tol-default,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.lm.jac-analytic.tol-tight,sigma 1.0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,ok=5 silent=15 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.trf.jac-2point.tol-default,sigma 1.0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,ok=4 silent=16 flagged=0 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.trf.jac-2point.tol-tight,sigma 1.0,,ok=4 silent=14 flagged=2 flagged_ok=0 error=0,,ok=4 silent=14 flagged=2 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.trf.jac-analytic.tol-default,sigma 1.0,,ok=4 silent=15 flagged=1 flagged_ok=0 error=0,,ok=4 silent=15 flagged=1 flagged_ok=0 error=0,,,False
+quick,B,nonlinear,Thurber,scipy.least_squares.trf.jac-analytic.tol-tight,sigma 1.0,,ok=4 silent=14 flagged=2 flagged_ok=0 error=0,,ok=4 silent=14 flagged=2 flagged_ok=0 error=0,,,False

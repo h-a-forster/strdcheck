@@ -1,0 +1,60 @@
+2026-11-21T02:35:02+00:00 run_study: attempt 1/3
+2026-11-21T02:38:55+00:00 study quick: 1884 units P=58, A=1160, B=540, C=126
+2026-11-21T02:38:55+00:00 execute: 0/58 done, 58 to run, workers=3
+2026-11-21T02:41:27+00:00 progress: 50/58 (0.33 units/s, about 24 s left)
+2026-11-21T02:44:21+00:00 progress: 58/58 (0.18 units/s, about 0 s left)
+2026-11-21T02:44:28+00:00 phase P: 58 run in 333 s
+2026-11-21T02:44:30+00:00 execute: 0/1160 done, 1160 to run, workers=3
+2026-11-21T02:50:18+00:00 progress: 50/1160 (0.14 units/s, about 7740 s left)
+2026-11-21T02:51:37+00:00 progress: 100/1160 (0.23 units/s, about 4536 s left)
+2026-11-21T02:52:44+00:00 progress: 150/1160 (0.30 units/s, about 3331 s left)
+2026-11-21T02:54:21+00:00 progress: 200/1160 (0.34 units/s, about 2840 s left)
+2026-11-21T02:56:11+00:00 progress: 250/1160 (0.36 units/s, about 2554 s left)
+2026-11-21T02:57:12+00:00 progress: 300/1160 (0.39 units/s, about 2186 s left)
+2026-11-21T02:57:16+00:00 progress: 350/1160 (0.46 units/s, about 1774 s left)
+2026-11-21T02:57:20+00:00 progress: 400/1160 (0.52 units/s, about 1464 s left)
+2026-11-21T02:57:29+00:00 progress: 450/1160 (0.58 units/s, about 1230 s left)
+2026-11-21T02:57:42+00:00 progress: 500/1160 (0.63 units/s, about 1046 s left)
+2026-11-21T02:57:53+00:00 progress: 550/1160 (0.68 units/s, about 891 s left)
+2026-11-21T02:57:59+00:00 progress: 600/1160 (0.74 units/s, about 755 s left)
+2026-11-21T02:58:06+00:00 progress: 650/1160 (0.80 units/s, about 640 s left)
+2026-11-21T02:58:28+00:00 progress: 700/1160 (0.83 units/s, about 551 s left)
+2026-11-21T02:59:02+00:00 progress: 750/1160 (0.86 units/s, about 477 s left)
+2026-11-21T02:59:16+00:00 progress: 800/1160 (0.90 units/s, about 399 s left)
+2026-11-21T02:59:22+00:00 progress: 850/1160 (0.95 units/s, about 325 s left)
+2026-11-21T02:59:28+00:00 progress: 900/1160 (1.00 units/s, about 259 s left)
+2026-11-21T03:00:07+00:00 progress: 950/1160 (1.01 units/s, about 207 s left)
+2026-11-21T03:00:31+00:00 progress: 1000/1160 (1.04 units/s, about 154 s left)
+2026-11-21T03:00:39+00:00 progress: 1050/1160 (1.08 units/s, about 102 s left)
+2026-11-21T03:01:15+00:00 progress: 1100/1160 (1.09 units/s, about 55 s left)
+2026-11-21T03:01:48+00:00 progress: 1150/1160 (1.11 units/s, about 9 s left)
+2026-11-21T03:01:55+00:00 progress: 1160/1160 (1.11 units/s, about 0 s left)
+2026-11-21T03:02:05+00:00 phase A: 1160 run in 1057 s
+2026-11-21T03:02:06+00:00 execute: 0/540 done, 540 to run, workers=3
+2026-11-21T03:04:41+00:00 progress: 50/540 (0.32 units/s, about 1521 s left)
+2026-11-21T03:09:58+00:00 progress: 100/540 (0.21 units/s, about 2078 s left)
+2026-11-21T03:12:32+00:00 progress: 150/540 (0.24 units/s, about 1629 s left)
+2026-11-21T03:13:59+00:00 progress: 200/540 (0.28 units/s, about 1213 s left)
+2026-11-21T03:16:20+00:00 progress: 250/540 (0.29 units/s, about 991 s left)
+2026-11-21T03:21:03+00:00 progress: 300/540 (0.26 units/s, about 910 s left)
+2026-11-21T03:21:41+00:00 progress: 350/540 (0.30 units/s, about 638 s left)
+2026-11-21T03:23:13+00:00 progress: 400/540 (0.32 units/s, about 444 s left)
+2026-11-21T03:24:27+00:00 progress: 450/540 (0.34 units/s, about 268 s left)
+2026-11-21T03:25:37+00:00 progress: 500/540 (0.35 units/s, about 113 s left)
+2026-11-21T03:48:08+00:00 run_study: attempt 1/3
+2026-11-21T03:48:58+00:00 WARNING: resuming with different code or packages than the first attempt (git_commit); units of this run no longer share one provenance
+2026-11-21T03:48:58+00:00 study quick: 1884 units P=58, A=1160, B=540, C=126
+2026-11-21T03:48:58+00:00 execute: 58/58 done, 0 to run, workers=3
+2026-11-21T03:48:58+00:00 phase P: 0 run in 0 s
+2026-11-21T03:48:59+00:00 execute: 1160/1160 done, 0 to run, workers=3
+2026-11-21T03:48:59+00:00 phase A: 0 run in 2 s
+2026-11-21T03:49:00+00:00 execute: 521/540 done, 19 to run, workers=3
+2026-11-21T03:51:10+00:00 progress: 540/540 (0.15 units/s, about 0 s left)
+2026-11-21T03:51:15+00:00 phase B: 19 run in 135 s
+2026-11-21T03:51:15+00:00 execute: 0/126 done, 126 to run, workers=1
+2026-11-21T03:54:06+00:00 progress: 50/126 (0.29 units/s, about 260 s left)
+2026-11-21T03:54:51+00:00 progress: 100/126 (0.46 units/s, about 56 s left)
+2026-11-21T03:55:20+00:00 progress: 126/126 (0.51 units/s, about 0 s left)
+2026-11-21T03:55:23+00:00 phase C: 126 run in 248 s
+2026-11-21T03:55:23+00:00 study quick complete: 1884/1884 units, 386 s this attempt
+2026-11-21T03:57:33+00:00 run_study: attempt 1 exit 0 after 565 s

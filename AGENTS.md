@@ -78,7 +78,17 @@ uv run strdcheck fetch               # real StRD files into the user cache (need
 
 ## Status and next steps
 
-Updated: 2026-11-06. Open work lives in `backlog.md`.
+Updated: 2026-11-21.
+
+Done after v0.1.0:
+- Platform spread (2026-11-21): the quick run repeated on a second Windows machine (Intel
+  CPU) and compared cell by cell with `scripts/platform_spread.py` (`results/platforms/`,
+  REPORT 6.1). Not done: the full configuration there, Linux, Part C comparison (its
+  non-repeatable cells differ even on one machine).
+- Known environment trap: on a Windows machine whose "CA" certificate store still holds the
+  expired ISRG Root X2 cross-sign, `strdcheck fetch` fails with `CERTIFICATE_VERIFY_FAILED`
+  although NIST's chain is valid. Download the files with another client into the cache and
+  run `strdcheck verify` (SHA-256 against the manifest).
 
 Done (v0.1.0, tagged and released 2026-11-08):
 - Release audit (2026-11-06): a fresh quick run reproduced every committed table byte for byte

@@ -32,7 +32,8 @@ wrong answer, which a success flag cannot reveal.
 
 ## Key results (v0.1.0)
 
-From [REPORT.md](REPORT.md) (one machine, CPU only; see its limitations):
+From [REPORT.md](REPORT.md) (CPU only; on a second CPU no Part A or Part B cell changes
+verdict class and only torch `lstsq` cells move; see its limitations):
 
 - Univariate statistics: every float64 path is within 1.5 digits of the ceiling; float32
   paths keep 15 digits on NumAcc1 and 0-7.6 on the other eight datasets (DuckDB `FLOAT`, which
